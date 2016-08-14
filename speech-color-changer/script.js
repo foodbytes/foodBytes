@@ -2,7 +2,7 @@ var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
 var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList
 var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent
 
-var grammar = '#JSGF V1.0; grammar colors; public <color> = aqua | azure | beige | bisque | black | blue | brown | chocolate | coral | crimson | cyan | fuchsia | ghostwhite | gold | goldenrod | gray | green | indigo | ivory | khaki | lavender | lime | linen | magenta | maroon | moccasin | navy | olive | orange | orchid | peru | pink | plum | purple | red | salmon | sienna | silver | snow | tan | teal | thistle | tomato | turquoise | violet | white | yellow ;'
+var grammar = 'repeat, next;'
 var recognition = new SpeechRecognition();
 var speechRecognitionList = new SpeechGrammarList();
 speechRecognitionList.addFromString(grammar, 1);
@@ -28,11 +28,20 @@ recognition.onresult = function(event) {
   // Each SpeechRecognitionResult object contains SpeechRecognitionAlternative objects that contain individual results.
   // These also have getters so they can be accessed like arrays.
   // The second [0] returns the SpeechRecognitionAlternative at position 0.
-  // We then return the transcript property of the SpeechRecognitionAlternative object 
-  var color = event.results[0][0].transcript;
-  diagnostic.textContent = 'Result received: ' + color + '.';
+  // We then return the transcript property of the SpeechRecognitionAlternative object
+  var nextStep = event.results[0][0].transcript;
+  diagnostic.textContent = 'Result received: ' + nextStep + '.';
   bg.style.backgroundColor = color;
   console.log('Confidence: ' + event.results[0][0].confidence);
+}
+
+//psudocode for function that takes in command and uses a switch statement to trigger instructions
+function voice(grammar, command) {
+  switch (command)
+    case 'repeat';
+    return repeatInstructions;
+    case 'next'
+    return nextInstructions
 }
 
 recognition.onspeechend = function() {
