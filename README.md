@@ -1,3 +1,11 @@
+To learn about two areas of functionality - speech recognition and speech synthesis (also known as text to speech or tts). These technologies are opening up interesting new possibilities for accessibility. Voice recognition program to access a library of commands (repeat, next etc).
+
+Step 1: speech recognition to access a library of commands (repeat, next etc).
+
+Step 2: Have a prerecord audio files (repeat, next etc) and call the play function on it depending on the command detected through the speech recognition.
+var audio = new Audio('repeat_audio_file.mp3');
+audio.play();
+
 # web-speech-api
 A repository for demos illustrating features of the Web Speech API. See [Web_Speech_API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API) for more details.
 
