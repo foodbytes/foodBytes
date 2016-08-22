@@ -21,23 +21,19 @@ document.body.onclick = function() {
   console.log('Ready to receive a command.');
 }
 
-// function next() {
-//     document.getElementById('next-sound').play();
-// }
-
 recognition.onresult = function(event) {
   var command = event.results[0][0].transcript;
   diagnostic.textContent = 'Result received: ' + command + '.';
-  console.log('result', event[0][0].transcript);
+  console.log('result here', event[0][0].transcript);
 }
 
-playAudio = function (command) {
-  switch (command) {
+playAudio = function(command) {
+   switch (command) {
       case "next":
-        audio.src = "Audio/familyguy2.wav"
+        document.getElementById('next-sound').play();
         break;
-      case 'repeat':
-        audio.src = "Audio/JazzTrio.wav"
+      case "repeat":
+        document.getElementById('repeat-sound').play();
         break;
       default:
         console.log("Your command was invalid!", false);
