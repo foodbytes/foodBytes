@@ -21,23 +21,33 @@ document.body.onclick = function() {
   console.log('Ready to receive a command.');
 }
 
+var audioArray = [
+ document.getElementById('next-sound'),
+ document.getElementById('repeat-sound')
+]
+
+var index = -1
+
 recognition.onresult = function(event) {
   var command = event.results[0][0].transcript;
-  diagnostic.textContent = 'Result received: ' + command + '.';
-  console.log('result here', event[0][0].transcript);
-}
-
-playAudio = function(command) {
-   switch (command) {
+  switch (command) {
       case "next":
-        document.getElementById('next-sound').play();
+        if (audioArray[index+1]) {
+          index++
+          audioArray[index].play()
+      };
+        console.log(index)
         break;
       case "repeat":
-        document.getElementById('repeat-sound').play();
+        if (audioArray[index]) {
+        audioArray[index].play()
+      };
         break;
       default:
         console.log("Your command was invalid!", false);
     }
+  diagnostic.textContent = 'Result received: ' + command + '.';
+  console.log('result here', event.results[0][0].transcript);
 }
 
 recognition.onspeechend = function() {
@@ -52,26 +62,4 @@ recognition.onerror = function(event) {
   diagnostic.textContent = 'Error occurred in recognition: ' + event.error;
 }
 
-// function play() {
-//     document.getElementById('next-sound').play();
-// }
 
-// function addListeners (element) {
-//   element.addEventListener('click', playAudio)
-// }
-
-// function playAudio (evt) {
-//  //
-//   if (evt.target.speechRecognitionResult.contains('repeat')) {
-//     var commandOne = document.getElementById('repeat-sound')
-//     commandOne.volume = 0.5
-//     commandOne.play()
-//   } else {
-//     // You can only mark cells that are hidden!
-//     if (evt.target.speechRecognitionResult.contains('next')) {
-//       // If the cell wasn't marked, play the mark sound and add a mark!
-//       var markSound = document.getElementById('next-sound')
-//       commandTwo.volume = 0.5
-//       commandTwo.play()
-//     }
-//   }
