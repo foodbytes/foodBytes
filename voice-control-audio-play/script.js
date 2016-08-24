@@ -2,13 +2,16 @@ var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
 var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList
 var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent
 
-//var grammar = '#JSGF V1.0; grammar colors; public <color> = aqua | azure | beige | bisque | black | blue | brown | chocolate | coral | crimson | cyan | fuchsia | ghostwhite | gold | goldenrod | gray | green | indigo | ivory | khaki | lavender | lime | linen | magenta | maroon | moccasin | navy | olive | orange | orchid | peru | pink | plum | purple | red | salmon | sienna | silver | snow | tan | teal | thistle | tomato | turquoise | violet | white | yellow ;'
-var grammar = '#JSGF V1.0; grammar commands; public <commands> = next | repeat'
+var grammar = '#JSGF V1.0; grammar commands; public <commands> = next | repeat | previous | ingredients | define | recipe'
+//Define a new instance of speechRecognition to control the recognition for our application.
+//This is done using the SpeechRecognition() constructor. We also create a new speech grammar list to
+//contain our grammar using the SpeechGrammarList() constructor.
 var recognition = new SpeechRecognition();
 var speechRecognitionList = new SpeechGrammarList();
+
 speechRecognitionList.addFromString(grammar, 1);
 recognition.grammars = speechRecognitionList;
-//recognition.continuous = false;
+
 recognition.lang = 'en-US';
 recognition.interimResults = false;
 recognition.maxAlternatives = 1;
@@ -37,11 +40,16 @@ recognition.onresult = function(event) {
           index++
           audioArray[index].play()
       };
-        console.log(index)
         break;
       case "repeat":
         if (audioArray[index]) {
         audioArray[index].play()
+      };
+        break;
+      case "previous":
+        if (audioArray[index+1]) {
+          index--
+          audioArray[index].play()
       };
         break;
       case "ingredients":
