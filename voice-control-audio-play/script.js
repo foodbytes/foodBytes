@@ -22,8 +22,9 @@ document.body.onclick = function() {
 }
 
 var audioArray = [
- document.getElementById('next-sound'),
- document.getElementById('repeat-sound')
+ document.getElementById('stepOne'),
+ document.getElementById('stepTwo'),
+ document.getElementById('stepThree')
 ]
 
 var index = -1
@@ -43,6 +44,15 @@ recognition.onresult = function(event) {
         audioArray[index].play()
       };
         break;
+      case "ingredients":
+        document.getElementById('ingredients').play();
+        break;
+      case "define cheese":
+        document.getElementById('cheddarCheese').play();
+        break;
+      case "recipe":
+        document.getElementById('wholeRecipe').play();
+        break;
       default:
         console.log("Your command was invalid!", false);
     }
@@ -55,7 +65,7 @@ recognition.onspeechend = function() {
 }
 
 recognition.onnomatch = function(event) {
-  diagnostic.textContent = 'I didnt recognise that color.';
+  diagnostic.textContent = 'I didnt recognise that.';
 }
 
 recognition.onerror = function(event) {
