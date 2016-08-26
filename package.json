@@ -1,0 +1,23 @@
+{
+  "name": "foodbytes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "start": "node index.js ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mandy-kate/web-speech-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mandy-kate/web-speech-project/issues"
+  },
+  "homepage": "https://github.com/mandy-kate/web-speech-project#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
