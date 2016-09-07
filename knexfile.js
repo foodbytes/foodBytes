@@ -1,12 +1,12 @@
 // Update with your config settings.
+require('dotenv').config();
+let dbConnection = `${ process.env.DATABASE_URL }?ssl=true`;
 
 module.exports = {
 
   development: {
     client: 'pg',
-    connection: {
-      filename: './dev.sqlite3'
-    }
+    connection: dbConnection
   },
 
   staging: {
