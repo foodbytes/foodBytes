@@ -12,27 +12,32 @@ class App extends Component {
   }
 
   componentDidMount () {
+    console.log(this.props);
     speechRecognition(this.props)
   }
+
+    // <Audio step={this.props.step} audio={this.props.audio}/>
 
   render () {
     return(
         <div>
-          <Audio step={this.props.step} audio={this.props.audio}/>
+
         </div>
         )
     }
 
 }
 
-const mapStateToProps = (state) => {
-  return {
-    step: state.step[state.position],
-    audio: state.audio[state.position]
-  }
-}
+// const mapStateToProps = (state) => {
+//   return {
+//     step: state.step[state.position],
+//     audio: state.audio[state.position]
+//   }
+// }
 
-export const AppContainer = connect(
-  mapStateToProps,
-  actionCreators
-  )(App)
+// export const AppContainer = connect(
+//   mapStateToProps,
+//   actionCreators
+//   )(App)
+
+export default App;
