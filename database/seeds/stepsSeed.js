@@ -7,7 +7,10 @@ exports.seed = function(knex, Promise) {
         // Inserts seed entries
         knex('steps').insert({id: 0, recipe_id: 0, instructions: 'step_one', audio_path: '../audio/stepOne.mp3' }),
         knex('steps').insert({id: 1, recipe_id: 0, instructions: 'step_two', audio_path: '../audio/stepTwo.mp3'}),
-        knex('steps').insert({id: 2, recipe_id: 0, instructions: 'step_three', audio_path: '../audio/stepThree.mp3'})
+        knex('steps').insert({id: 2, recipe_id: 0, instructions: 'step_three', audio_path: '../audio/stepThree.mp3'}),
+        knex('steps').insert({id: 3, recipe_id: 1, instructions: 'step_one', audio_path: '../audio/stepOne.mp3' }),
+        knex('steps').insert({id: 4, recipe_id: 1, instructions: 'step_two', audio_path: '../audio/stepTwo.mp3'}),
+        knex('steps').insert({id: 5, recipe_id: 1, instructions: 'step_three', audio_path: '../audio/stepThree.mp3'})
       ]);
     });
 };
