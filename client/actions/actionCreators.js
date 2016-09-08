@@ -2,6 +2,9 @@ import request from 'superagent'
 import initialState from '../initialstate/initialstate.js'
 import React from 'react'
 
+const NEXT = 'NEXT'
+const PREVIOUS = 'PREVIOUS'
+export {NEXT, PREVIOUS}
 
 export const recieveRecipeSteps = (state) => {
     console.log("recieve action creators")
@@ -31,7 +34,7 @@ export const nextDispatch = () => {
     console.log("inside nextDispatch")
     return (dispatch) => {
       dispatch ({
-        type: 'NEXT'
+        type: NEXT
       })
     }
 }

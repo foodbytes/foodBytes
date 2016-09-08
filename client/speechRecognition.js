@@ -1,3 +1,5 @@
+import {NEXT} from './actions/actionCreators'
+
 module.exports = function speechRecogntion(props) {
   let SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
   let SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList
@@ -32,7 +34,7 @@ module.exports = function speechRecogntion(props) {
 
     var command = event.results[0][0].transcript;
     switch (command) {
-       case "next":
+       case NEXT:
          console.log('this is the props i can see ',props);
          props.nextDispatch()
          //This is where we should dispatch the NEXT action
