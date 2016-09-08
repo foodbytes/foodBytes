@@ -4,19 +4,24 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
+    "build": "browserify -o ./public/bundle.js -g uglifyify",
     "test": "node ./client/tests/test.js | tap-spec"
   },
   "dependencies": {
     "body-parser": "~1.15.1",
     "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
+    "dotenv": "2.0.0",
     "express": "~4.13.4",
     "hbs": "~4.0.0",
     "install": "^0.8.1",
+    "knex": "0.11.10",
     "morgan": "~1.7.0",
+    "pg": "6.1.0",
     "react": "^15.3.1",
     "react-redux": "^4.4.5",
     "redux": "^3.6.0",
+    "redux-thunk": "^2.1.0",
     "serve-favicon": "~2.3.0"
   },
   "devDependencies": {

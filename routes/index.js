@@ -1,9 +1,25 @@
-var express = require('express');
-var router = express.Router();
+let express = require('express');
+let router = express.Router();
+
+let {getRecipesTable, getStepsTable}  = require('../database/db.js');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('app');
 });
+
+// router.get('/api/v1/*', (req, res, next) => {
+//     res.redirect('/')
+// })
+
+router.get('/api/v1/recipes/:id', (req, res) => {
+  let id = req.params.id
+  getRecipesTable(id)
+    .then( data => {
+      res.json(data)
+    })
+    .catch( err => res.status(500).send(err) )
+})
+
 
 module.exports = router;
