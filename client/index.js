@@ -7,16 +7,18 @@ import { createStore, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
 import reducers from './reducers/reducer.js'
 
-// let store = createStore(reducers, compose(
-//     applyMiddleware(thunk)
-// ))
+let store = createStore(reducers, compose(
+    applyMiddleware(thunk)
+))
 
 
 
 domready(() => {
   // console.log(store);
   ReactDOM.render(
-      <App />,
+      <Provider store={store}>
+        <App />
+      </Provider>,
     document.querySelector('#app')
   )
 })
