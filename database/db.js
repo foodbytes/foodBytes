@@ -12,8 +12,8 @@ const getStepsTable =  (id)=>{
   return knex('steps').where('recipe_id', id)
 }
 
-// call getStepsTable and store in a variable
-// attach that var to the end getRecipesTable
+// call getStepsTable and store in a letiable
+// attach that let to the end getRecipesTable
 
 const getJoinTable = () => {
 
