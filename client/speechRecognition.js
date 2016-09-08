@@ -3,6 +3,7 @@ module.exports = function speechRecogntion(props) {
   let SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList
   let SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent
 
+  //grammar currently might not be doing anything, these commands should come from the state.
   let grammar = '#JSGF V1.0; grammar commands; public <commands> = next | repeat | previous | ingredients | define | recipe'
   //Define a new instance of speechRecognition to control the recognition for our application.
   //This is done using the SpeechRecognition() constructor. We also create a new speech grammar list to
@@ -27,30 +28,19 @@ module.exports = function speechRecogntion(props) {
     console.log('Ready to receive a command.');
   }
 
-  let audioArray = [
-   document.getElementById('stepOne')
-   // document.getElementById('stepTwo'),
-   // document.getElementById('stepThree')
-  ]
-
-  let index = -1
-
   recognition.onresult = function(event) {
 
     var command = event.results[0][0].transcript;
     switch (command) {
        case "next":
-         if (audioArray[index+1]) {
-           index++
-           audioArray[index].play()
-       };
+         console.log('this is the props i can see ',props);
+         props.nextDispatch()
+         //This is where we should dispatch the NEXT action
          break;
        default:
          console.log("Your command was invalid!", false);
      }
-    console.log('result here', event.results);
-  // diagnostic.textContent = 'Result received: ' + command + '.';
-    console.log('result here', event.results[0][0].transcript);
+    console.log('result here', command);
   }
 
   recognition.onspeechend = function() {

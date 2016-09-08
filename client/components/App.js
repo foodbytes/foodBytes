@@ -3,17 +3,7 @@ import Audio from './Audio.js'
 import speechRecognition from '../speechRecognition.js'
 import {connect} from 'react-redux'
 import { bindActionCreators } from 'redux'
-import {recieveRecipeSteps, fetchRecipeSteps, setState} from '../actions/actionCreators'
-
-
-const mapStateToProps = (state) => {
-  return {
-    data: state.steps
-  }
-}
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({ fetchRecipeSteps}, dispatch)
-}
+import {recieveRecipeSteps, nextDispatch, fetchRecipeSteps } from '../actions/actionCreators'
 
 class App extends Component {
 
@@ -24,13 +14,11 @@ class App extends Component {
   componentDidMount () {
     const { fetchRecipeSteps } = this.props
     const id = 1
-    fetchRecipeSteps(id[id.length - 1])
+    fetchRecipeSteps(id)
     console.log('these are the props', this.props);
-    speechRecognition()
+    speechRecognition(this.props)
     console.log(speechRecognition);
   }
-
-    // <Audio step={this.props.step} audio={this.props.audio}/>
 
   render () {
     return(
@@ -42,18 +30,15 @@ class App extends Component {
 
 }
 
-// const mapStateToProps = (state) => {
-//   return {
-//     step: state.step[state.position],
-//     audio: state.audio[state.position]
-//   }
-// }
+const mapStateToProps = (state) => {
+  return {
+    //data: state.steps
+  }
+}
 
-// export const AppContainer = connect(
-//   mapStateToProps,
-//   actionCreators
-//   )(App)
-
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({ fetchRecipeSteps, nextDispatch }, dispatch)
+}
 
 export default connect(
   mapStateToProps,

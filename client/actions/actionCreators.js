@@ -6,7 +6,7 @@ import React from 'react'
 export const recieveRecipeSteps = (state) => {
     console.log("recieve action creators")
     return {
-        type: 'NEXT',
+        type: 'RECIEVE_RECIPE_STEPS',
         payload: state
         //payload: find position in array and move to the next audio and play that
     }
@@ -27,11 +27,11 @@ export const fetchRecipeSteps = (id) => {
   }
 }
 
-
-export const setState = (state) => {
-  console.log('inside setstate ', state);
-    return {
-        type: 'setstate',
-        state: state
+export const nextDispatch = () => {
+    console.log("inside nextDispatch")
+    return (dispatch) => {
+      dispatch ({
+        type: 'NEXT'
+      })
     }
 }
