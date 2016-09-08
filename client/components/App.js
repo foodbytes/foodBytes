@@ -12,9 +12,9 @@ class App extends Component {
   }
 
   componentDidMount () {
-    console.log('these are the props', this.props);
+    // console.log('these are the props', this.props);
     speechRecognition(this.props)
-    console.log(speechRecognition);
+    // console.log(speechRecognition);
   }
 
     // <Audio step={this.props.step} audio={this.props.audio}/>
@@ -22,7 +22,7 @@ class App extends Component {
   render () {
     return(
         <div>
-
+          <h1>speech Recognition is working</h1>
         </div>
         )
     }
