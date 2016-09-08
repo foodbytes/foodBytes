@@ -5,10 +5,13 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www",
-    "build": "NODE_ENV=production browserify -o ./public/bundle.js -g uglifyify",
+    "build": "browserify client/index.js -o public/bundle.js -g uglifyify",
     "postinstall": "npm run build",
-    "watch": "watchify client/index.js -o ./public/bundle.js -t babelify -dv",
+    "watch": "watchify client/index.js -o public/bundle.js -dv",
     "test": "node ./client/tests/test.js | tap-spec"
+  },
+  "browserify": {
+    "transform": ["babelify"]
   },
   "engines": {
     "node": "6.4.0"
