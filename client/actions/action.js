@@ -1,4 +1,4 @@
-export const next = (state) => {
+export const nextAction = (state) => {
     console.log("recieve action creators")
     return {
         type: 'NEXT'
