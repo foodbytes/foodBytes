@@ -3,7 +3,7 @@ import Audio from './Audio.js'
 import speechRecognition from '../speechRecognition.js'
 import {connect} from 'react-redux'
 import { bindActionCreators } from 'redux'
-import {nextAction, fetchRecipeSteps, setState} from '../actions/actionCreators'
+import {recieveRecipeSteps, fetchRecipeSteps, setState} from '../actions/actionCreators'
 
 
 const mapStateToProps = (state) => {

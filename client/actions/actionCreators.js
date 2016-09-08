@@ -3,7 +3,7 @@ import initialState from '../initialstate/initialstate.js'
 import React from 'react'
 
 
-export const nextAction = (state) => {
+export const recieveRecipeSteps = (state) => {
     console.log("recieve action creators")
     return {
         type: 'NEXT',
@@ -22,7 +22,7 @@ export const fetchRecipeSteps = (id) => {
         console.error(err.message)
         return
       }
-      dispatch(nextAction(JSON.parse(res.text)))
+      dispatch(recieveRecipeSteps(JSON.parse(res.text)))
     })
   }
 }
