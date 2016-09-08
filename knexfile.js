@@ -8,7 +8,13 @@ module.exports = {
 
   development: {
     client: 'pg',
-    connection: dbConnection
+    connection: dbConnection,
+    migrations:{
+      directory: './database/migrations'
+    },
+    seeds:{
+      directory: './database/seeds'
+    }
   },
 
   staging: {
