@@ -12,7 +12,6 @@ const mapStateToProps = (state) => {
     data: state.steps
   }
 }
-
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({ fetchRecipeSteps}, dispatch)
 }
