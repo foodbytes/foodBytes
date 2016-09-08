@@ -9,6 +9,9 @@
     "watch": "watchify client/index.js -o ./public/bundle.js -t babelify -dv",
     "test": "node ./client/tests/test.js | tap-spec"
   },
+  "engines": {
+    "node": "6.4.0"
+  },
   "dependencies": {
     "body-parser": "~1.15.1",
     "cookie-parser": "~1.4.3",

@@ -1,8 +1,7 @@
-"use strict"
 let express = require('express');
 let router = express.Router();
 
-let {getRecipesTable, getStepsTable, getJoinTable}  = require('../database/db.js');
+let {getRecipesTable, getStepsTable, getJoinTable} = require('../database/db.js');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
