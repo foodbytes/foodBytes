@@ -1,14 +1,14 @@
 module.exports = function speechRecogntion(props) {
-  var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
-  var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList
-  var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent
+  let SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
+  let SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList
+  let SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent
 
-  var grammar = '#JSGF V1.0; grammar commands; public <commands> = next | repeat | previous | ingredients | define | recipe'
+  let grammar = '#JSGF V1.0; grammar commands; public <commands> = next | repeat | previous | ingredients | define | recipe'
   //Define a new instance of speechRecognition to control the recognition for our application.
   //This is done using the SpeechRecognition() constructor. We also create a new speech grammar list to
   //contain our grammar using the SpeechGrammarList() constructor.
-  var recognition = new SpeechRecognition();
-  var speechRecognitionList = new SpeechGrammarList();
+  let recognition = new SpeechRecognition();
+  let speechRecognitionList = new SpeechGrammarList();
 
   speechRecognitionList.addFromString(grammar, 1);
   recognition.grammars = speechRecognitionList;
@@ -19,21 +19,21 @@ module.exports = function speechRecogntion(props) {
 
   console.log('speechRecognition');
 
-  var diagnostic = document.querySelector('.output');
-  var bg = document.querySelector('html');
+  let diagnostic = document.querySelector('.output');
+  let bg = document.querySelector('html');
 
   document.body.onclick = function() {
     recognition.start();
     console.log('Ready to receive a command.');
   }
 
-  var audioArray = [
+  let audioArray = [
    document.getElementById('stepOne')
    // document.getElementById('stepTwo'),
    // document.getElementById('stepThree')
   ]
 
-  var index = -1
+  let index = -1
 
   recognition.onresult = function(event) {
   // diagnostic.textContent = 'Result received: ' + command + '.';
