@@ -1,4 +1,4 @@
-module.exports = function speechRecogntion() {
+module.exports = function speechRecogntion(props) {
   var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
   var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList
   var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent
@@ -17,7 +17,7 @@ module.exports = function speechRecogntion() {
   recognition.interimResults = false;
   recognition.maxAlternatives = 1;
 
-
+  console.log('speechRecognition');
 
   var diagnostic = document.querySelector('.output');
   var bg = document.querySelector('html');

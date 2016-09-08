@@ -12,8 +12,9 @@ class App extends Component {
   }
 
   componentDidMount () {
-    console.log(this.props);
+    console.log('these are the props', this.props);
     speechRecognition(this.props)
+    console.log(speechRecognition);
   }
 
     // <Audio step={this.props.step} audio={this.props.audio}/>
