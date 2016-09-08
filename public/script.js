@@ -33,6 +33,7 @@ var audioArray = [
 var index = -1
 
 recognition.onresult = function(event) {
+  console.log(event)
   var command = event.results[0][0].transcript;
   switch (command) {
       case "next":
