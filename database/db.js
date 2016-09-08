@@ -2,14 +2,14 @@ let knexConfig = require('../knexfile').development;
 let knex = require('knex')(knexConfig);
 
 
-const getRecipesTable =  ()=>{
+const getRecipesTable =  (id)=>{
 
-  return knex.select('*').table('recipes')
+  return knex('recipes').where('id', id)
 }
 
-const getStepsTable =  ()=>{
+const getStepsTable =  (id)=>{
 
-  return knex.select('*').table('steps')
+  return knex('steps').where('recipe_id', id)
 }
 
 const getJoinTable = () => {
