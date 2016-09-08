@@ -1,10 +1,11 @@
 let express = require('express');
 let router = express.Router();
+
 //let {getRecipe}  = require('../config/database/db');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('app');
 });
 
 router.get('/api/v1/*', (req, res, next) => {
