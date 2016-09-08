@@ -37,6 +37,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
+  //bindActionCreators is unknown. keep in mind
   return bindActionCreators({ fetchRecipeSteps, nextDispatch }, dispatch)
 }
 
