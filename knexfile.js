@@ -1,7 +1,11 @@
 // Update with your config settings.
 
 // getting the DATABASE_URL from the env file
-require('dotenv').config();
+
+if (process.env.NODE_ENV != 'production') {
+  require('dotenv').config();
+
+}
 let dbConnection = `${ process.env.DATABASE_URL }?ssl=true`;
 
 module.exports = {
