@@ -1,7 +1,7 @@
 let express = require('express');
 let router = express.Router();
 
-let {getRecipesTable, getStepsTable}  = require('../database/db.js');
+let {getRecipesTable, getStepsTable, getJoinTable}  = require('../database/db.js');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
 
 router.get('/api/v1/recipes/:id', (req, res) => {
   let id = req.params.id
-  getRecipesTable(id)
+  getJoinTable(id)
     .then( data => {
       res.json(data)
     })
