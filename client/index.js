@@ -16,7 +16,7 @@ let store = createStore(reducers, compose(
 domready(() => {
   ReactDOM.render(
     <div>
-      <h1></h1>
+      <h1>Hey there</h1>
       <Provider store={store}>
         <App/>
       </Provider>
