@@ -1,9 +1,21 @@
 
 import React, { Component } from 'react'
-import Audio from './audio.js'
+import Audio from './Audio.js'
 import speechRecognition from '../speechRecognition.js'
 import {connect} from 'react-redux'
-import * as actionCreators from '../actions/actionCreators'
+import { bindActionCreators } from 'redux'
+import {nextAction, fetchRecipeSteps, setState} from '../actions/actionCreators'
+
+
+const mapStateToProps = (state) => {
+  return {
+    data: state.steps
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({ fetchRecipeSteps}, dispatch)
+}
 
 class App extends Component {
 
@@ -12,8 +24,11 @@ class App extends Component {
   }
 
   componentDidMount () {
+    const { fetchRecipeSteps } = this.props
+    const id = 1
+    fetchRecipeSteps(id[id.length - 1])
     console.log('these are the props', this.props);
-    speechRecognition(this.props)
+    speechRecognition()
     console.log(speechRecognition);
   }
 
@@ -41,4 +56,8 @@ class App extends Component {
 //   actionCreators
 //   )(App)
 
-export default App;
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App)

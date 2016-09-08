@@ -1,3 +1,8 @@
+import request from 'superagent'
+import initialState from '../initialstate/initialstate.js'
+import React from 'react'
+
+
 export const nextAction = (state) => {
     console.log("recieve action creators")
     return {
@@ -5,6 +10,22 @@ export const nextAction = (state) => {
         //payload: find position in array and move to the next audio and play that
     }
 }
+
+export const fetchRecipeSteps = (id) => {
+  console.log('Inside fetchRecipeSteps');
+  return (dispatch) => {
+    request
+    .get(`/api/v1/recipe/${id}/steps`)
+    .end((err, res) => {
+      if (err) {
+        console.error(err.message)
+        return
+      }
+      dispatch(nextAction(JSON.parse(res.text)))
+    })
+  }
+}
+
 
 export const setState = (state) => {
     return {

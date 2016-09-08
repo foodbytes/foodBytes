@@ -36,6 +36,19 @@ module.exports = function speechRecogntion(props) {
   var index = -1
 
   recognition.onresult = function(event) {
+
+    var command = event.results[0][0].transcript;
+    switch (command) {
+       case "next":
+         if (audioArray[index+1]) {
+           index++
+           audioArray[index].play()
+       };
+         break;
+       default:
+         console.log("Your command was invalid!", false);
+     }
+    console.log('result here', event.results);
   // diagnostic.textContent = 'Result received: ' + command + '.';
     console.log('result here', event.results[0][0].transcript);
   }
