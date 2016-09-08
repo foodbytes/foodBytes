@@ -12,7 +12,14 @@ const getStepsTable =  ()=>{
   return knex.select('*').table('steps')
 }
 
+const getJoinTable = () => {
+
+  return knex.table('recipes').innerJoin('steps', 'recipes.id', '=', 'steps.recipe_id')
+
+}
+
 module.exports = {
   getRecipesTable,
-  getStepsTable
+  getStepsTable,
+  getJoinTable
 }
