@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react'
-import Audio from './audio.js'
+import Audio from './Audio.js'
 import speechRecognition from '../speechRecognition.js'
 import {connect} from 'react-redux'
 import * as actionCreators from '../actions/actionCreators'
@@ -12,8 +12,9 @@ class App extends Component {
   }
 
   componentDidMount () {
-    console.log(this.props);
+    console.log('these are the props', this.props);
     speechRecognition(this.props)
+    console.log(speechRecognition);
   }
 
     // <Audio step={this.props.step} audio={this.props.audio}/>
