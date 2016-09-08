@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www",
-    "build": "browserify -o ./public/bundle.js -g uglifyify",
+    "build": "NODE_ENV=production browserify -o ./public/bundle.js -g uglifyify",
     "postinstall": "npm run build",
     "watch": "watchify client/index.js -o ./public/bundle.js -t babelify -dv",
     "test": "node ./client/tests/test.js | tap-spec"
