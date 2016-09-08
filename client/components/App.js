@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import Audio from './audio.js'
 import speechRecognition from '../speechRecognition.js'
 import {connect} from 'react-redux'
-import * as actionCreators from '../actionCreators'
+import * as actionCreators from '../actions/actionCreators'
 
 class App extends Component {
 

@@ -21,5 +21,13 @@ router.get('/api/v1/recipes/:id', (req, res) => {
     .catch( err => res.status(500).send(err) )
 })
 
+router.get('/api/v1/recipes/:id/steps', (req, res) => {
+  let id = req.params.id
+  getStepsTable(id)
+    .then( data => {
+      res.json(data)
+    })
+    .catch( err => res.status(500).send(err) )
+})
 
 module.exports = router;

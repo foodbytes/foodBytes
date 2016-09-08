@@ -5,12 +5,16 @@
   "scripts": {
     "start": "node ./bin/www",
     "build": "browserify -o ./public/bundle.js -g uglifyify",
+    "dev": "nodemon ./bin/www",
+    "build": "browserify -o ./public/bundle.js -g uglifyify",
+    "watch": "watchify client/index.js -o ./public/bundle.js -t babelify -dv",
     "test": "node ./client/tests/test.js | tap-spec"
   },
   "dependencies": {
     "body-parser": "~1.15.1",
     "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
+    "domready": "^1.0.8",
     "dotenv": "2.0.0",
     "express": "~4.13.4",
     "hbs": "~4.0.0",
