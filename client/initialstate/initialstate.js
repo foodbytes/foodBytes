@@ -1,14 +1,12 @@
 export const INITIAL_STATE = {
-  commands:{
-    next: nextAction
-  }
+  
   Recipe:{
-    id:,
-    name:,
-    description:,
-    ingredients:,
-    cooktime:,
-    length:,
+    id: 0,
+    name: '',
+    description: '',
+    ingredients: '',
+    cooktime: '',
+    length: 0,
     currentStep:0,
     steps:[]
   }

@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './Components/App'
+import App from './components/App'
 import domready from 'domready'
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware, compose } from 'redux'
@@ -14,13 +14,11 @@ let store = createStore(reducers, compose(
 
 
 domready(() => {
+  // console.log(store);
   ReactDOM.render(
-    <div>
-      <h1>Hey there</h1>
       <Provider store={store}>
-        <App/>
-      </Provider>
-    </div>,
+        <App />
+      </Provider>,
     document.querySelector('#app')
   )
 })
