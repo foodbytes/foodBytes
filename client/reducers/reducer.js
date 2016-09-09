@@ -1,14 +1,25 @@
-let initialState = require('../initialstate/initialstate')
+var reducer = (state, action) => {
+  switch (action.type) {
+    case 'NEXT':
 
-export default function reducer (state = initialState, action) {
-    switch (action.type){
-      case "RECEIVE_RECIPE_STEPS":
-        let newState = Object.assign({}, action.payload)
-        console.log('this is the newState ',newState);
-        return newState //change this
-      case "NEXT":
+      const newRecipeState = Object.assign({}, state.recipe, {currentStep: state.recipe.currentStep +1})
+      const newState = Object.assign({}, state, {recipe: newRecipeState})
+      return newState
 
-      default:
-        return state
-    }
+
+    default:
+      return state
+
+  }
 }
+
+
+
+
+
+
+
+
+// let initialState = require('../initialstate/initialstate')
+//
+export default reducer

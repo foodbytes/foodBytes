@@ -8,7 +8,7 @@
     "build": "NODE_ENV=production browserify client/index.js -o public/bundle.js -g uglifyify",
     "postinstall": "npm run build",
     "watch": "watchify client/index.js -o public/bundle.js -dv",
-    "test": "node ./client/tests/test.js | tap-spec"
+    "test": "babel-tape-runner ./client/tests/**/*.js | tap-spec"
   },
   "browserify": {
     "transform": [
@@ -44,14 +44,15 @@
     "uglifyify": "^3.0.2"
   },
   "devDependencies": {
+    "babel-tape-runner": "^2.0.1",
     "budo": "^9.0.0",
     "expect": "^1.20.2",
     "gh-pages": "^0.11.0",
     "mocha": "^3.0.2",
     "nodemon": "^1.10.2",
     "react-addons-test-utils": "^15.3.1",
-    "supertest": "^2.0.0",
     "superagent": "^2.2.0",
+    "supertest": "^2.0.0",
     "tap-spec": "^4.1.1",
     "tape": "^4.6.0",
     "watchify": "^3.7.0"

@@ -9,21 +9,7 @@ test('testing', function (t) {
   t.end()
 })
 
-var currentState = {
-  recipe:{
-    id: 0,
-    currentStep:0,
-  }
-}
 
-// freeze(initialState)
-
-var expectedState = {
-  recipe:{
-    id: 0,
-    currentStep:1,
-  }
-}
 //
 test('this test should fail', function (t) {
   t.equal(currentState, expectedState)
