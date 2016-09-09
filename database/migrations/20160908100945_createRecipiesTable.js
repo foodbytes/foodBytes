@@ -5,6 +5,7 @@ exports.up = function(knex, Promise) {
     table.string('description');
     table.string('cooking_time');
     table.string('ingredients');
+    table.integer('length');
   });
 };
 
