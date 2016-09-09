@@ -27,11 +27,9 @@ class App extends Component {
   render () {
     return(
         <div>
+        {/* default nav bar, image placeholder, iframe */}
           <h1>Speech Recognition is Working - Rendering by App.js</h1>
           <button type="button"> Click Here!</button>
-          <button type="button"> <Link to="/contents"> Contents Page</Link></button>
-          <p class="output"><em>...diagnostic messages</em></p>
-          {this.props.children}
         </div>
         )
     }
