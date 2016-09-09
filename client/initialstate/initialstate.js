@@ -12,5 +12,3 @@ var INITIAL_STATE = {
     audio_path:['../audio/stepOne.mp3', '../audio/stepTwo.mp3', '../audio/stepThree.mp3']
   }
 }
-
-modules.export = INITIAL_STATE
