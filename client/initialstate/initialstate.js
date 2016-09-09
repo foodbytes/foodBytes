@@ -1,6 +1,6 @@
 export const INITIAL_STATE = {
-  
-  Recipe:{
+
+  recipe:{
     id: 0,
     name: '',
     description: '',
