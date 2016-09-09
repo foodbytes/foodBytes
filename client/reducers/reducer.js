@@ -7,6 +7,9 @@ var reducer = (state, action) => {
       const newState = Object.assign({}, state, {recipe: newRecipeState})
       return newState
 
+    case 'REPEAT':
+      return state
+
     case 'PREVIOUS':
       if (state.recipe.currentStep === state.recipe.currentStep[0]) return state
 
