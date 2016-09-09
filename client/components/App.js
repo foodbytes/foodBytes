@@ -3,7 +3,7 @@ import Audio from './Audio.js'
 import speechRecognition from '../speechRecognition.js'
 import {connect} from 'react-redux'
 import { bindActionCreators } from 'redux'
-import {recieveRecipeSteps, nextDispatch, fetchRecipeSteps } from '../actions/actionCreators'
+import {receiveRecipeSteps, nextDispatch, fetchRecipeSteps } from '../actions/actionCreators'
 
 class App extends Component {
 
@@ -13,8 +13,8 @@ class App extends Component {
 
   componentDidMount () {
     const { fetchRecipeSteps } = this.props
-    const id = 0
-    fetchRecipeSteps(id)
+    const id = 1
+    //fetchRecipeSteps(id)
     console.log('these are the props', this.props);
     speechRecognition(this.props)
     console.log(speechRecognition);
