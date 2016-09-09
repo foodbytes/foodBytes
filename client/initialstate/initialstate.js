@@ -8,6 +8,7 @@ export const INITIAL_STATE = {
     cooktime: '',
     length: 0,
     currentStep:0,
-    steps:[]
+    instructions:[],
+    audio_path:[]
   }
 }
