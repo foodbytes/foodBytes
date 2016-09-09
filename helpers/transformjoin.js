@@ -12,7 +12,7 @@ let initialState = {
   }
 
  const transformJoin = (seedData)=> {
-   console.log('',seedData);
+   console.log('WOWOW',seedData);
    let result = {id:null,
    name: null,
    description: null,
@@ -28,9 +28,11 @@ let initialState = {
      prev.description = row.description
      prev.ingredients = row.ingredients
      prev.cooking_time =row.cooking_time
+     prev.length = row.length
+     prev.currentStep = row.currentStep
      prev.instructions.push(row.instructions)
      prev.audio_path.push(row.audio_path)
-     console.log(prev);
+     console.log("YAYAYA",prev);
       return prev
 
    },result)

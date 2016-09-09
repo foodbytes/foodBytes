@@ -10,15 +10,17 @@ exports.seed = function(knex, Promise) {
           name: 'Grilled cheese sandwich',
           description: 'Indulge in an heavenly melt of cheese grilled in delicious slices',
           cooking_time: '10 mins',
-          ingredients: 'Two slices of cheddar or swiss cheese,Two slices of white bread,Two tablespoons of butter'
+          ingredients: 'Two slices of cheddar or swiss cheese,Two slices of white bread,Two tablespoons of butter',
+          length: 3
         }),
         knex('recipes').insert({
           id: 1,
           name: 'banana bread',
           description: 'Indulge in an heavenly melt of cheese grilled in delicious slices',
           cooking_time: '10 mins',
-          ingredients: 'Two slices of cheddar or swiss cheese,Two slices of white bread,Two tablespoons of butter'
-        })                  
+          ingredients: 'Two slices of cheddar or swiss cheese,Two slices of white bread,Two tablespoons of butter',
+          length: 3
+        })
       ]);
     });
 };
