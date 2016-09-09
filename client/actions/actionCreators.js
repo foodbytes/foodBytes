@@ -1,4 +1,5 @@
 import {initialState} from '../initialstate/initialstate.js'
+import request from 'superagent'
 
 const NEXT = 'NEXT'
 const PREVIOUS = 'PREVIOUS'
@@ -7,7 +8,7 @@ export {NEXT, PREVIOUS, RECEIVE_RECIPE_STEPS}
 
 export const receiveRecipeSteps = (state) => {
     console.log("receive action creators")
-    console.log('this is the state inside receiveRecipeSteps', state);
+    //console.log('this is the state inside receiveRecipeSteps', state);
     return {
         type: RECEIVE_RECIPE_STEPS,
         payload: state
@@ -24,6 +25,7 @@ export const fetchRecipeSteps = (id) => {
         console.error(err.message)
         return
       }
+      console.log('this is in fetchRecipeSteps');
       dispatch(receiveRecipeSteps(JSON.parse(res.text)))
     })
   }
