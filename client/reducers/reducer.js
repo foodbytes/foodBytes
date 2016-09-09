@@ -1,7 +1,7 @@
 import initialState from '../initialstate/initialstate'
 import {NEXT, REPEAT, PREVIOUS, RECEIVE_RECIPE_STEPS} from '../actions/actionCreators'
 
-export default (state = initialState, action) => {
+const recipe = (state = initialState, action) => {
 
   let newState
   switch (action.type){
@@ -35,3 +35,5 @@ export default (state = initialState, action) => {
       return state
     }
   }
+
+  export default recipe
