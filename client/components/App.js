@@ -16,7 +16,7 @@ class App extends Component {
     const { fetchRecipeSteps } = this.props
     const id = 0
     receiveRecipeSteps()
-    //fetchRecipeSteps(id)
+    fetchRecipeSteps(id)
     console.log('these are the props', this.props);
     speechRecognition(this.props)
     console.log(speechRecognition);
