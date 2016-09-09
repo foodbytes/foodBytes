@@ -35,7 +35,7 @@ module.exports = function speechRecogntion(props) {
     var command = event.results[0][0].transcript;
     switch (command) {
        case NEXT:
-         console.log('this is the props i can see ',props);
+         //console.log('this is the props i can see ',props);
          props.nextDispatch()
          //This is where we should dispatch the NEXT action
          break;
