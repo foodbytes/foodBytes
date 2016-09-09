@@ -8,6 +8,7 @@
     "build": "NODE_ENV=production browserify client/index.js -o public/bundle.js -g uglifyify",
     "postinstall": "npm run build",
     "watch": "watchify client/index.js -o public/bundle.js -dv",
+    "server-test": "node ./helpers/test.js | tap-spec",
     "test": "babel-tape-runner ./client/tests/**/*.js | tap-spec"
   },
   "browserify": {
@@ -41,7 +42,11 @@
     "redux": "^3.6.0",
     "redux-thunk": "^2.1.0",
     "serve-favicon": "~2.3.0",
-    "uglifyify": "^3.0.2"
+    "uglifyify": "^3.0.2",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "babelify": "^7.3.0",
+    "react-dom": "^15.3.1"
   },
   "devDependencies": {
     "babel-tape-runner": "^2.0.1",

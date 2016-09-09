@@ -1,17 +1,16 @@
-import request from 'superagent'
-import initialState from '../initialstate/initialstate.js'
-import React from 'react'
+import {initialState} from '../initialstate/initialstate.js'
 
 const NEXT = 'NEXT'
 const PREVIOUS = 'PREVIOUS'
-export {NEXT, PREVIOUS}
+const RECEIVE_RECIPE_STEPS = 'RECEIVE_RECIPE_STEPS'
+export {NEXT, PREVIOUS, RECEIVE_RECIPE_STEPS}
 
-export const receiveRecipeSteps = (state = initialState) => {
+export const receiveRecipeSteps = (state) => {
     console.log("receive action creators")
+    console.log('this is the state inside receiveRecipeSteps', state);
     return {
-        type: 'RECEIVE_RECIPE_STEPS',
+        type: RECEIVE_RECIPE_STEPS,
         payload: state
-        //payload: find position in array and move to the next audio and play that
     }
 }
 
