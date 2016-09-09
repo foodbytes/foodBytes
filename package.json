@@ -31,6 +31,7 @@
     "redux": "^3.6.0",
     "redux-thunk": "^2.1.0",
     "serve-favicon": "~2.3.0",
+    "superagent": "^2.2.0",
     "uglifyify": "^3.0.2"
   },
   "devDependencies": {
