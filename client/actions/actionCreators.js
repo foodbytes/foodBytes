@@ -6,10 +6,10 @@ const NEXT = 'NEXT'
 const PREVIOUS = 'PREVIOUS'
 export {NEXT, PREVIOUS}
 
-export const recieveRecipeSteps = (state) => {
-    console.log("recieve action creators")
+export const receiveRecipeSteps = (state) => {
+    console.log("receive action creators")
     return {
-        type: 'RECIEVE_RECIPE_STEPS',
+        type: 'RECEIVE_RECIPE_STEPS',
         payload: state
         //payload: find position in array and move to the next audio and play that
     }
@@ -19,13 +19,13 @@ export const fetchRecipeSteps = (id) => {
   console.log('Inside fetchRecipeSteps');
   return (dispatch) => {
     request
-    .get(`/api/v1/recipes/1/steps`)
+    .get(`/api/v1/recipes/${id}/join`)
     .end((err, res) => {
       if (err) {
         console.error(err.message)
         return
       }
-      dispatch(recieveRecipeSteps(JSON.parse(res.text)))
+      dispatch(receiveRecipeSteps(JSON.parse(res.text)))
     })
   }
 }

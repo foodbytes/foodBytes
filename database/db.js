@@ -17,7 +17,10 @@ const getStepsTable =  (id)=>{
 
 const getJoinTable = () => {
 
-  return knex.table('recipes').innerJoin('steps', 'recipes.id', '=', 'steps.recipe_id')
+  return knex('steps')
+    .where({recipe_id: 0})
+    .select('instructions')
+  //return knex.table('recipes').innerJoin('steps', 'recipes.id', '=', 'steps.recipe_id')
 
 }
 
