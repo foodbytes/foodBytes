@@ -5,10 +5,13 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www",
-    "build": "browserify -o ./public/bundle.js -g uglifyify",
+    "build": "NODE_ENV=production browserify client/index.js -o public/bundle.js -g uglifyify",
     "postinstall": "npm run build",
-    "watch": "watchify client/index.js -o ./public/bundle.js -t babelify -dv",
+    "watch": "watchify client/index.js -o public/bundle.js -dv",
     "test": "node ./client/tests/test.js | tap-spec"
+  },
+  "browserify": {
+    "transform": ["babelify"]
   },
   "engines": {
     "node": "6.4.0"
@@ -31,23 +34,23 @@
     "redux": "^3.6.0",
     "redux-thunk": "^2.1.0",
     "serve-favicon": "~2.3.0",
-    "superagent": "^2.2.0",
-    "uglifyify": "^3.0.2"
-  },
-  "devDependencies": {
+    "uglifyify": "^3.0.2",
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-react": "^6.11.1",
     "babelify": "^7.3.0",
     "browserify": "^13.1.0",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1"
+  },
+  "devDependencies": {
     "budo": "^9.0.0",
     "expect": "^1.20.2",
     "gh-pages": "^0.11.0",
     "mocha": "^3.0.2",
     "nodemon": "^1.10.2",
-    "react": "^15.3.1",
     "react-addons-test-utils": "^15.3.1",
-    "react-dom": "^15.3.1",
     "supertest": "^2.0.0",
+    "superagent": "^2.2.0",
     "tap-spec": "^4.1.1",
     "tape": "^4.6.0",
     "watchify": "^3.7.0"
