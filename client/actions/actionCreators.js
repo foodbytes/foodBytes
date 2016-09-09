@@ -6,7 +6,7 @@ const NEXT = 'NEXT'
 const PREVIOUS = 'PREVIOUS'
 export {NEXT, PREVIOUS}
 
-export const receiveRecipeSteps = (state) => {
+export const receiveRecipeSteps = (state = initialState) => {
     console.log("receive action creators")
     return {
         type: 'RECEIVE_RECIPE_STEPS',
