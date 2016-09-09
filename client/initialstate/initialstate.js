@@ -5,9 +5,9 @@ export const initialState = {
     description: '',
     ingredients: '',
     cooking_time: '',
-    length: 3,
+    length: 0,
     currentStep: 0,
-    instructions:['step one', 'step two', 'step three'],
-    audio_path:['../audio/stepOne.mp3', '../audio/stepTwo.mp3', '../audio/stepThree.mp3']
+    instructions:[],
+    audio_path:[]
   }
 }

@@ -2,6 +2,7 @@ import initialState from '../initialstate/initialstate'
 import {NEXT, REPEAT, PREVIOUS, RECEIVE_RECIPE_STEPS} from '../actions/actionCreators'
 
 export default (state = initialState, action) => {
+
   let newState
   switch (action.type){
     case RECEIVE_RECIPE_STEPS:
