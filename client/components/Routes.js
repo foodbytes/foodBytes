@@ -8,7 +8,7 @@ import Audio from './Audio'
 module.exports = (
 
 <Route path="/" component={App}>
-    <Route path="/contents" component={ContentsPage} />
+    <Route path="/contents" components={ContentsPage} />
 </Route>
 
 )
