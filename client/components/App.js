@@ -5,6 +5,7 @@ import {connect} from 'react-redux'
 import { bindActionCreators } from 'redux'
 import {receiveRecipeSteps, nextDispatch, fetchRecipeSteps } from '../actions/actionCreators'
 
+
 class App extends Component {
 
   constructor (props) {
@@ -13,7 +14,8 @@ class App extends Component {
 
   componentDidMount () {
     const { fetchRecipeSteps } = this.props
-    const id = 1
+    const id = 0
+    receiveRecipeSteps()
     //fetchRecipeSteps(id)
     console.log('these are the props', this.props);
     speechRecognition(this.props)
