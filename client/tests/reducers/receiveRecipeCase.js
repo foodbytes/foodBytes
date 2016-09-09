@@ -66,8 +66,8 @@ test('we send the receiveRecipeSteps action to the reducer to get a filled state
 test('we send the fetchRecipeSteps action to add api data to the reducer to fill the state.', t => {
   var id = 0
   var action = fetchRecipeSteps(id)
-  console.log('the action in fetchRecipeSteps test ', action);
   var newState = reducer(initialState, action)
+  console.log('this is the newState inside the fetchRecipeSteps action test', newState);
   var expectedState = {
   recipe:{
     id: 0,

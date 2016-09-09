@@ -9,7 +9,7 @@ export default (state = initialState, action) => {
         let apiData = Object.assign({}, action.payload, {length: length}, {currentStep: 0})
         //console.log('this is the api.data ', apiData);
         newState = Object.assign({}, state, {recipe: apiData})
-        //console.log('this is the newState ',newState);
+        console.log('this is the newState ',newState);
         return newState
 
       case NEXT:
