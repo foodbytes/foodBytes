@@ -19,7 +19,7 @@ export const fetchRecipeSteps = (id) => {
   console.log('Inside fetchRecipeSteps');
   return (dispatch) => {
     request
-    .get(`/api/v1/recipes/1/steps`)
+    .get(`/api/v1/recipes/0/join`)
     .end((err, res) => {
       if (err) {
         console.error(err.message)

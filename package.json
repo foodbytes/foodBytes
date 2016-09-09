@@ -8,7 +8,9 @@
     "build": "NODE_ENV=production browserify client/index.js -o public/bundle.js -g uglifyify",
     "postinstall": "npm run build",
     "watch": "watchify client/index.js -o public/bundle.js -dv",
-    "test": "node ./client/tests/test.js | tap-spec"
+    "test": "node ./client/tests/test.js | tap-spec",
+    "server-test": "node ./helpers/test.js | tap-spec"
+
   },
   "browserify": {
     "transform": ["babelify"]
