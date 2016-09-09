@@ -14,7 +14,7 @@ let store = createStore(reducer, compose(
     applyMiddleware(thunk)
 ))
 
-const histroy = syncHistoryWithStore(browserHistory, store)
+const history = syncHistoryWithStore(browserHistory, store)
 
 domready(() => {
   // console.log(store);
