@@ -26,6 +26,8 @@ class App extends Component {
     return(
         <div>
           <h1>speech Recognition is working</h1>
+          <button type="button"> Click Here!</button>
+          <p class="output"><em>...diagnostic messages</em></p>
         </div>
         )
     }
