@@ -1,4 +1,6 @@
-export default function reducer (state = initialState, action) {
+let initialState = require('../initialstate/initialstate')
+
+function reducer (state = initialState, action) {
     switch (action.type){
       case ("NEXT"):
       initialState.recipe.currentStep++
@@ -9,3 +11,5 @@ export default function reducer (state = initialState, action) {
         return state
     }
 }
+
+modules.export = reducer

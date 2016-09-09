@@ -1,4 +1,4 @@
-import initialState from './initialstate/initialstate'
+let initialState = require('../initialstate/initialstate')
 
 export default function reducer (state = initialState, action) {
     switch (action.type){

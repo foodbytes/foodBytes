@@ -1,4 +1,4 @@
-export const INITIAL_STATE = {
+var INITIAL_STATE = {
 
   recipe:{
     id: 0,
@@ -12,3 +12,5 @@ export const INITIAL_STATE = {
     audio_path:['../audio/stepOne.mp3', '../audio/stepTwo.mp3', '../audio/stepThree.mp3']
   }
 }
+
+modules.export = INITIAL_STATE
