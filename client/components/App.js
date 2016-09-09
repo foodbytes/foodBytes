@@ -3,8 +3,9 @@ import Audio from './Audio.js'
 import speechRecognition from '../speechRecognition.js'
 import {connect} from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { receiveRecipeSteps, nextDispatch, fetchRecipeSteps } from '../actions/actionCreators'
-
+import {receiveRecipeSteps, nextDispatch, fetchRecipeSteps } from '../actions/actionCreators'
+import { Router, Route, hashHistory, Link } from 'react-router'
+import ContentsPage from './ContentsPage'
 
 class App extends Component {
 
@@ -25,9 +26,9 @@ class App extends Component {
   render () {
     return(
         <div>
-          <h1>speech Recognition is working</h1>
+        {/* default nav bar, image placeholder, iframe */}
+          <h1>Speech Recognition is Working - Rendering by App.js</h1>
           <button type="button"> Click Here!</button>
-          <p class="output"><em>...diagnostic messages</em></p>
         </div>
         )
     }
