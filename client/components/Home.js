@@ -18,7 +18,7 @@ class Home extends Component {
     const id = 0
     receiveRecipeSteps()
     // fetchRecipeSteps(id)
-    //console.log('these are the props', this.props);
+    console.log('these are the props', this.props);
     speechRecognition(this.props)
     //console.log(speechRecognition);
   }
@@ -26,7 +26,6 @@ class Home extends Component {
   render () {
     return(
         <div className="jumbotron">
-        {/* default nav bar, image placeholder, iframe */}
            <div className="row">
               <div className="col-sm-6 col-md-4">
                 <div className="thumbnail">
