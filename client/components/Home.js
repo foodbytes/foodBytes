@@ -25,28 +25,45 @@ class Home extends Component {
 
   render () {
     return(
-        <div className="">
-           <div className="well row">
-             <div>
-             <div className="col-xs-12 col-sm-6 col-md-4 col-lg-4"></div>
-               <div className="container col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <div className="text-center">
-                     <h1>Food Bytes</h1>
-                  </div>
-                    <div className="thumbnail">
-                       <img src="http://www.fillmurray.com/300/200" alt="..."></img>
-                    </div>
-                </div>
-              <div className="col-xs-12 col-sm-6 col-md-4 col-lg-4"></div>
+     <div className="jumbotron">
+       {/* Image with foodbytes header*/}
+       <div className="well row">
+         <div>
+           <div className="col-xs-12 col-sm-6 col-md-4 col-lg-4"></div>
+           <div className="container col-xs-12 col-sm-6 col-md-4 col-lg-4">
+             <div className="text-center">
+             <h1>Food Bytes</h1>
+             </div>
+           <div className="thumbnail">
+             <img src="http://www.fillmurray.com/300/200" alt="..."></img>
+           </div>
+           </div>
+           <div className="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+           </div>
+           </div>
+         </div>
 
-            </div>
+
+
+       {/* Foodbytes description with iframe header*/}
+
+       <div className=" well row">
+         <div>
+          <div className="well  col-xs-12 col-sm-6 col-md-6 col-lg-4">
+           <span>
+             <h3 text-center>Why Food Bytes</h3>
+             <p>Welcome to awesomeness!</p>
+           </span>
+
+           <a className="btn btn-danger btn-sm" href="#" role="button">Available Recipes</a>
           </div>
-          <div className=" well row">
-            <h3>Why Food Bytes</h3>
-            <iframe width="420" height="315"src="https://www.youtube.com/embed/XGSy3_Czz8k"></iframe>
-            <p><a className="btn btn-primary btn-lg" href="#" role="button">Available Recipes</a></p>
+          <div className="col-xs-12 col-sm-6 col-md-2 col-lg-4"></div>
+          <div className="well col-xs-12 col-sm-6 col-md-4 col-lg-4">
+           <iframe width="500" height="315"src="https://www.youtube.com/embed/XGSy3_Czz8k"></iframe>
           </div>
-        </div>
+         </div>
+       </div>
+     </div>
 
         )
     }
