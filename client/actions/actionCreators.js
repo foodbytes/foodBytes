@@ -1,7 +1,7 @@
 import {initialState} from '../initialstate/initialstate.js'
 import request from 'superagent'
 
-const NEXT = 'NEXT'
+const NEXT = 'next'
 const PREVIOUS = 'PREVIOUS'
 const RECEIVE_RECIPE_STEPS = 'RECEIVE_RECIPE_STEPS'
 export {NEXT, PREVIOUS, RECEIVE_RECIPE_STEPS}

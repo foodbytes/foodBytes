@@ -1,24 +1,37 @@
 import initialState from '../initialstate/initialstate'
 import {NEXT, REPEAT, PREVIOUS, RECEIVE_RECIPE_STEPS} from '../actions/actionCreators'
 
-const recipe = (state = initialState, action) => {
 
+
+export default function recipe(state = initialState, action){
+  let length
   let newState
   switch (action.type){
     case RECEIVE_RECIPE_STEPS:
-      let length = action.payload.instructions.length
+      length = action.payload.instructions.length
       let apiData = Object.assign({}, action.payload, {length: length}, {currentStep: 0})
       //console.log('this is the api.data ', apiData);
       newState = Object.assign({}, state, {recipe: apiData})
-      //console.log('this is the newState ',newState);
+      console.log('this is the newState inside the recipe ',newState);
       return newState
 
     case NEXT:
+    console.log("inside next reducer");
       if (state.recipe.currentStep === state.recipe.length -1) return state
-
+      length = action.payload.audio_path.length
       let newRecipeState = Object.assign({}, state.recipe, {currentStep: state.recipe.currentStep +1})
       let nextState = Object.assign({}, state, {recipe: newRecipeState})
-      return nextState
+      for (var i = 0; i<length; i++){
+        if (currentStep = i) {
+          console.log('next reducer as expected',nextState.recipe.audio_path[i]);
+          return nextState.recipe.audio_path[i - 1]
+        }
+        else {
+          console.log('XOXO next reducer sucks',nextState.recipe.audio_path[i]);
+          return nextState.recipe.audio_path[0]
+        }
+      }
+      // return nextState
 
     case REPEAT:
       return state
@@ -35,5 +48,3 @@ const recipe = (state = initialState, action) => {
       return state
     }
   }
-
-  export default recipe
