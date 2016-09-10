@@ -7,7 +7,7 @@ import {receiveRecipeSteps, nextDispatch, fetchRecipeSteps } from '../actions/ac
 import { Router, Route, hashHistory, Link } from 'react-router'
 import ContentsPage from './ContentsPage'
 
-class App extends Component {
+class Home extends Component {
 
   constructor (props) {
     super(props)
@@ -27,7 +27,7 @@ class App extends Component {
     return(
         <div>
         {/* default nav bar, image placeholder, iframe */}
-          <h1>Speech Recognition is Working - Rendering by App.js</h1>
+          <h1>Speech Recognition is Working - Rendering by Home.js</h1>
           <button type="button"> Click Here!</button>
         </div>
         )
@@ -49,4 +49,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(App)
+)(Home)

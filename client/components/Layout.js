@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router";
+import Nav from './layout/Nav';
 
 
 class Layout extends Component {
@@ -8,8 +9,7 @@ class Layout extends Component {
     return (
       <div>
       {/* default nav bar */}
-      <p>this this the layout page</p>
-      <button type="button"> <Link to="/contents"> Contents Page</Link></button>
+      <Nav />
         {this.props.children}
       </div>
     );
