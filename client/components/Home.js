@@ -30,6 +30,14 @@ class Home extends Component {
   //     }
   // }
 
+  checkReady(){
+    const { playing } = this.props.data
+    if (playing !== undefined) {
+      console.log("What in playing?", playing);
+      return <Audio currentStep={0} audio_path={'https://www.youtube.com/watch?v=ysz5S6PUM-U'} playing={playing}/>
+    }
+  }
+
   render () {
 
     return(
@@ -41,7 +49,7 @@ class Home extends Component {
                    <img src="http://www.fillmurray.com/300/200" alt="..."></img>
                 <div className="caption">
                    <h3>Food Bytes</h3>
-                   <Audio currentStep={0} audio_path={'https://www.youtube.com/watch?v=ysz5S6PUM-U'}/>
+                   {this.checkReady()}
                 </div>
               </div>
             </div>
