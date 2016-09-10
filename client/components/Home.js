@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Audio from './Audio.js'
+//import Audio from './Audio.js'
 import speechRecognition from '../speechRecognition.js'
 import {connect} from 'react-redux'
 import { bindActionCreators } from 'redux'
@@ -19,7 +19,21 @@ class Home extends Component {
     fetchRecipeSteps(id)
   }
 
+   audioPlayer() {
+      console.log("ifbobhbvbfav", this.props)
+      if (this.props.data.currentStep !== undefined){
+        console.log('currentStep just before audio in home',this.props.data.currentStep)
+        console.log('audio_path just before audio in home',this.props.data.audio_path)
+        return (
+        <audio id={this.props.data.currentStep}>
+            <source src={this.props.data.audio_path[this.props.data.currentStep]}></source>
+        </audio>
+        )
+      }
+  }
+
   render () {
+
     return(
         <div className="jumbotron">
           {speechRecognition(this.props)}
@@ -29,6 +43,7 @@ class Home extends Component {
                    <img src="http://www.fillmurray.com/300/200" alt="..."></img>
                 <div className="caption">
                    <h3>Food Bytes</h3>
+                   {this.audioPlayer()}
                 </div>
               </div>
             </div>

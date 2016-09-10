@@ -22,7 +22,7 @@ const recipe = (state = initialState, action) => {
       if (state.currentStep === state.length -1) return state
       console.log('!!!!!!!!!!!!!', action);
       length = action.payload.length
-      let newState = Object.assign({}, state.audio_path, {currentStep: state.currentStep + 1})
+      let newState = Object.assign({}, {audio_path: [state.audio_path]}, {currentStep: state.currentStep + 1})
 
       console.log('next reducer as expected',newState)
       // for (var i = 0; i<length; i++){
