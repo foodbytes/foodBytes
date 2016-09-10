@@ -22,9 +22,9 @@ const recipe = (state = initialState, action) => {
       if (state.currentStep === state.length -1) return state
       console.log('!!!!!!!!!!!!!', action);
       length = action.payload.length
-      let newRecipeState = Object.assign({}, state, {currentStep: state.currentStep +1})
-      let nextState = Object.assign({}, state, newRecipeState)
-      console.log('next reducer as expected',nextState)
+      let newState = Object.assign({}, state.audio_path, {currentStep: state.currentStep + 1})
+
+      console.log('next reducer as expected',newState)
       // for (var i = 0; i<length; i++){
       //   if (nextState.currentStep === i) {
       //     console.log('next reducer as expected',nextState.audio_path[i]);
@@ -36,7 +36,7 @@ const recipe = (state = initialState, action) => {
       //     return nextState.audio_path[0]
       //   }
       // }
-      return nextState
+      return newState
 
     case REPEAT:
       return state
@@ -45,7 +45,6 @@ const recipe = (state = initialState, action) => {
       if (state.currentStep === state.currentStep[0]) return state
 
       let previousRecipeState = Object.assign({}, state, {currentStep: state.currentStep -1})
-      let previousState = Object.assign({}, state, previousRecipeState)
       return previousState
 
     default:

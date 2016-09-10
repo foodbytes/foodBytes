@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 
-const Audio = ({step, audio}) => {
+const Audio = ({currentStep, audio_path}) => {
 
-    return ( <audio id={step}>
-      <source src={audio}></source>
+    return ( <audio id={currentStep}>
+      <source src={audio_path}></source>
     </audio>)
   }
 

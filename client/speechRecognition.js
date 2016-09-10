@@ -37,6 +37,8 @@ module.exports = function speechRecogntion(props) {
        case NEXT:
          console.log('this is the props i can see in speechRecognition ',props);
          props.nextDispatch(props.data.audio_path)
+         //props.data.audio_path[props.data.currentStep].play()
+         
          //This is where we should dispatch the NEXT action
          break;
        default:
