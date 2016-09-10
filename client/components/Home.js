@@ -31,7 +31,7 @@ class Home extends Component {
          <div>
            <div className="col-xs-12 col-sm-6 col-md-4 col-lg-4"></div>
            <div className="container wide col-xs-12 col-sm-6 col-md-4 col-lg-4">
-             <div className=" well  text-center">
+             <div className="page-header text-center">
              <h1>Food Bytes</h1>
              </div>
            <div className="thumbnail">
