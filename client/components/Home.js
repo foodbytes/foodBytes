@@ -30,7 +30,7 @@ class Home extends Component {
            <div className="row">
               <div className="col-sm-6 col-md-4">
                 <div className="thumbnail">
-                   <img src="http://www.fillmurray.com/460/300" alt="..."></img>
+                   <img src="http://www.fillmurray.com/300/200" alt="..."></img>
                 <div className="caption">
                    <h3>Food Bytes</h3>
                 </div>
