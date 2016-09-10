@@ -3,7 +3,7 @@ import {NEXT, REPEAT, PREVIOUS, RECEIVE_RECIPE_STEPS} from '../actions/actionCre
 
 
 
-const recipe = (state = initialState, action) => {
+export default function recipe(state = initialState, action){
   let length
   let newState
   switch (action.type){
@@ -12,7 +12,7 @@ const recipe = (state = initialState, action) => {
       let apiData = Object.assign({}, action.payload, {length: length}, {currentStep: 0})
       //console.log('this is the api.data ', apiData);
       newState = Object.assign({}, state, {recipe: apiData})
-      console.log('this is the newState ',newState);
+      console.log('this is the newState inside the recipe ',newState);
       return newState
 
     case NEXT:
@@ -24,7 +24,7 @@ const recipe = (state = initialState, action) => {
       for (var i = 0; i<length; i++){
         if (currentStep = i) {
           console.log('next reducer as expected',nextState.recipe.audio_path[i]);
-          return nextState.recipe.audio_path[i]
+          return nextState.recipe.audio_path[i - 1]
         }
         else {
           console.log('XOXO next reducer sucks',nextState.recipe.audio_path[i]);
@@ -48,5 +48,3 @@ const recipe = (state = initialState, action) => {
       return state
     }
   }
-
-  export default recipe

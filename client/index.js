@@ -3,14 +3,15 @@ import ReactDOM from 'react-dom'
 import App from './components/App'
 import domready from 'domready'
 import { Provider } from 'react-redux'
-import { createStore, applyMiddleware, compose } from 'redux'
+import { createStore, applyMiddleware, compose, combineReducers } from 'redux'
 import thunk from 'redux-thunk'
-import reducer from './reducers/index.js'
+import reducers from './reducers'
 import { Router, Route, browserHistory } from 'react-router'
 import Routes from './components/Routes'
 import { syncHistoryWithStore, routerReducer} from 'react-router-redux'
 
-let store = createStore(reducer, compose(
+
+let store = createStore(reducers, compose(
     applyMiddleware(thunk)
 ))
 
