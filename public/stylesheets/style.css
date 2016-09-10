@@ -6,11 +6,6 @@ body {
 a {
   color: #00B7FF;
 }
-.img-circle{
-  height: 220px;
-  width: 220px;
-}
-
 .thumbnail.right-caption > img {
     float: left;
     margin-right: 9px;
