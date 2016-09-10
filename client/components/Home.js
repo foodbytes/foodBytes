@@ -16,16 +16,13 @@ class Home extends Component {
   componentDidMount () {
     const { fetchRecipeSteps } = this.props
     const id = 0
-    receiveRecipeSteps()
-    // fetchRecipeSteps(id)
-    console.log('these are the props', this.props);
-    speechRecognition(this.props)
-    //console.log(speechRecognition);
+    fetchRecipeSteps(id)
   }
 
   render () {
     return(
         <div className="jumbotron">
+          {speechRecognition(this.props)}
            <div className="row">
               <div className="col-sm-6 col-md-4">
                 <div className="thumbnail">
@@ -48,7 +45,7 @@ class Home extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    //data: state.steps
+    data: state.recipe
   }
 }
 
