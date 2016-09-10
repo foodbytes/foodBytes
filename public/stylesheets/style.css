@@ -6,16 +6,7 @@ body {
 a {
   color: #00B7FF;
 }
-.thumbnail.right-caption > img {
-    float: left;
-    margin-right: 9px;
-}
 
-.thumbnail.right-caption {
-    float: left;
-    border: none;
-}
-
-.thumbnail.right-caption > .caption {
-    padding: 4px;
+.content {
+  border: 1px solid red;
 }
