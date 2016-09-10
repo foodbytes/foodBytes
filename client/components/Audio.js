@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
+import ReactPlayer from 'react-player'
 
 const Audio = ({currentStep, audio_path}) => {
 
-    return ( <audio id={currentStep}>
-      <source src={audio_path}></source>
-    </audio>)
-  }
+
+  return (
+    <div>
+      <ReactPlayer url={audio_path} playing />
+    </div>
+  )
+}
 
 export default Audio

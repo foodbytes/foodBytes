@@ -2,6 +2,7 @@ import { initialState } from '../initialstate/initialstate'
 import {NEXT, REPEAT, PREVIOUS, RECEIVE_RECIPE_STEPS} from '../actions/actionCreators'
 import { combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
+import { audioReducer as audio } from 'redux-audio'
 
 
 
@@ -54,7 +55,8 @@ const recipe = (state = initialState, action) => {
 
 const reducer = combineReducers({
   recipe,
-  routing: routerReducer
+  routing: routerReducer,
+  audio
 })
 
 export default reducer
