@@ -23,7 +23,6 @@ class Home extends Component {
     return(
         <div className="jumbotron">
           {speechRecognition(this.props)}
-        {/* default nav bar, image placeholder, iframe */}
            <div className="row">
               <div className="col-sm-6 col-md-4">
                 <div className="thumbnail">
