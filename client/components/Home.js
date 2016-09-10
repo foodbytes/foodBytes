@@ -25,20 +25,27 @@ class Home extends Component {
 
   render () {
     return(
-        <div className="jumbotron">
-           <div className="row">
-              <div className="col-sm-6 col-md-4">
-                <div className="thumbnail">
-                   <img src="http://www.fillmurray.com/300/200" alt="..."></img>
-                <div className="caption">
-                   <h3>Food Bytes</h3>
+        <div className="">
+           <div className="well row">
+             <div>
+             <div className="col-xs-12 col-sm-6 col-md-4 col-lg-4"></div>
+               <div className="container col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                  <div className="text-center">
+                     <h1>Food Bytes</h1>
+                  </div>
+                    <div className="thumbnail">
+                       <img src="http://www.fillmurray.com/300/200" alt="..."></img>
+                    </div>
                 </div>
-              </div>
+              <div className="col-xs-12 col-sm-6 col-md-4 col-lg-4"></div>
+
             </div>
           </div>
+          <div className=" well row">
             <h3>Why Food Bytes</h3>
             <iframe width="420" height="315"src="https://www.youtube.com/embed/XGSy3_Czz8k"></iframe>
             <p><a className="btn btn-primary btn-lg" href="#" role="button">Available Recipes</a></p>
+          </div>
         </div>
 
         )
