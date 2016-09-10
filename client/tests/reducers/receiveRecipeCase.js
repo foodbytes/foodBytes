@@ -1,7 +1,7 @@
 const request = require('supertest')
 const test = require('tape')
 const freeze = require('deep-freeze')
-import reducer from '../../reducers/reducer.js'
+import reducer from '../../reducers'
 import {receiveRecipeSteps, fetchRecipeSteps} from '../../actions/actionCreators.js'
 import {initialState} from '../../initialstate/initialstate.js'
 
@@ -67,7 +67,6 @@ test('we send the fetchRecipeSteps action to add api data to the reducer to fill
   var id = 0
   var action = fetchRecipeSteps(id)
   var newState = reducer(initialState, action)
-  console.log('this is the newState inside the fetchRecipeSteps action test', newState);
   var expectedState = {
   recipe:{
     id: 0,
