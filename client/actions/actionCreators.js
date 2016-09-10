@@ -7,8 +7,7 @@ const RECEIVE_RECIPE_STEPS = 'RECEIVE_RECIPE_STEPS'
 export {NEXT, PREVIOUS, RECEIVE_RECIPE_STEPS}
 
 export const receiveRecipeSteps = (state) => {
-    console.log("receive action creators")
-    //console.log('this is the state inside receiveRecipeSteps', state);
+    console.log("Inside receiveRecipeSteps")
     return {
         type: RECEIVE_RECIPE_STEPS,
         payload: state
@@ -25,17 +24,17 @@ export const fetchRecipeSteps = (id) => {
         console.error(err.message)
         return
       }
-      console.log('this is in fetchRecipeSteps');
       dispatch(receiveRecipeSteps(JSON.parse(res.text)))
     })
   }
 }
 
-export const nextDispatch = () => {
-    console.log("inside nextDispatch")
+export const nextDispatch = (state) => {
+    console.log("Inside nextDispatch")
     return (dispatch) => {
       dispatch ({
-        type: NEXT
+        type: NEXT,
+        payload: state
       })
     }
 }

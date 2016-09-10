@@ -18,7 +18,6 @@ let store = createStore(reducers, compose(
 const history = syncHistoryWithStore(browserHistory, store)
 
 domready(() => {
-  // console.log(store);
   ReactDOM.render(
       <Provider store={store}>
         <Router routes={Routes} history={history}>

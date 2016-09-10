@@ -1,5 +1,5 @@
 var test = require('tape')
-import reducer from '../../reducers/reducer.js'
+import reducer from '../../reducers'
 var freeze = require('deep-freeze')
 
 test('reducer with basic REPEAT action', t=> {

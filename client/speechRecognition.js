@@ -1,4 +1,4 @@
-import {NEXT} from './actions/actionCreators'
+import {NEXT, REPEAT, PREVIOUS} from './actions/actionCreators'
 
 module.exports = function speechRecogntion(props) {
   let SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
@@ -35,8 +35,8 @@ module.exports = function speechRecogntion(props) {
     var command = event.results[0][0].transcript;
     switch (command) {
        case NEXT:
-         //console.log('this is the props i can see ',props);
-         props.nextDispatch()
+         console.log('this is the props i can see in speechRecognition ',props);
+         props.nextDispatch(props.data.audio_path)
          //This is where we should dispatch the NEXT action
          break;
        default:
