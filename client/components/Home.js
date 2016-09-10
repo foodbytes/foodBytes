@@ -19,22 +19,11 @@ class Home extends Component {
     fetchRecipeSteps(id)
   }
 
-  //  audioPlayer() {
-  //     console.log("ifbobhbvbfav", this.props)
-  //     if (this.props.data.currentStep !== undefined){
-  //       console.log('currentStep just before audio in home',this.props.data.currentStep)
-  //       console.log('audio_path just before audio in home',this.props.data.audio_path[this.props.data.currentStep])
-  //       return (
-  //         <ReactPlayer url='https://www.youtube.com/watch?v=ysz5S6PUM-U' playing />
-  //       )
-  //     }
-  // }
-
   checkReady(){
     const { playing } = this.props.data
     if (playing !== undefined) {
       console.log("What in playing?", playing);
-      return <Audio currentStep={0} audio_path={'https://www.youtube.com/watch?v=ysz5S6PUM-U'} playing={playing}/>
+      return <Audio currentStep={0} audio_path={'https://www.youtube.com/watch?v=2lmBUq1Zd34'} playing={playing}/>
     }
   }
 
