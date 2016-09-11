@@ -16,6 +16,7 @@ let initialState = {
    let result = {id:null,
    name: null,
    description: null,
+   notes:null,
    ingredients: null,
    cooking_time: null,
    length: 0,
@@ -26,6 +27,7 @@ let initialState = {
      prev.id = row.recipe_id
      prev.name = row.name
      prev.description = row.description
+     prev.notes = row.notes
      prev.ingredients = row.ingredients
      prev.cooking_time =row.cooking_time
      prev.length = row.length

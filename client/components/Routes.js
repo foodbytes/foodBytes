@@ -4,11 +4,11 @@ import Home from './Home'
 import ContentsPage from './ContentsPage'
 import RecipePage from './RecipePage'
 import Audio from './Audio'
-import Layout from './Layout'
+import App from './App'
 
 module.exports = (
 
-  <Route path="/" component={Layout}>
+  <Route path="/" component={App}>
     <IndexRoute component={Home}></IndexRoute>
     <Route path="/contents" components={ContentsPage} />
     <Route path="/recipes" components={RecipePage} />
