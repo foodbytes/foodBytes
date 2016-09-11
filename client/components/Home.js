@@ -23,7 +23,9 @@ class Home extends Component {
     const { playing } = this.props.data
     if (playing !== undefined) {
       console.log("What in playing?", playing);
-      return <Audio currentStep={0} audio_path={'https://www.youtube.com/watch?v=2lmBUq1Zd34'} playing={playing}/>
+      console.log('inside checkReady audio_path ', this.props.data.audio_path)
+      console.log('inside checkReady currentStep ', this.props.data.currentStep)
+      return <Audio currentStep={this.props.data.currentStep} audio_path={this.props.data.audio_path[this.props.data.currentStep - 1]} playing={playing}/>
     }
   }
 
