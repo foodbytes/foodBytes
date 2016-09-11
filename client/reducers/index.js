@@ -1,43 +1,71 @@
 import { initialState } from '../initialstate/initialstate'
-import {NEXT, REPEAT, PREVIOUS, RECEIVE_RECIPE_STEPS} from '../actions/actionCreators'
+import {NEXT, REPEAT, PREVIOUS, WHOLE_RECIPE, INGREDIENTS, RECEIVE_RECIPE_STEPS} from '../actions/actionCreators'
 import { combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
 
 
+const moveStep = (state, stepIncrement) => {
+  console.log("the state inside moveStep", state);
+  return Object.assign(
+    {},
+    {audio_path: state.audio_path},
+    {playing: true},
+    {currentStep: state.currentStep + stepIncrement}
+  )
+
+}
+
+const START_STEP = 2
+const isAtStart = (state) => state.currentStep === START_STEP  // NOTE: CHECK THIS
+const isAtEnd   = (state) => state.currentStep === state.length -1
+
 
 const recipe = (state = initialState, action) => {
   let length
-  let newState
 
   switch (action.type){
+
     case RECEIVE_RECIPE_STEPS:
-    console.log('Inside RECEIVE_RECIPE_STEPS');
       length = action.payload.instructions.length
       let apiData = Object.assign({}, action.payload, {length: length}, {currentStep: 0})
-      newState = Object.assign({}, state, apiData)
-      return newState
+
+      return Object.assign({}, state, apiData)
 
     case NEXT:
-    console.log('Inside NEXT');
-      if (state.currentStep === state.length -1) return state
-      newState = Object.assign({}, {audio_path: state.audio_path}, {playing: true}, {currentStep: state.currentStep + 1})
-      return newState
+      if (isAtEnd(state)) return state
+
+      return moveStep(state, 1)
+
 
     case PREVIOUS:
-      console.log('Inside PREVIOUS');
-      if (state.currentStep === state.currentStep[0]) return state
-      newState = Object.assign({}, {audio_path: state.audio_path}, {playing: true}, {currentStep: state.currentStep - 1})
-      return newState
+      if (isAtStart(state)) return state
+
+      return moveStep(state, -1)
+
 
     case REPEAT:
       console.log('Inside REPEAT');
       newState = Object.assign({}, {audio_path: state.audio_path}, {playing: true}, {currentStep: state.currentStep})
       return newState
 
+    case WHOLE_RECIPE:
+      console.log('Inside WHOLE_RECIPE');
+      newState = Object.assign({}, {audio_path: state.audio_path}, {playing: true}, {currentStep: state.currentStep})
+      return newState
+
+    case INGREDIENTS:
+      console.log('Inside REPEAT');
+      newState = Object.assign({}, {audio_path: state.audio_path}, {playing: true}, {currentStep: state.currentStep})
+      return newState
+
     default:
       return state
-    }
   }
+}
+
+
+
+
 
 const reducer = combineReducers({
   recipe,

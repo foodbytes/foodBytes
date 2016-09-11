@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router'
+import { connect } from 'react-redux'
+
+import RecipeThumbnail from './RecipeThumbnail'
 
 class ContentsPage extends Component {
 
@@ -9,28 +11,37 @@ class ContentsPage extends Component {
         <div className="page-header">
           <h1 className="text-center">Recipes List</h1>
         </div>
-        <div className="row well content">
-          <div className="content col-xs-12 col-sm-6 col-md-3 col-lg-3">
-            <img src="http://cook.sndimg.com/content/dam/images/cook/fullset/2012/9/24/0/CC-kelsey-nixon_grilled-cheese-sandwich-recipe-02_s4x3.jpg/jcr:content/renditions/cq5dam.web.266.200.jpeg" alt="sandwich" ></img>
-          </div>
-          <div className=" col-xs-12 col-sm-6 col-md-9 col-lg-9">
-            <h3>Grilled Cheese Sandwich</h3>
-            <span><h5>Indulge in an heavenly melt of cheese grilled in delicious slices</h5></span>
-          </div>
-        </div>
 
-        <div className="row well content">
-          <div className="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-            <img src="http://cook.sndimg.com/content/dam/images/cook/fullset/2012/9/24/0/CC-kelsey-nixon_grilled-cheese-sandwich-recipe-02_s4x3.jpg/jcr:content/renditions/cq5dam.web.266.200.jpeg" alt="sandwich" ></img>
-          </div>
-          <div className="col-xs-12 col-sm-6 col-md-9 col-lg-9">
-            <h1>Hello</h1>
-          </div>
-        </div>
+        {
+          this.props.recipes.map(
+              (recipe)=> <RecipeThumbnail recipe={recipe} key={recipe.id}/>
+          )
+        }
+
+
+
       </div>
     )
   }
 }
 
 
-export default ContentsPage
+const mapStateToProps = (state) => {
+
+  console.log("this is the state at the recipe page", state);
+  return {
+    // recipes: state.recipes
+    // ultimately, the state should have an overview of all the recipes available. for the moment we've hard coded them in here
+    recipes: [{
+      id: 0,
+      name: "Grilled Cheese",
+    }, {
+      id: 1,
+      name: "Quesidilla",
+    }]
+  }
+}
+
+export default connect(
+  mapStateToProps
+)(ContentsPage)

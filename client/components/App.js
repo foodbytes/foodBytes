@@ -9,21 +9,20 @@ import Nav from './layout/Nav';
 class App extends Component {
 
   constructor (props) {
-    super(props)
+    super(props);
   }
 
   componentDidMount () {
-    const { fetchRecipeSteps } = this.props
-    const id = 0
-    fetchRecipeSteps(id)
+    // const { fetchRecipes } = this.props
+    // fetchRecipe()
   }
 
   render() {
     const { location } = this.props;
     return (
       <div>
-      {/* default nav bar */}
-      <Nav />
+        {/* default nav bar */}
+        <Nav />
         {this.props.children}
       </div>
     );
