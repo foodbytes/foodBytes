@@ -25,11 +25,28 @@ class RecipePage extends React.Component {
     }
   }
 
+  componentDidMount () {
+    const { fetchRecipeSteps } = this.props
+    const id = this.props.params.id
+
+    // fetchRecipeSteps(id, () => {speechRecognition(this.props, classToListenTo)} )
+      // go to the api, get recipes
+      // dispatch RECEIVE_RECIPE_STEPS
+      // run the speechRecognition(this.props, classToListenTo)  as a callback
+
+    // bad mvp
+    speechRecognition(this.props)
+  }
+
+  componentWillUnmount () {
+    // later
+    // destroy the listeners
+  }
+
   render(){
     const { cooking_time, ingredients, instructions } = this.props.data
     return (
       <div className="jumbotron">
-        {speechRecognition(this.props)}
         {/* This is the placeholder the button */}
         <button id="speech">Start</button>
         <div className="row">

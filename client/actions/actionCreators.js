@@ -26,6 +26,7 @@ export const fetchRecipeSteps = (id) => {
         return
       }
       dispatch(receiveRecipeSteps(JSON.parse(res.text)))
+      // in this case, the doLater = the speech recognition thing that should be activated
     })
   }
 }

@@ -29,3 +29,8 @@ exports.seed = function(knex, Promise) {
       ]);
     });
 };
+
+// future possibility : add col with step: 2,3....
+// create function which turns that into a string
+// 1 --> Step One
+// 2 --> Step Two
