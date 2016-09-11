@@ -5,6 +5,7 @@ import { routerReducer } from 'react-router-redux'
 
 
 const moveStep = (state, stepIncrement) => {
+  console.log("the state inside moveStep", state);
   return Object.assign(
     {},
     {audio_path: state.audio_path},
