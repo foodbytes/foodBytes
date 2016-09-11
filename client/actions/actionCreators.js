@@ -15,7 +15,7 @@ export const receiveRecipeSteps = (state) => {
     }
 }
 
-export const fetchRecipeSteps = (id) => {
+export const fetchRecipeSteps = (id, doLater) => {
   console.log('Inside fetchRecipeSteps');
   return (dispatch) => {
     request
@@ -26,6 +26,9 @@ export const fetchRecipeSteps = (id) => {
         return
       }
       dispatch(receiveRecipeSteps(JSON.parse(res.text)))
+
+      doLater(null)
+      // in this case, the doLater = the speech recognition thing that should be activated
     })
   }
 }

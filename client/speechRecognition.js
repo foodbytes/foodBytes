@@ -23,7 +23,19 @@ module.exports = function speechRecogntion(props) {
   console.log('speechRecognition');
 
   let diagnostic = document.querySelector('.output');
-  let bg = document.querySelector('html');
+
+  // // parent file
+  // const listener = ( runThis ) => {
+  //    document.getElementById('.startButton').addEventListener('click', (ev)=> { runThis() })
+  // }
+
+  // props.listener(recognition.start)
+
+  document.querySelector(props.classToListenTo).addEventListener('click', () => {
+    recognition.start();
+    console.log('Ready to receive a command.');
+  })
+
 
   document.body.onclick = function() {
     recognition.start();
