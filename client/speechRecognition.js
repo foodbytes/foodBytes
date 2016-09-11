@@ -32,15 +32,22 @@ module.exports = function speechRecogntion(props) {
 
   recognition.onresult = function(event) {
 
+    let { audio_path } = props.data
+
     var command = event.results[0][0].transcript;
     switch (command) {
        case NEXT:
-         console.log('this is the props i can see in speechRecognition ',props);
          props.nextDispatch(props.data.audio_path)
-         //props.data.audio_path[props.data.currentStep].play()
-         
-         //This is where we should dispatch the NEXT action
          break;
+
+       case PREVIOUS:
+         props.previousDispatch(props.data.audio_path)
+         break;
+
+       case REPEAT:
+         props.repeatDispatch(props.data.audio_path)
+         break;
+
        default:
          console.log("Your command was invalid!", false);
      }

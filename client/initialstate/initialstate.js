@@ -8,6 +8,7 @@ export const initialState = {
     length: 0,
     currentStep: 0,
     instructions:[],
-    audio_path:[]
+    audio_path:[],
+    playing: false
   }
 }
