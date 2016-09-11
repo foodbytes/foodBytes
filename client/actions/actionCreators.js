@@ -1,4 +1,4 @@
-import {initialState} from '../initialstate/initialstate.js'
+import { initialState } from '../initialstate/initialstate.js'
 import request from 'superagent'
 
 const NEXT = 'next'
@@ -7,7 +7,7 @@ const REPEAT = 'repeat'
 const WHOLE_RECIPE = 'whole recipe'
 const INGREDIENTS = 'ingredients'
 const RECEIVE_RECIPE_STEPS = 'RECEIVE_RECIPE_STEPS'
-export {NEXT, PREVIOUS, REPEAT, WHOLE_RECIPE, INGREDIENTS, RECEIVE_RECIPE_STEPS}
+export { NEXT, PREVIOUS, REPEAT, RECEIVE_RECIPE_STEPS }
 
 export const receiveRecipeSteps = (state) => {
     console.log("Inside receiveRecipeSteps")
@@ -28,6 +28,7 @@ export const fetchRecipeSteps = (id) => {
         return
       }
       dispatch(receiveRecipeSteps(JSON.parse(res.text)))
+      // in this case, the doLater = the speech recognition thing that should be activated
     })
   }
 }

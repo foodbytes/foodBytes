@@ -5,7 +5,7 @@ let {getRecipesTable, getStepsTable, getJoinTable} = require('../database/db.js'
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('app');
+  res.send('index.html');
 });
 
 // router.get('/api/v1/*', (req, res, next) => {

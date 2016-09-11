@@ -20,6 +20,7 @@ const getJoinTable = (id) => {
         .then(function (rows){
           return transformJoin(rows)
         })
+
 }
 
 module.exports = {

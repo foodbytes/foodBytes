@@ -2,12 +2,14 @@ import React from 'react'
 import speechRecognition from '../speechRecognition.js'
 import Audio from './Audio'
 import { bindActionCreators } from 'redux'
-import { nextDispatch, previousDispatch, repeatDispatch, wholeRecipeDispatch, ingredientsDispatch } from '../actions/actionCreators'
+import { nextDispatch, previousDispatch, repeatDispatch, fetchRecipeSteps, wholeRecipeDispatch, ingredientsDispatch } from '../actions/actionCreators'
 import { connect } from 'react-redux'
 
 
 class RecipePage extends React.Component {
 
+
+  /* Checks if the data ready and if so then will create audio component and play the audio */
   constructor (props) {
     super(props)
     this.handleClickNext = this.handleClickNext.bind(this)
@@ -31,15 +33,41 @@ class RecipePage extends React.Component {
     const { playing } = this.props.data
     if (playing !== undefined) {
       console.log("What is playing? ", playing)
+      console.log("this is the props", this.props);
       console.log('This is the audio being played ', this.props.data.audio_path[this.props.data.currentStep - 1])
       return <Audio currentStep={this.props.data.currentStep} audio_path={this.props.data.audio_path[this.props.data.currentStep - 1]} playing={playing}/>
     }
   }
 
+  /* This method gets the individual instruction and put it back to the <h3> tage  */
+  getInstructions(instructions){
+    if (instructions !== undefined){
+      return instructions.map((ingredient) => ingredient)
+    }
+  }
+
+  componentDidMount () {
+    const { fetchRecipeSteps } = this.props
+    const id = this.props.params.id
+
+    fetchRecipeSteps(id)
+      // go to the api, get recipes
+      // dispatch RECEIVE_RECIPE_STEPS
+      // run the speechRecognition(this.props, classToListenTo)  as a callback
+
+    // bad mvp
+    speechRecognition(this.props)
+  }
+
+  componentWillUnmount () {
+    // later
+    // destroy the listeners
+  }
+
   render(){
+    const { cooking_time, ingredients, instructions } = this.props.data
     return (
       <div className="jumbotron">
-        {speechRecognition(this.props)}
         {/* This is the placeholder the button */}
         <h5>Click here and start talkin!</h5>
         <button id="speech">Start</button>
@@ -65,9 +93,9 @@ class RecipePage extends React.Component {
            </div>
           </div>
         </div>
-        <h3>Cook time: </h3>
-        <h3>Ingredients: </h3>
-        <h3>Instructions: </h3>
+        <h3>Cook time: {cooking_time}</h3>
+        <h3>Ingredients: {ingredients}</h3>
+        <h3>Instructions:{this.getInstructions(instructions)} </h3>
         {this.checkReady()}
       </div>
     )
@@ -76,7 +104,7 @@ class RecipePage extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
   //bindActionCreators is unknown. keep in mind
-  return bindActionCreators({ nextDispatch,  previousDispatch, repeatDispatch, wholeRecipeDispatch, ingredientsDispatch }, dispatch)
+  return bindActionCreators({ nextDispatch,  previousDispatch, repeatDispatch, fetchRecipeSteps, wholeRecipeDispatch, ingredientsDispatch }, dispatch)
 }
 
 const mapStateToProps = (state) => {
