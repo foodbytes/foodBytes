@@ -16,15 +16,12 @@ router.get('/api/v1/recipes/:id', (req, res) => {
   let id = req.params.id
   getJoinTable(id)
     .then( data => {
-      console.log('HOLA ', data);
       res.json(data)
     })
     .catch( err => res.status(500).send(err) )
 })
 
-
-router.get('/api/v1/recipes', (req, res) => {
-  // let id = req.params.id
+router.get('/api/v1/recipes/', (req, res) => {
   getRecipesTable()
     .then( data => {
       res.json(data)
