@@ -8,6 +8,7 @@ import { connect } from 'react-redux'
 
 class RecipePage extends React.Component {
 
+  /* Checks if the data ready and if so then will create audio component and play the audio */
   checkReady(){
     const { playing } = this.props.data
     if (playing !== undefined) {
