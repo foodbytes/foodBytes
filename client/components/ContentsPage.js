@@ -25,6 +25,7 @@ class ContentsPage extends Component {
   }
 }
 
+export default ContentsPage
 
 const mapStateToProps = (state) => {
 
@@ -45,3 +46,4 @@ const mapStateToProps = (state) => {
 export default connect(
   mapStateToProps
 )(ContentsPage)
+
