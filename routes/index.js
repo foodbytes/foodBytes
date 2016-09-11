@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
 //     res.redirect('/')
 // })
 
-router.get('/api/v1/recipes/:id/join', (req, res) => {
+router.get('/api/v1/recipes/:id', (req, res) => {
   let id = req.params.id
   getJoinTable(id)
     .then( data => {
@@ -23,9 +23,9 @@ router.get('/api/v1/recipes/:id/join', (req, res) => {
 })
 
 
-router.get('/api/v1/recipes/:id', (req, res) => {
-  let id = req.params.id
-  getRecipesTable(id)
+router.get('/api/v1/recipes', (req, res) => {
+  // let id = req.params.id
+  getRecipesTable()
     .then( data => {
       res.json(data)
     })

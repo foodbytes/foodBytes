@@ -3,9 +3,9 @@ let knex = require('knex')(knexConfig);
 let transformJoin = require('../helpers/transformjoin')
 
 
-const getRecipesTable =  (id)=>{
+const getRecipesTable =  ()=>{
 
-  return knex('recipes').where('id', id)
+  return knex('recipes')
 }
 
 const getStepsTable =  (id)=>{
