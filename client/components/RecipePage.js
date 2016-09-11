@@ -20,7 +20,9 @@ class RecipePage extends React.Component {
 
   /* This method gets the individual instruction and put it back to the <h3> tage  */
   getInstructions(instructions){
-    return instructions.map((ingredient) => ingredient)
+    if (instructions !== undefined){
+      return instructions.map((ingredient) => ingredient)
+    }
   }
 
   render(){
