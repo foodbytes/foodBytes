@@ -32,7 +32,8 @@ const recipe = (state = initialState, action) => {
 
     case REPEAT:
       console.log('Inside REPEAT');
-      return state
+      newState = Object.assign({}, {audio_path: state.audio_path}, {playing: true}, {currentStep: state.currentStep})
+      return newState
 
     default:
       return state

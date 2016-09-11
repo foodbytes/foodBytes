@@ -3,7 +3,7 @@ import Audio from './Audio'
 import speechRecognition from '../speechRecognition.js'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import {receiveRecipeSteps, nextDispatch, fetchRecipeSteps, previousDispatch } from '../actions/actionCreators'
+import { receiveRecipeSteps, nextDispatch, fetchRecipeSteps, previousDispatch, repeatDispatch } from '../actions/actionCreators'
 import { Router, Route, hashHistory, Link } from 'react-router'
 import ContentsPage from './ContentsPage'
 
@@ -90,7 +90,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   //bindActionCreators is unknown. keep in mind
-  return bindActionCreators({ fetchRecipeSteps, nextDispatch, previousDispatch }, dispatch)
+  return bindActionCreators({ fetchRecipeSteps, nextDispatch, previousDispatch, repeatDispatch }, dispatch)
 }
 
 export default connect(

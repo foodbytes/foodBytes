@@ -43,6 +43,11 @@ module.exports = function speechRecogntion(props) {
        case PREVIOUS:
          props.previousDispatch(props.data.audio_path)
          break;
+
+       case REPEAT:
+         props.repeatDispatch(props.data.audio_path)
+         break;
+
        default:
          console.log("Your command was invalid!", false);
      }
