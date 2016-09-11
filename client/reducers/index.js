@@ -1,5 +1,5 @@
 import { initialState } from '../initialstate/initialstate'
-import {NEXT, REPEAT, PREVIOUS, RECEIVE_RECIPE_STEPS} from '../actions/actionCreators'
+import {NEXT, REPEAT, PREVIOUS, WHOLE_RECIPE, INGREDIENTS, RECEIVE_RECIPE_STEPS} from '../actions/actionCreators'
 import { combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
 
@@ -30,6 +30,16 @@ const recipe = (state = initialState, action) => {
       return newState
 
     case REPEAT:
+      console.log('Inside REPEAT');
+      newState = Object.assign({}, {audio_path: state.audio_path}, {playing: true}, {currentStep: state.currentStep})
+      return newState
+
+    case WHOLE_RECIPE:
+      console.log('Inside WHOLE_RECIPE');
+      newState = Object.assign({}, {audio_path: state.audio_path}, {playing: true}, {currentStep: state.currentStep})
+      return newState
+
+    case INGREDIENTS:
       console.log('Inside REPEAT');
       newState = Object.assign({}, {audio_path: state.audio_path}, {playing: true}, {currentStep: state.currentStep})
       return newState

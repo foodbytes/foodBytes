@@ -1,4 +1,4 @@
-import {NEXT, REPEAT, PREVIOUS} from './actions/actionCreators'
+import {NEXT, REPEAT, PREVIOUS, WHOLE_RECIPE, INGREDIENTS} from './actions/actionCreators'
 
 module.exports = function speechRecogntion(props) {
   let SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
@@ -46,6 +46,14 @@ module.exports = function speechRecogntion(props) {
 
        case REPEAT:
          props.repeatDispatch(props.data.audio_path)
+         break;
+
+       case WHOLE_RECIPE:
+         props.wholeRecipeDispatch(props.data.audio_path)
+         break;
+
+       case INGREDIENTS:
+         props.ingredientsDispatch(props.data.audio_path)
          break;
 
        default:
