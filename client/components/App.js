@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { fetchRecipeSteps } from '../actions/actionCreators'
+import { fetchRecipe } from '../actions/actionCreators'
 import { Router, Route, hashHistory, Link } from 'react-router'
-import ContentsPage from './ContentsPage'
+import RecipeList from './RecipeList'
 import Nav from './layout/Nav';
 
 class App extends Component {
@@ -38,7 +38,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   //bindActionCreators is unknown. keep in mind
-  return bindActionCreators({ fetchRecipeSteps }, dispatch)
+  return bindActionCreators({ fetchRecipe }, dispatch)
 }
 
 export default connect(

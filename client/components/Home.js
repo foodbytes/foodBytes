@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { fetchRecipeSteps } from '../actions/actionCreators'
+import { fetchRecipe } from '../actions/actionCreators'
 import { Router, Route, hashHistory, Link } from 'react-router'
-import ContentsPage from './ContentsPage'
+import RecipeList from './RecipeList'
 
 class Home extends Component {
 

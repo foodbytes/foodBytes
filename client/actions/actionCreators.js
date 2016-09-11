@@ -17,11 +17,27 @@ export const receiveRecipeSteps = (state) => {
     }
 }
 
-export const fetchRecipeSteps = (id) => {
-  console.log('Inside fetchRecipeSteps');
+export const fetchRecipe = (id) => {
+  console.log('Inside fetchRecipe');
   return (dispatch) => {
     request
     .get(`/api/v1/recipes/${id}`)
+    .end((err, res) => {
+      if (err) {
+        console.error(err.message)
+        return
+      }
+      dispatch(receiveRecipeSteps(JSON.parse(res.text)))
+      // in this case, the doLater = the speech recognition thing that should be activated
+    })
+  }
+}
+
+export const fetchRecipes = () => {
+  console.log('Inside fetchRecipes');
+  return (dispatch) => {
+    request
+    .get(`/api/v1/recipes/`)
     .end((err, res) => {
       if (err) {
         console.error(err.message)

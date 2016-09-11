@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import RecipeThumbnail from './RecipeThumbnail'
 
-class ContentsPage extends Component {
+class RecipeList extends Component {
 
   render () {
     return (
@@ -44,4 +44,4 @@ const mapStateToProps = (state) => {
 
 export default connect(
   mapStateToProps
-)(ContentsPage)
+)(RecipeList)
