@@ -4,6 +4,8 @@ import request from 'superagent'
 const NEXT = 'next'
 const PREVIOUS = 'previous'
 const REPEAT = 'repeat'
+const WHOLE_RECIPE = 'whole recipe'
+const INGREDIENTS = 'ingredients'
 const RECEIVE_RECIPE_STEPS = 'RECEIVE_RECIPE_STEPS'
 export { NEXT, PREVIOUS, REPEAT, RECEIVE_RECIPE_STEPS }
 
@@ -56,6 +58,26 @@ export const repeatDispatch = (state) => {
     return (dispatch) => {
       dispatch ({
         type: REPEAT,
+        payload: state
+      })
+    }
+}
+
+export const wholeRecipeDispatch = (state) => {
+    console.log("Inside wholeRecipeDispatch")
+    return (dispatch) => {
+      dispatch ({
+        type: WHOLE_RECIPE,
+        payload: state
+      })
+    }
+}
+
+export const ingredientsDispatch = (state) => {
+    console.log("Inside ingredientsDispatch")
+    return (dispatch) => {
+      dispatch ({
+        type: INGREDIENTS,
         payload: state
       })
     }

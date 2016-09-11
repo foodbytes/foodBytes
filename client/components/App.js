@@ -9,7 +9,7 @@ import Nav from './layout/Nav';
 class App extends Component {
 
   constructor (props) {
-    super(props)
+    super(props);
   }
 
   componentDidMount () {
