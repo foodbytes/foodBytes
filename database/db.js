@@ -13,12 +13,6 @@ const getStepsTable =  (id)=>{
   return knex('steps').where('recipe_id', id)
 }
 
-// call getStepsTable and store in a letiable
-// attach that let to the end getRecipesTable
-const knexRawJoin = (id) =>{
-  return knex('recipes')
-}
-
 const getJoinTable = (id) => {
 
   return knex.table('recipes').where('recipe_id',id).innerJoin('steps', 'recipes.id', '=', 'steps.recipe_id')
