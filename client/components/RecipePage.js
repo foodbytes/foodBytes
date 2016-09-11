@@ -17,7 +17,12 @@ class RecipePage extends React.Component {
     }
   }
 
+  getInstructions(instructions){
+    return instructions.map((ingredient) => ingredient)
+  }
+
   render(){
+    const { cooking_time, ingredients, instructions } = this.props.data
     return (
       <div className="jumbotron">
         {speechRecognition(this.props)}
@@ -33,9 +38,9 @@ class RecipePage extends React.Component {
            </div>
           </div>
         </div>
-        <h3>Cook time: </h3>
-        <h3>Ingredients: </h3>
-        <h3>Instructions: </h3>
+        <h3>Cook time: {cooking_time}</h3>
+        <h3>Ingredients: {ingredients}</h3>
+        <h3>Instructions:{this.getInstructions(instructions)} </h3>
         {this.checkReady()}
       </div>
     )
