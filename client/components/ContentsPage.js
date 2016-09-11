@@ -3,7 +3,7 @@ import { Link } from 'react-router'
 
 class ContentsPage extends Component {
 
-  render() {
+  render () {
     return (
       <div className="jumbotron">
         <div className="page-header">

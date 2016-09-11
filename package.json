@@ -10,7 +10,7 @@
     "watch": "watchify client/index.js -o public/bundle.js -dv",
     "server-test": "node ./helpers/test.js | tap-spec",
     "test": "babel-tape-runner ./client/tests/**/*.js | tap-spec",
-    "test:integration": "chimp"
+    "test:integration": "chimp --watch"
   },
   "browserify": {
     "transform": [

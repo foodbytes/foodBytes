@@ -7,20 +7,13 @@ import ContentsPage from './ContentsPage'
 
 class Home extends Component {
 
-  constructor (props) {
-    super(props)
-  }
-
-  componentDidMount () {
-    const { fetchRecipeSteps } = this.props
-    const id = 0
-    fetchRecipeSteps(id)
-  }
-
   render () {
 
     return(
+<<<<<<< HEAD
 
+=======
+>>>>>>> 89566a65e00cb83976ba7cf0c9915508919d6112
      <div className="jumbotron">
        {/* Image with foodbytes header*/}
        <div className="well row">
@@ -53,6 +46,7 @@ class Home extends Component {
            </span>
 
            <a className="btn btn-danger btn-xs" href="#" role="button">Available Recipes</a>
+<<<<<<< HEAD
           </div>
           <div className="col-xs-12 col-sm-6 col-md-2 col-lg-4"></div>
           <div className="well col-xs-12 col-sm-6 col-md-4 col-lg-4">
@@ -68,19 +62,28 @@ class Home extends Component {
     }
 
 }
+=======
+          </div>
+          <div className="col-xs-12 col-sm-6 col-md-2 col-lg-4"></div>
+          <div className="well col-xs-12 col-sm-6 col-md-4 col-lg-4">
+           <div className="embed-responsive embed-responsive-16by9">
+           <iframe className="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/y9N2yFDaQ_8" frameborder="0" allowfullscreen></iframe>
+           </div>
+          </div>
+         </div>
+       </div>
+     </div>
+>>>>>>> 89566a65e00cb83976ba7cf0c9915508919d6112
 
-const mapStateToProps = (state) => {
-  return {
-    data: state.recipe
-  }
-}
+   )
+ }
 
+<<<<<<< HEAD
 const mapDispatchToProps = (dispatch) => {
   //bindActionCreators is unknown. keep in mind
   return bindActionCreators({ fetchRecipeSteps }, dispatch)
+=======
+>>>>>>> 89566a65e00cb83976ba7cf0c9915508919d6112
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Home)
+export default Home

@@ -21,7 +21,10 @@ const recipe = (state = initialState, action) => {
     console.log('Inside NEXT');
       if (state.currentStep === state.length -1) return state
       newState = Object.assign({}, {audio_path: state.audio_path}, {playing: true}, {currentStep: state.currentStep + 1})
+<<<<<<< HEAD
       console.log("this is the new state", newState);
+=======
+>>>>>>> 89566a65e00cb83976ba7cf0c9915508919d6112
       return newState
 
     case PREVIOUS:
