@@ -10,11 +10,11 @@ class RecipePage extends React.Component {
 
   /* Checks if the data ready and if so then will create audio component and play the audio */
   checkReady(){
-    const { playing } = this.props.data
+    const { playing, repeat } = this.props.data
     if (playing !== undefined) {
       console.log("What is playing? ", playing)
       console.log('This is the audio being played ', this.props.data.audio_path[this.props.data.currentStep - 1])
-      return <Audio currentStep={this.props.data.currentStep} audio_path={this.props.data.audio_path[this.props.data.currentStep - 1]} playing={playing}/>
+      return <Audio currentStep={this.props.data.currentStep} audio_path={this.props.data.audio_path[this.props.data.currentStep - 1]} playing={playing} repeat={repeat}/>
     }
   }
 
