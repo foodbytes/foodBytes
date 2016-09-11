@@ -4,7 +4,8 @@ import { bindActionCreators } from 'redux'
 import { fetchRecipeSteps } from '../actions/actionCreators'
 import { Router, Route, hashHistory, Link } from 'react-router'
 import ContentsPage from './ContentsPage'
-import Nav from './layout/Nav';
+import Nav from './layout/Nav'
+import playAudio from './AudioTest'
 
 class App extends Component {
 
@@ -20,16 +21,18 @@ class App extends Component {
 
   render() {
     const { location } = this.props;
+    playAudio()
     return (
       <div>
       {/* default nav bar */}
-      <Nav />
+        <Nav />
         {this.props.children}
       </div>
     );
   }
 
 }
+
 
 const mapStateToProps = (state) => {
   return {

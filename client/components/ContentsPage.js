@@ -32,5 +32,4 @@ class ContentsPage extends Component {
   }
 }
 
-
 export default ContentsPage
