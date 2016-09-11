@@ -22,7 +22,7 @@ class RecipePage extends React.Component {
       <div className="jumbotron">
         {speechRecognition(this.props)}
         {/* This is the placeholder the button */}
-        <button id="speech"></button>
+        <button id="speech">Start</button>
         <div className="row">
           <div className="col-xs-12 col-sm-6 col-md-4 col-lg-3">
             <div className="caption text-center">
