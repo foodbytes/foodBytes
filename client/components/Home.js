@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import Audio from './Audio'
-import speechRecognition from '../speechRecognition.js'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import {receiveRecipeSteps, nextDispatch, fetchRecipeSteps } from '../actions/actionCreators'
@@ -19,20 +17,11 @@ class Home extends Component {
     fetchRecipeSteps(id)
   }
 
-  checkReady(){
-    const { playing } = this.props.data
-    if (playing !== undefined) {
-      console.log("What in playing?", playing);
-      return <Audio currentStep={0} audio_path={'https://www.youtube.com/watch?v=2lmBUq1Zd34'} playing={playing}/>
-    }
-  }
-
   render () {
 
     return(
 
      <div className="jumbotron">
-     {speechRecognition(this.props)}
        {/* Image with foodbytes header*/}
        <div className="well row">
          <div>
@@ -40,7 +29,6 @@ class Home extends Component {
            <div className="container wide col-xs-12 col-sm-6 col-md-4 col-lg-4">
              <div className="page-header text-center">
              <h1>Food Bytes</h1>
-             {this.checkReady()}
              </div>
            <div className="thumbnail">
              <img src="https://cdn.shopify.com/s/files/1/1043/3552/products/roast-chicken-with-apricot-stuffing_grande.jpeg?v=1457647233" alt="..."></img>
@@ -89,7 +77,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   //bindActionCreators is unknown. keep in mind
-  return bindActionCreators({ fetchRecipeSteps, nextDispatch }, dispatch)
+  return bindActionCreators({ fetchRecipeSteps }, dispatch)
 }
 
 export default connect(
