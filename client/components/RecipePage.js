@@ -17,6 +17,12 @@ class RecipePage extends React.Component {
     }
   }
 
+  componentDidMount () {
+    const { fetchRecipeSteps } = this.props
+    const id = this.props.params.id
+    fetchRecipeSteps(id)
+  }
+
   render(){
     return (
       <div className="jumbotron">

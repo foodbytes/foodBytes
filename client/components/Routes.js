@@ -11,7 +11,7 @@ module.exports = (
   <Route path="/" component={App}>
     <IndexRoute component={Home}></IndexRoute>
     <Route path="/contents" components={ContentsPage} />
-    <Route path="/recipes" components={RecipePage} />
+    <Route path="/recipes/:id" components={RecipePage} />
   </Route>
 
 )
