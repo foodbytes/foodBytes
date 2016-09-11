@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import {receiveRecipeSteps, nextDispatch, fetchRecipeSteps } from '../actions/actionCreators'
+import { fetchRecipeSteps } from '../actions/actionCreators'
 import { Router, Route, hashHistory, Link } from 'react-router'
 import ContentsPage from './ContentsPage'
 

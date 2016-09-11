@@ -2,18 +2,18 @@ import React from 'react'
 import speechRecognition from '../speechRecognition.js'
 import Audio from './Audio'
 import { bindActionCreators } from 'redux'
-import { nextDispatch } from '../actions/actionCreators'
+import { nextDispatch, previousDispatch, repeatDispatch } from '../actions/actionCreators'
 import { connect } from 'react-redux'
 
 
 class RecipePage extends React.Component {
 
   checkReady(){
-    console.log(this.props);
     const { playing } = this.props.data
     if (playing !== undefined) {
-      console.log("What in playing?", playing);
-      return <Audio currentStep={0} audio_path={'https://www.youtube.com/watch?v=2lmBUq1Zd34'} playing={playing}/>
+      console.log("What is playing? ", playing)
+      console.log('This is the audio being played ', this.props.data.audio_path[this.props.data.currentStep - 1])
+      return <Audio currentStep={this.props.data.currentStep} audio_path={this.props.data.audio_path[this.props.data.currentStep - 1]} playing={playing}/>
     }
   }
 
@@ -44,7 +44,7 @@ class RecipePage extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
   //bindActionCreators is unknown. keep in mind
-  return bindActionCreators({ nextDispatch }, dispatch)
+  return bindActionCreators({ nextDispatch,  previousDispatch, repeatDispatch }, dispatch)
 }
 
 const mapStateToProps = (state) => {
