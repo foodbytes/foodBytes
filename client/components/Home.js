@@ -7,20 +7,8 @@ import ContentsPage from './ContentsPage'
 
 class Home extends Component {
 
-  constructor (props) {
-    super(props)
-  }
-
-  componentDidMount () {
-    const { fetchRecipeSteps } = this.props
-    const id = 0
-    fetchRecipeSteps(id)
-  }
-
   render () {
-
     return(
-
      <div className="jumbotron">
        {/* Image with foodbytes header*/}
        <div className="well row">
@@ -64,23 +52,9 @@ class Home extends Component {
        </div>
      </div>
 
-        )
-    }
+   )
+ }
 
 }
 
-const mapStateToProps = (state) => {
-  return {
-    data: state.recipe
-  }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  //bindActionCreators is unknown. keep in mind
-  return bindActionCreators({ fetchRecipeSteps }, dispatch)
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Home)
+export default Home
