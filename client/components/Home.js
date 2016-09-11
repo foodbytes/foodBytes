@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
-import Audio from './Audio'
-import speechRecognition from '../speechRecognition.js'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { receiveRecipeSteps, nextDispatch, fetchRecipeSteps, previousDispatch, repeatDispatch } from '../actions/actionCreators'
+import { fetchRecipeSteps } from '../actions/actionCreators'
 import { Router, Route, hashHistory, Link } from 'react-router'
 import ContentsPage from './ContentsPage'
 
@@ -19,21 +17,11 @@ class Home extends Component {
     fetchRecipeSteps(id)
   }
 
-  checkReady(){
-    const { playing } = this.props.data
-    if (playing !== undefined) {
-      console.log("What is playing? ", playing)
-      console.log('This is the audio being played ', this.props.data.audio_path[this.props.data.currentStep - 1])
-      return <Audio currentStep={this.props.data.currentStep} audio_path={this.props.data.audio_path[this.props.data.currentStep - 1]} playing={playing}/>
-    }
-  }
-
   render () {
 
     return(
 
      <div className="jumbotron">
-     {speechRecognition(this.props)}
        {/* Image with foodbytes header*/}
        <div className="well row">
          <div>
@@ -41,7 +29,6 @@ class Home extends Component {
            <div className="container wide col-xs-12 col-sm-6 col-md-4 col-lg-4">
              <div className="page-header text-center">
              <h1>Food Bytes</h1>
-             {this.checkReady()}
              </div>
            <div className="thumbnail">
              <img src="https://cdn.shopify.com/s/files/1/1043/3552/products/roast-chicken-with-apricot-stuffing_grande.jpeg?v=1457647233" alt="..."></img>
@@ -90,7 +77,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   //bindActionCreators is unknown. keep in mind
-  return bindActionCreators({ fetchRecipeSteps, nextDispatch, previousDispatch, repeatDispatch }, dispatch)
+  return bindActionCreators({ fetchRecipeSteps }, dispatch)
 }
 
 export default connect(
