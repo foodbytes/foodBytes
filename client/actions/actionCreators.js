@@ -1,11 +1,11 @@
-import {initialState} from '../initialstate/initialstate.js'
+import { initialState } from '../initialstate/initialstate.js'
 import request from 'superagent'
 
 const NEXT = 'next'
 const PREVIOUS = 'previous'
 const REPEAT = 'repeat'
 const RECEIVE_RECIPE_STEPS = 'RECEIVE_RECIPE_STEPS'
-export {NEXT, PREVIOUS, REPEAT, RECEIVE_RECIPE_STEPS}
+export { NEXT, PREVIOUS, REPEAT, RECEIVE_RECIPE_STEPS }
 
 export const receiveRecipeSteps = (state) => {
     console.log("Inside receiveRecipeSteps")

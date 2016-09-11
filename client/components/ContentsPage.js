@@ -27,6 +27,8 @@ class ContentsPage extends Component {
 
 
 const mapStateToProps = (state) => {
+
+  console.log("this is the state at the recipe page", state);
   return {
     // recipes: state.recipes
     // ultimately, the state should have an overview of all the recipes available. for the moment we've hard coded them in here
