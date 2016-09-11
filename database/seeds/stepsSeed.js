@@ -3,14 +3,6 @@ exports.seed = function(knex, Promise) {
   return knex('steps').del()
     .then(function () {
       return Promise.all([
-<<<<<<< HEAD
-        knex('steps').insert({id: 0, recipe_id: 0, instructions: 'Step One: Put the cheese between the slices of bread.', audio_path: 'https://www.youtube.com/watch?v=2lmBUq1Zd34' }),
-        knex('steps').insert({id: 1, recipe_id: 0, instructions: 'Step Two: Heat a fry pan to a hot temperature.', audio_path: 'https://www.youtube.com/watch?v=l7H4aNciRh8'}),
-        knex('steps').insert({id: 2, recipe_id: 0, instructions: 'Step Three: Heat one tablespoon of butter in the fry pan.', audio_path: 'https://www.youtube.com/watch?v=SGTPnvW4jpw'}),
-        knex('steps').insert({id: 3, recipe_id: 1, instructions: 'Step One: Put some bread in a bowl.', audio_path: 'https://www.youtube.com/watch?v=2lmBUq1Zd34' }),
-        knex('steps').insert({id: 4, recipe_id: 1, instructions: 'Step Two: Put some bananas in the bowl.', audio_path: 'https://www.youtube.com/watch?v=l7H4aNciRh8'}),
-        knex('steps').insert({id: 5, recipe_id: 1, instructions: 'Step Three: Mix it all up.', audio_path: 'https://www.youtube.com/watch?v=SGTPnvW4jpw'})
-=======
         knex('steps').insert({id: 0, recipe_id: 0, instructions: 'Whole Recipe ', audio_path: 'https://www.youtube.com/watch?v=5n-M_XqfdWg' }),
         knex('steps').insert({id: 1, recipe_id: 0, instructions: 'Ingredients', audio_path: 'https://www.youtube.com/watch?v=OJ3HJg5Fypw' }),
         knex('steps').insert({id: 2, recipe_id: 0, instructions: 'Step One: Put the cheese between the slices of bread ', audio_path: 'https://www.youtube.com/watch?v=2lmBUq1Zd34' }),
@@ -34,7 +26,6 @@ exports.seed = function(knex, Promise) {
         knex('steps').insert({id: 20, recipe_id: 2, instructions: 'Step Two: Into a small fry pan set over a medium heat add butter and melt. Add onion and cook till soft and transparent but not brown.  Add rosemary and combine. Cool.', audio_path: 'https://www.youtube.com/watch?v=l7H4aNciRh8'}),
         knex('steps').insert({id: 21, recipe_id: 2, instructions: 'Step Three: Add onion mixture to breadcrumb mixture and combine.  Add egg and salt and pepper and mix together.', audio_path: 'https://www.youtube.com/watch?v=SGTPnvW4jpw'})
 
->>>>>>> 89566a65e00cb83976ba7cf0c9915508919d6112
       ]);
     });
 };
