@@ -22,6 +22,15 @@ exports.seed = function(knex, Promise) {
           cooking_time: '1 hours 30 mins',
           ingredients: '1.3-1.5kg (1 size 14) chicken@Prune and Apricot Stuffing@3-4 rashers streaky rindless bacon@2 tablespoons olive oil + extra for oiling roasting pan@3-4 small rosemary sprigs@2 cups white wine, chicken stock liquid, a mixture of both, or half of either  with cold  water. added for volume@½ teaspoon flaky sea salt@1/8 teaspoon freshly ground black pepper@2 tablespoons olive oil',
           length: 3
+        }),
+        knex('recipes').insert({
+          id: 2,
+          name: 'Prune and Apricot Stuffing',
+          description: 'Delcious stuffing for chicken roast',
+          notes:'If possible use dried apricots from Central Otago as they are soft and luscious.',
+          cooking_time: '20 Mins',
+          ingredients: '3 cups fresh breadcrumbs@1/2 cup pitted prunes (roughly chopped)@1/2 cup dried apricots (roughly chopped)@1/4 cup pine nuts ( lightly toasted)@finely grated zest of 1 lemon@3 tablespoons butter@90g (3/4-1) small onion (diced)@1 tablespoon finely chopped rosemary leaves@1 egg (lightly whisked)@1 teaspoon flaky sea salt@¼ teaspoon freshly ground black pepper',
+          length: 3
         })
       ]);
     });

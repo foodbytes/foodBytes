@@ -7,7 +7,7 @@ exports.up = function(knex, Promise) {
     table.string('cooking_time');
     table.text('ingredients');
     table.integer('length');
-  });
+  })
 };
 
 exports.down = function(knex, Promise) {
