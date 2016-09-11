@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
-import Audio from './Audio.js'
-import speechRecognition from '../speechRecognition.js'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import {receiveRecipeSteps, nextDispatch, fetchRecipeSteps } from '../actions/actionCreators'
+import { fetchRecipeSteps } from '../actions/actionCreators'
 import { Router, Route, hashHistory, Link } from 'react-router'
 import ContentsPage from './ContentsPage'
 
@@ -20,7 +18,9 @@ class Home extends Component {
   }
 
   render () {
+
     return(
+
      <div className="jumbotron">
        {/* Image with foodbytes header*/}
        <div className="well row">
@@ -38,8 +38,6 @@ class Home extends Component {
            </div>
            </div>
          </div>
-
-
 
        {/* Foodbytes description with iframe header*/}
 
@@ -79,7 +77,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   //bindActionCreators is unknown. keep in mind
-  return bindActionCreators({ fetchRecipeSteps, nextDispatch }, dispatch)
+  return bindActionCreators({ fetchRecipeSteps }, dispatch)
 }
 
 export default connect(

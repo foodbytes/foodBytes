@@ -15,6 +15,9 @@ const getStepsTable =  (id)=>{
 
 // call getStepsTable and store in a letiable
 // attach that let to the end getRecipesTable
+const knexRawJoin = (id) =>{
+  return knex('recipes')
+}
 
 const getJoinTable = (id) => {
 

@@ -18,8 +18,7 @@ exports.seed = function(knex, Promise) {
         knex('steps').insert({id: 12, recipe_id: 1, instructions: 'Step ten: Carve chicken with stuffing and serve with jus and stuffing balls. If you wish accompany with roast kumara and silver beet finished with sherry vinegar.', audio_path: '../audio/stepThree.mp3'}),
         knex('steps').insert({id: 13, recipe_id: 2, instructions: 'Step One: Into a medium sized bowl place breadcrumbs, prunes, apricots, pine nuts and lemon zest.', audio_path: 'https://www.youtube.com/watch?v=2lmBUq1Zd34' }),
         knex('steps').insert({id: 14, recipe_id: 2, instructions: 'Step Two: Into a small fry pan set over a medium heat add butter and melt. Add onion and cook till soft and transparent but not brown.  Add rosemary and combine. Cool.', audio_path: 'https://www.youtube.com/watch?v=l7H4aNciRh8'}),
-        knex('steps').insert({id: 15, recipe_id: 2, instructions: 'Step Three: Add onion mixture to breadcrumb mixture and combine.  Add egg and salt and pepper and mix together.', audio_path: 'https://www.youtube.com/watch?v=SGTPnvW4jpw'}),
-
+        knex('steps').insert({id: 15, recipe_id: 2, instructions: 'Step Three: Add onion mixture to breadcrumb mixture and combine.  Add egg and salt and pepper and mix together.', audio_path: 'https://www.youtube.com/watch?v=SGTPnvW4jpw'})
       ]);
     });
 };
