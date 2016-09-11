@@ -2,7 +2,7 @@ import {initialState} from '../initialstate/initialstate.js'
 import request from 'superagent'
 
 const NEXT = 'next'
-const PREVIOUS = 'PREVIOUS'
+const PREVIOUS = 'previous'
 const RECEIVE_RECIPE_STEPS = 'RECEIVE_RECIPE_STEPS'
 export {NEXT, PREVIOUS, RECEIVE_RECIPE_STEPS}
 
@@ -34,6 +34,16 @@ export const nextDispatch = (state) => {
     return (dispatch) => {
       dispatch ({
         type: NEXT,
+        payload: state
+      })
+    }
+}
+
+export const previousDispatch = (state) => {
+    console.log("Inside previousDispatch")
+    return (dispatch) => {
+      dispatch ({
+        type: PREVIOUS,
         payload: state
       })
     }

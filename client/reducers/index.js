@@ -17,38 +17,22 @@ const recipe = (state = initialState, action) => {
       newState = Object.assign({}, state, apiData)
       return newState
 
-    case NEXT://this should havea payload with the audio_path array from the nextDispatch action
+    case NEXT:
     console.log('Inside NEXT');
       if (state.currentStep === state.length -1) return state
-      console.log('!!!!!!!!!!!!!', action);
-      //length = action.payload.length
-
-      let newState = Object.assign({}, {audio_path: state.audio_path}, {playing: true}, {currentStep: state.currentStep + 1})
-
-      console.log('next reducer as expected',newState)
-      // for (var i = 0; i<length; i++){
-      //   if (nextState.currentStep === i) {
-      //     console.log('next reducer as expected',nextState.audio_path[i]);
-      //
-      //     return nextState.audio_path[i - 1]
-      //   }
-      //   else {
-      //     console.log('XOXO next reducer sucks',nextState.audio_path[0]);
-      //     return nextState.audio_path[0]
-      //   }
-      // }
-
+      newState = Object.assign({}, {audio_path: state.audio_path}, {playing: true}, {currentStep: state.currentStep + 1})
       console.log("this is the new state", newState);
       return newState
 
-    case REPEAT:
-      return state
-
     case PREVIOUS:
+      console.log('Inside PREVIOUS');
       if (state.currentStep === state.currentStep[0]) return state
+      newState = Object.assign({}, {audio_path: state.audio_path}, {playing: true}, {currentStep: state.currentStep - 1})
+      return newState
 
-      let previousRecipeState = Object.assign({}, state, {currentStep: state.currentStep -1})
-      return previousState
+    case REPEAT:
+      console.log('Inside REPEAT');
+      return state
 
     default:
       return state

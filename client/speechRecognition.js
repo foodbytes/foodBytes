@@ -38,7 +38,10 @@ module.exports = function speechRecogntion(props) {
     switch (command) {
        case NEXT:
          props.nextDispatch(props.data.audio_path)
-         //This is where we should dispatch the NEXT action
+         break;
+
+       case PREVIOUS:
+         props.previousDispatch(props.data.audio_path)
          break;
        default:
          console.log("Your command was invalid!", false);
