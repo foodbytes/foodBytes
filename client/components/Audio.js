@@ -8,7 +8,7 @@ const Audio = ({currentStep, audio_path, playing}) => {
     }
 
     return (
-      <div>
+      <div className ="hidden">
         <ReactPlayer url={audio_path} playing={playing} />
       </div>
     )
