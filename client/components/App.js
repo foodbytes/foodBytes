@@ -10,13 +10,12 @@ import playAudio from './AudioTest'
 class App extends Component {
 
   constructor (props) {
-    super(props)
+    super(props);
   }
 
   componentDidMount () {
-    const { fetchRecipeSteps } = this.props
-    const id = 0
-    fetchRecipeSteps(id)
+    // const { fetchRecipes } = this.props
+    // fetchRecipe()
   }
 
   render() {
@@ -24,7 +23,7 @@ class App extends Component {
     playAudio()
     return (
       <div>
-      {/* default nav bar */}
+        {/* default nav bar */}
         <Nav />
         {this.props.children}
       </div>

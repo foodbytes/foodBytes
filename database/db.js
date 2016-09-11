@@ -16,9 +16,11 @@ const getStepsTable =  (id)=>{
 const getJoinTable = (id) => {
 
   return knex.table('recipes').where('recipe_id',id).innerJoin('steps', 'recipes.id', '=', 'steps.recipe_id')
+        .orderBy('steps.id')
         .then(function (rows){
           return transformJoin(rows)
         })
+
 }
 
 module.exports = {
