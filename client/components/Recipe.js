@@ -51,9 +51,23 @@ class Recipe extends React.Component {
   /* This method gets the individual instruction and put it back to the <h3> tage  */
   getInstructions(instructions){
     if (instructions !== undefined){
-      return instructions.map((ingredient) => ingredient)
+      return instructions.map((instruction, i) => {
+         return <li key={i}> {instruction.split(',')}</li>
+      })
     }
   }
+
+  getIngredients(ingredients){
+
+    if(ingredients){
+      const ingredientArray = ingredients.split('@')
+      console.log(ingredientArray);
+      return ingredientArray.map((ingredient, i) => {
+         return <li key={i}> {ingredient.split(',')}</li>
+      })
+    }
+  }
+
 
   componentDidMount () {
     const { fetchRecipe } = this.props
@@ -84,7 +98,8 @@ class Recipe extends React.Component {
   }
 
   render(){
-    const { cooking_time, ingredients, instructions } = this.props.data
+    const { cooking_time, ingredients, instructions, image_path } = this.props.data
+    // console.log("Ohh yeah", ingredients);
     return (
       <div className="jumbotron">
         {/* This is the placeholder the button */}
@@ -113,13 +128,21 @@ class Recipe extends React.Component {
               </div>
             </div>
            <div className="thumbnail">
-             <img src="http://cook.sndimg.com/content/dam/images/cook/fullset/2012/9/24/0/CC-kelsey-nixon_grilled-cheese-sandwich-recipe-02_s4x3.jpg/jcr:content/renditions/cq5dam.web.266.200.jpeg" alt="sandwich" ></img>
+            <img width ='300'height ='200'src={`${image_path}`} alt="sandwich"></img>
            </div>
           </div>
         </div>
         <h3>Cook time: {cooking_time}</h3>
-        <h3>Ingredients: {ingredients}</h3>
-        <h3>Instructions:{this.getInstructions(instructions)} </h3>
+        <div>Ingredients
+          <ul>
+           {this.getIngredients(ingredients)}
+          </ul>
+        </div>
+        <div>Method
+        <ul>
+          {this.getInstructions(instructions)}
+          </ul>
+        </div>
         {this.checkReady()}
       </div>
     )

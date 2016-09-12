@@ -14,7 +14,8 @@ exports.seed = function(knex, Promise) {
           ingredients: 'Two slices of cheddar or swiss cheese@Two slices of white bread@Two tablespoons of butter',
           length: 3,
           whole_recipe_audio_path:'../audio/wholeRecipe.mp3',
-          ingredients_audio_path:'../audio/ingredients.mp3'
+          ingredients_audio_path:'../audio/ingredients.mp3',
+          image_path:'http://cook.sndimg.com/content/dam/images/cook/fullset/2012/9/24/0/CC-kelsey-nixon_grilled-cheese-sandwich-recipe-02_s4x3.jpg/jcr:content/renditions/cq5dam.web.266.200.jpeg'
 
         }),
         knex('recipes').insert({
@@ -26,7 +27,8 @@ exports.seed = function(knex, Promise) {
           ingredients: '1.3-1.5kg (1 size 14) chicken@Prune and Apricot Stuffing@3-4 rashers streaky rindless bacon@2 tablespoons olive oil + extra for oiling roasting pan@3-4 small rosemary sprigs@2 cups white wine, chicken stock liquid, a mixture of both, or half of either  with cold  water. added for volume@½ teaspoon flaky sea salt@1/8 teaspoon freshly ground black pepper@2 tablespoons olive oil',
           length: 3,
           whole_recipe_audio_path:'../audio/wholeRecipe.mp3',
-          ingredients_audio_path:'../audio/ingredients.mp3'
+          ingredients_audio_path:'../audio/ingredients.mp3',
+          image_path:'https://cdn.shopify.com/s/files/1/1043/3552/products/roast-chicken-with-apricot-stuffing_grande.jpeg?v=1457647233'
         }),
         knex('recipes').insert({
           id: 2,
@@ -37,7 +39,8 @@ exports.seed = function(knex, Promise) {
           ingredients: '3 cups fresh breadcrumbs@1/2 cup pitted prunes (roughly chopped)@1/2 cup dried apricots (roughly chopped)@1/4 cup pine nuts ( lightly toasted)@finely grated zest of 1 lemon@3 tablespoons butter@90g (3/4-1) small onion (diced)@1 tablespoon finely chopped rosemary leaves@1 egg (lightly whisked)@1 teaspoon flaky sea salt@¼ teaspoon freshly ground black pepper',
           length: 3,
           whole_recipe_audio_path:'../audio/wholeRecipe.mp3',
-          ingredients_audio_path:'../audio/ingredients.mp3'
+          ingredients_audio_path:'../audio/ingredients.mp3',
+          image_path:'https://s-media-cache-ak0.pinimg.com/236x/18/e6/6f/18e66fd90df8201dbac873bcd8478ffd.jpg'
         })
       ]);
     });
