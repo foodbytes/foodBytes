@@ -28,9 +28,15 @@ test('reducer with basic NEXT action', t=> {
   var expectedState = {
     recipe: {
       audio_path: [],
+      cooking_time: '',
       currentStep: 1,
+      description: '',
+      id: 0, ingredients: '',
+      instructions: [],
+      length: 0,
+      name: '',
       playing: true
-    }, 
+    },
     routing: {
       locationBeforeTransitions: null
     }
