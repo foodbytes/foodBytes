@@ -9,6 +9,7 @@ exports.up = function(knex, Promise) {
     table.integer('length');
     table.text('whole_recipe_audio_path');
     table.text('ingredients_audio_path');
+    table.text('image_path');
   });
 };
 
