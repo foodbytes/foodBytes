@@ -20,6 +20,7 @@ class App extends Component {
 
   render() {
     const { location } = this.props;
+    
     return (
       <div>
         {/* default nav bar */}
