@@ -1,5 +1,5 @@
 import { initialState } from '../initialstate/initialstate'
-import { NEXT, REPEAT, PREVIOUS, WHOLE_RECIPE, INGREDIENTS, RECEIVE_RECIPE_STEPS, RECEIVE_ALL_RECIPES } from '../actions/actionCreators'
+import { NEXT, REPEAT, PREVIOUS, STOP, WHOLE_RECIPE, INGREDIENTS, RECEIVE_RECIPE_STEPS, RECEIVE_ALL_RECIPES } from '../actions/actionCreators'
 import { combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
 
@@ -43,6 +43,9 @@ const recipe = (state = initialState, action) => {
 
       return moveStep(state, -1)
 
+    case STOP:
+      return {playing: false}
+
 
     case REPEAT:
       console.log('Inside REPEAT');
@@ -59,7 +62,7 @@ const recipe = (state = initialState, action) => {
       return newState
 
     case RECEIVE_ALL_RECIPES:
-    return Object.assign({}, {recipes: [...action.payload]})
+      return Object.assign({}, {recipes: [...action.payload]})
 
     default:
       return state
