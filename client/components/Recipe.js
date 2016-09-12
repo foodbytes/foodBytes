@@ -65,7 +65,7 @@ class Recipe extends React.Component {
   }
 
   render(){
-    const { cooking_time, ingredients, instructions } = this.props.data
+    const { cooking_time, ingredients, instructions, image_path } = this.props.data
     return (
       <div className="jumbotron">
         {/* This is the placeholder the button */}
@@ -87,7 +87,7 @@ class Recipe extends React.Component {
               </div>
             </div>
            <div className="thumbnail">
-             <img src="http://cook.sndimg.com/content/dam/images/cook/fullset/2012/9/24/0/CC-kelsey-nixon_grilled-cheese-sandwich-recipe-02_s4x3.jpg/jcr:content/renditions/cq5dam.web.266.200.jpeg" alt="sandwich" ></img>
+            <img width ='300'height ='200'src={`${image_path}`} alt="sandwich"></img>
            </div>
           </div>
         </div>
