@@ -11,15 +11,11 @@ class RecipeList extends Component {
         <div className="page-header">
           <h1 className="text-center">Recipes List</h1>
         </div>
-
         {
           this.props.recipes.map(
               (recipe)=> <RecipeThumbnail recipe={recipe} key={recipe.id}/>
           )
         }
-
-
-
       </div>
     )
   }
