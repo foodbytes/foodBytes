@@ -25,8 +25,6 @@ class ContentsPage extends Component {
   }
 }
 
-export default ContentsPage
-
 const mapStateToProps = (state) => {
 
   console.log("this is the state at the recipe page", state);
