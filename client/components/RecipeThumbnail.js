@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router'
 
 export default ({recipe}) => {
-  console.log(recipe)
   return (
     <div className="row well content">
       <Link to={`/recipes/${recipe.id}`}>

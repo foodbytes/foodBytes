@@ -5,21 +5,24 @@ import RecipeThumbnail from './RecipeThumbnail'
 
 class RecipeList extends Component {
 
+  getRecipes(recipes){
+    if (recipes) {
+      return recipes.map(
+        (recipe)=> <RecipeThumbnail recipe={recipe} key={recipe.id}/>
+      )
+    }
+  }
+
   render () {
 
     const { recipes } = this.props
 
-    console.log("say hello world",recipes);
     return (
       <div className="jumbotron">
         <div className="page-header">
           <h1 className="text-center">Recipes List</h1>
         </div>
-        {
-          recipes.map(
-              (recipe)=> <RecipeThumbnail recipe={recipe} key={recipe.id}/>
-          )
-        }
+        {this.getRecipes(recipes)}
       </div>
     )
   }
