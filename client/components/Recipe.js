@@ -35,9 +35,6 @@ class Recipe extends React.Component {
     const { playing } = this.props.data
     if (playing !== undefined) {
       console.log("What is playing? ", playing)
-      //console.log("this is the props", this.props);
-      //console.log('This is the audio being played ', this.props.data.audio_path[this.props.data.currentStep - 1])
-      //return <Audio currentStep={this.props.data.currentStep} audio_path={this.props.data.audio_path[this.props.data.currentStep - 1]} playing={playing}/>
       playAudio(this.props)
     }
   }
