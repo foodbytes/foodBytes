@@ -2,7 +2,7 @@ import React from 'react'
 import speechRecognition from '../speechRecognition.js'
 import Audio from './Audio'
 import { bindActionCreators } from 'redux'
-import { nextDispatch, previousDispatch, repeatDispatch, fetchRecipe, wholeRecipeDispatch, ingredientsDispatch } from '../actions/actionCreators'
+import { nextDispatch, previousDispatch, repeatDispatch, stopDispatch, fetchRecipe, wholeRecipeDispatch, ingredientsDispatch } from '../actions/actionCreators'
 import { connect } from 'react-redux'
 import PlayAudio from './PlayAudio'
 
@@ -17,6 +17,7 @@ class Recipe extends React.Component {
     this.handleClickNext = this.handleClickNext.bind(this)
     this.handleClickPrevious = this.handleClickPrevious.bind(this)
     this.handleClickRepeat = this.handleClickRepeat.bind(this)
+    this.handleClickStop = this.handleClickStop.bind(this)
   }
 
   handleClickNext() {
@@ -31,11 +32,15 @@ class Recipe extends React.Component {
     this.props.repeatDispatch(this.props.data.audio_path)
   }
 
+  /* this method will stop the audio from being played*/
+  handleClickStop() {
+    this.props.stopDispatch(this.props.data.audio_path)
+  }
+
   checkReady(){
     const { playing } = this.props.data
     if (playing !== undefined) {
-      console.log("What is playing? ", playing)
-      PlayAudio(this.props)
+      return <Audio currentStep={0} audio_path={this.props.data.audio_path[this.props.data.currentStep - 1]} playing={playing}/>
     }
   }
 
@@ -85,6 +90,9 @@ class Recipe extends React.Component {
               <div onClick={this.handleClickRepeat}>
                 <button id="Repeat" >Repeat</button>
               </div>
+              <div onClick={this.handleClickStop}>
+                <button id="Stop" >Stop</button>
+              </div>
             </div>
            <div className="thumbnail">
              <img src="http://cook.sndimg.com/content/dam/images/cook/fullset/2012/9/24/0/CC-kelsey-nixon_grilled-cheese-sandwich-recipe-02_s4x3.jpg/jcr:content/renditions/cq5dam.web.266.200.jpeg" alt="sandwich" ></img>
@@ -102,10 +110,11 @@ class Recipe extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
   //bindActionCreators is unknown. keep in mind
-  return bindActionCreators({ nextDispatch,  previousDispatch, repeatDispatch, fetchRecipe, wholeRecipeDispatch, ingredientsDispatch }, dispatch)
+  return bindActionCreators({ nextDispatch,  previousDispatch, repeatDispatch, stopDispatch, fetchRecipe, wholeRecipeDispatch, ingredientsDispatch }, dispatch)
 }
 
 const mapStateToProps = (state) => {
+console.log("the state in recipe is ", state);
   return {
     data: state.recipe
   }

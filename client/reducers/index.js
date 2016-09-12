@@ -44,7 +44,7 @@ const recipe = (state = initialState, action) => {
       return moveStep(state, -1)
 
     case STOP:
-      return {playing: false}
+      return Object.assign({},state,{audio_path: state.audio_path},{playing: false},{currentStep: state.currentStep})
 
 
     case REPEAT:
