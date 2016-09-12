@@ -20,7 +20,7 @@ class App extends Component {
 
   render() {
     const { location } = this.props;
-    playAudio()
+    //playAudio(this.props)
     return (
       <div>
         {/* default nav bar */}

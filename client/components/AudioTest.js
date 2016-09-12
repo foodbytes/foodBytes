@@ -1,6 +1,7 @@
-function playAudio() {
-    console.log("I'm in the playAudio", __dirname)
-    let audio = new Audio('./audio/cheddarCheese.mp3')
+
+function playAudio(props) {
+    console.log("I'm in the playAudio", props.data.audio_path[props.data.currentStep - 1])
+    let audio = new Audio(props.data.audio_path[props.data.currentStep - 1])
     audio.play()
 }
 
