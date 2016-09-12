@@ -1,4 +1,4 @@
-import { initialState } from '../initialstate/initialstate.js'
+import { initialState } from '../initialstate/initialstate'
 import request from 'superagent'
 
 const NEXT = 'next'
@@ -8,6 +8,7 @@ const WHOLE_RECIPE = 'whole recipe'
 const INGREDIENTS = 'ingredients'
 const RECEIVE_RECIPE_STEPS = 'RECEIVE_RECIPE_STEPS'
 const RECEIVE_ALL_RECIPES = 'RECEIVE_ALL_RECIPES'
+
 export { NEXT, PREVIOUS, REPEAT, RECEIVE_RECIPE_STEPS, RECEIVE_ALL_RECIPES }
 
 export const receiveRecipeSteps = (state) => {

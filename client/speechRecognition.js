@@ -6,6 +6,11 @@ module.exports = function speechRecogntion(props) {
   let SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent
 
   //grammar currently might not be doing anything, these commands should come from the state.
+  //
+
+  // weird - might need semicolon
+  ;[ NEXT, REPEAT, PREVIOUS ].map( action => action.toLowerCase() ).join(' | ')
+  
   let grammar = '#JSGF V1.0; grammar commands; public <commands> = next | repeat | previous | ingredients | define | recipe'
   //Define a new instance of speechRecognition to control the recognition for our application.
   //This is done using the SpeechRecognition() constructor. We also create a new speech grammar list to

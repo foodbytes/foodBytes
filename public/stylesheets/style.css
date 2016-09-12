@@ -42,20 +42,19 @@ padding: 5px;
  background-color: crimson;
  color: white;
 }
+
 .collapse{
  margin: 10px;
  padding: 5px;
-}
-.collapse h5{
 
- color:black;
- font-weight: 400;
+ h5 {
+   color:black;
+   font-weight: 400;
+ }
 }
 
 .left-text{
-
- font-weight: bold;
- padding-bottom: 15px;
-
-
+  font-weight: bold;
+  padding-bottom: 15px;
 }
+
