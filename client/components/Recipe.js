@@ -135,7 +135,7 @@ class Recipe extends React.Component {
            {this.getIngredients(ingredients)}
           </ul>
         </div>
-        <div>Instructions:
+        <div>Method:
         <ul>
           {this.getInstructions(instructions)}
           </ul>
