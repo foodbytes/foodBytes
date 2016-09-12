@@ -1,4 +1,4 @@
-gitimport {NEXT, REPEAT, PREVIOUS, WHOLE_RECIPE, INGREDIENTS} from './actions/actionCreators'
+import {NEXT, REPEAT, PREVIOUS, WHOLE_RECIPE, INGREDIENTS} from './actions/actionCreators'
 
 module.exports = function speechRecogntion(props) {
   let SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
