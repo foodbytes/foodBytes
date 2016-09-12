@@ -10,19 +10,26 @@ module.exports = function () {
     browser.url(Url.format(extend(config.proxy, { pathname: '/' })))
   })
 
-  this.When(/^I click on the Table of contents tab "([^"]*)"$/, (text) => {
-    browser.waitForExist('.contents')
-    browser.click('.contents')
+  this.When(/^I click on the Table of contents tab$/, () => {
+    browser.waitForExist('.navli.contents')
+    browser.click('.navli.contents')
   })
 
   this.Then(/^I am taken to the Table of contents view$/, () => {
     browser.url(Url.format(extend(config.proxy, { pathname: '/contents' })))
   })
 
-  this.Then('I see a header "$string"', (text) => {
+  this.Then(/^I see the header "([^"]*)"$/, (text) => {
     browser.waitForExist("h1")
     var actualText = browser.getText('h1')
     expect(actualText).toEqual(text)
-  })
+  });
+
+
+  // this.Then('I see a header "$string"', (text) => {
+  //   browser.waitForExist("h1")
+  //   var actualText = browser.getText('h1')
+  //   expect(actualText).toEqual(text)
+  // })
 
 }
