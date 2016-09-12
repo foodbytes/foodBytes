@@ -4,9 +4,9 @@ exports.seed = function(knex, Promise) {
     .then(function () {
       return Promise.all([
 
-        knex('steps').insert({id: 0, recipe_id: 0, instructions: 'Step One: Put the cheese between the slices of bread ', audio_path: 'https://www.youtube.com/watch?v=2lmBUq1Zd34' }),
-        knex('steps').insert({id: 1, recipe_id: 0, instructions: 'Step Two: Heat a fry pan to a hot temperature', audio_path: 'https://www.youtube.com/watch?v=l7H4aNciRh8'}),
-        knex('steps').insert({id: 2, recipe_id: 0, instructions: 'Step Three: Heat one tablespoon of butter in the fry pan', audio_path: 'https://www.youtube.com/watch?v=SGTPnvW4jpw'}),
+        knex('steps').insert({id: 0, recipe_id: 0, instructions: 'Step One: Put the cheese between the slices of bread ', audio_path: '../audio/stepOne.mp3' }),
+        knex('steps').insert({id: 1, recipe_id: 0, instructions: 'Step Two: Heat a fry pan to a hot temperature', audio_path: '../audio/stepTwo.mp3'}),
+        knex('steps').insert({id: 2, recipe_id: 0, instructions: 'Step Three: Heat one tablespoon of butter in the fry pan', audio_path: '../audio/stepThree.mp3'}),
         knex('steps').insert({id: 3, recipe_id: 1, instructions: 'Step One: Preheat oven to 180ºC', audio_path: '../audio/stepOne.mp3' }),
         knex('steps').insert({id: 4, recipe_id: 1, instructions: 'Step Two: Remove any giblets and the neck from chicken.  With cold water wash inside and outside of chicken and pat dry using paper towels.', audio_path: '../audio/stepTwo.mp3'}),
         knex('steps').insert({id: 5, recipe_id: 1, instructions: 'Step Three: Push Prune and Apricot Stuffing into cavity of chicken and secure opening with toothpicks or bamboo skewers.  {There will be stuffing remaining so form it into small walnut-sized balls and wrap in bacon to add to roasting pan during the last 30 minutes of the cooking time.}', audio_path: '../audio/stepThree.mp3'}),
