@@ -130,12 +130,12 @@ class Recipe extends React.Component {
           </div>
         </div>
         <h3>Cook time: {cooking_time}</h3>
-        <div>Ingredients:
+        <div>Ingredients
           <ul>
            {this.getIngredients(ingredients)}
           </ul>
         </div>
-        <div>Method:
+        <div>Method
         <ul>
           {this.getInstructions(instructions)}
           </ul>
