@@ -72,11 +72,9 @@ class Recipe extends React.Component {
         <h5>Available Commands: 'Next' 'Previous' 'Repeat'</h5>
         <h5>Click here and start talkin!</h5>
         <button id="speech">Start</button>
+        <h5>Available Commands: 'Next' 'Previous' 'Repeat'</h5>
         <div className="row">
           <div className="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-            <div className="caption text-center">
-              <h3>Food Bytes</h3>
-            </div>
             <div>
               <div onClick={this.handleClickNext}>
                 <button id="next" >Next</button>
