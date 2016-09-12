@@ -95,6 +95,7 @@ class Recipe extends React.Component {
   }
 
   isListening() {
+
     if (this.props.data.listening !== true){
       console.log(this.props.data.listening)
       return <img src='../images/not_listening.png' alt='not_listening_red' />
