@@ -1,7 +1,9 @@
 import React from 'react'
 import speechRecognition from '../speechRecognition.js'
 import { bindActionCreators } from 'redux'
-import { nextDispatch, previousDispatch, repeatDispatch, fetchRecipe, wholeRecipeDispatch, ingredientsDispatch, listeningDispatch} from '../actions/actionCreators'
+
+import { nextDispatch, previousDispatch, repeatDispatch, stopDispatch, fetchRecipe, wholeRecipeDispatch, ingredientsDispatch, listeningDispatch } from '../actions/actionCreators'
+
 import { connect } from 'react-redux'
 import PlayAudio from './PlayAudio'
 
@@ -16,6 +18,7 @@ class Recipe extends React.Component {
     this.handleClickNext = this.handleClickNext.bind(this)
     this.handleClickPrevious = this.handleClickPrevious.bind(this)
     this.handleClickRepeat = this.handleClickRepeat.bind(this)
+    this.handleClickStop = this.handleClickStop.bind(this)
     this.handleClickIngredients = this.handleClickIngredients.bind(this)
     this.handleClickWholeRecipe = this.handleClickWholeRecipe.bind(this)
   }
@@ -32,6 +35,11 @@ class Recipe extends React.Component {
     this.props.repeatDispatch(this.props.data.audio_path)
   }
 
+  /* this method will stop the audio from being played*/
+  handleClickStop() {
+    this.props.stopDispatch(this.props.data.audio_path)
+  }
+
   handleClickIngredients() {
     this.props.ingredientsDispatch(this.props.data.audio_path)
   }
@@ -43,7 +51,6 @@ class Recipe extends React.Component {
   checkReady(){
     const { playing } = this.props.data
     if (playing !== undefined) {
-      console.log("What is playing? ", playing)
       return <Audio currentStep={this.props.data.currentStep} audio_path={this.props.data.audio_path[this.props.data.currentStep - 1]} playing={playing}/>
     }
   }
@@ -120,6 +127,9 @@ class Recipe extends React.Component {
               <div onClick={this.handleClickRepeat}>
                 <button id="Repeat" >Repeat</button>
               </div>
+              <div onClick={this.handleClickStop}>
+                <button id="Stop" >Stop</button>
+              </div>
               <div onClick={this.handleClickWholeRecipe}>
                 <button id="Whole Recipe" >Whole Recipe</button>
               </div>
@@ -151,10 +161,11 @@ class Recipe extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
   //bindActionCreators is unknown. keep in mind
-  return bindActionCreators({ nextDispatch,  previousDispatch, repeatDispatch, fetchRecipe, wholeRecipeDispatch, ingredientsDispatch, listeningDispatch }, dispatch)
+  return bindActionCreators({ nextDispatch,  previousDispatch, repeatDispatch, stopDispatch, fetchRecipe, wholeRecipeDispatch, ingredientsDispatch, listeningDispatch }, dispatch)
 }
 
 const mapStateToProps = (state) => {
+console.log("the state in recipe is ", state);
   return {
     data: state.recipe
   }
