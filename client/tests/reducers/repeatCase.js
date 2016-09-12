@@ -19,6 +19,9 @@ test('reducer with basic REPEAT action', t=> {
     recipe:{
       id: 0,
       currentStep:0,
+    },
+    routing:{
+      locationBeforeTransitions: null
     }
   }
 

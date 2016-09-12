@@ -1,10 +1,13 @@
 var test = require('tape')
 import reducer from '../../reducers'
 var freeze = require('deep-freeze')
+import {initialState} from '../../initialstate/initialstate.js'
+import {NEXT, REPEAT, PREVIOUS, WHOLE_RECIPE, INGREDIENTS, RECEIVE_RECIPE_STEPS} from '../../actions/actionCreators'
+
 
 test('reducer with basic PREVIOUS action', t=> {
   var action = {
-    type: 'PREVIOUS'
+    type: PREVIOUS
   }
   var initialState = {
     recipe:{
@@ -21,6 +24,9 @@ test('reducer with basic PREVIOUS action', t=> {
       id: 0,
       currentStep: 4,
       length: 5
+    },
+    routing:{
+      locationBeforeTransitions: null
     }
   }
 
