@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { fetchRecipeSteps } from '../actions/actionCreators'
+import { fetchRecipes } from '../actions/actionCreators'
 import { Router, Route, hashHistory, Link } from 'react-router'
-import ContentsPage from './ContentsPage'
-import Nav from './layout/Nav'
-import playAudio from './AudioTest'
+import RecipeList from './RecipeList'
+import Nav from './layout/Nav';
 
 class App extends Component {
 
@@ -14,12 +13,13 @@ class App extends Component {
   }
 
   componentDidMount () {
-    // const { fetchRecipes } = this.props
-    // fetchRecipe()
+    const { fetchRecipes } = this.props
+    fetchRecipes()
   }
 
   render() {
     const { location } = this.props;
+
     return (
       <div>
         {/* default nav bar */}
@@ -40,7 +40,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   //bindActionCreators is unknown. keep in mind
-  return bindActionCreators({ fetchRecipeSteps }, dispatch)
+  return bindActionCreators({ fetchRecipes }, dispatch)
 }
 
 export default connect(
