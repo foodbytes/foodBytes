@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { fetchRecipe } from '../actions/actionCreators'
+import { fetchRecipes } from '../actions/actionCreators'
 import { Router, Route, hashHistory, Link } from 'react-router'
 import RecipeList from './RecipeList'
 import Nav from './layout/Nav';
@@ -13,8 +13,8 @@ class App extends Component {
   }
 
   componentDidMount () {
-    // const { fetchRecipes } = this.props
-    // fetchRecipe()
+    const { fetchRecipes } = this.props
+    fetchRecipes()
   }
 
   render() {
@@ -38,7 +38,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   //bindActionCreators is unknown. keep in mind
-  return bindActionCreators({ fetchRecipe }, dispatch)
+  return bindActionCreators({ fetchRecipes }, dispatch)
 }
 
 export default connect(
