@@ -64,7 +64,7 @@ class Recipe extends React.Component {
       const ingredientArray = ingredients.split('@')
       console.log(ingredientArray);
       return ingredientArray.map((ingredient, i) => {
-         return <li key={i}> {ingredient.split(',')}</li>
+         return <li key={i}> {ingredient}</li>
       })
     }
   }
