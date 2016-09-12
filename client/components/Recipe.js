@@ -1,8 +1,7 @@
 import React from 'react'
 import speechRecognition from '../speechRecognition.js'
-import Audio from './Audio'
 import { bindActionCreators } from 'redux'
-import { nextDispatch, previousDispatch, repeatDispatch, fetchRecipe, wholeRecipeDispatch, ingredientsDispatch } from '../actions/actionCreators'
+import { nextDispatch, previousDispatch, repeatDispatch, fetchRecipe, wholeRecipeDispatch, ingredientsDispatch, listeningDispatch} from '../actions/actionCreators'
 import { connect } from 'react-redux'
 import PlayAudio from './PlayAudio'
 
@@ -74,6 +73,16 @@ class Recipe extends React.Component {
     // destroy the listeners
   }
 
+  isListening() {
+    if (this.props.data.listening !== true){
+      console.log(this.props.data.listening)
+      return <img src='../images/not_listening.png' alt='not_listening_red' />
+    }else {
+      console.log(this.props.data.listening)
+      return <img src='../images/listening.png' alt='listening_green' />
+    }
+  }
+
   render(){
     const { cooking_time, ingredients, instructions } = this.props.data
     return (
@@ -83,6 +92,7 @@ class Recipe extends React.Component {
         <h5>Click here and start talkin!</h5>
         <button id="speech">Start</button>
         <h5>Available Commands: 'Next' 'Previous' 'Repeat'</h5>
+        {this.isListening()}
         <div className="row">
           <div className="col-xs-12 col-sm-6 col-md-4 col-lg-3">
             <div>
@@ -118,7 +128,7 @@ class Recipe extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
   //bindActionCreators is unknown. keep in mind
-  return bindActionCreators({ nextDispatch,  previousDispatch, repeatDispatch, fetchRecipe, wholeRecipeDispatch, ingredientsDispatch }, dispatch)
+  return bindActionCreators({ nextDispatch,  previousDispatch, repeatDispatch, fetchRecipe, wholeRecipeDispatch, ingredientsDispatch, listeningDispatch }, dispatch)
 }
 
 const mapStateToProps = (state) => {

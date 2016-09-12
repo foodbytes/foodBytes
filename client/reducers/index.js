@@ -1,5 +1,5 @@
 import { initialState } from '../initialstate/initialstate'
-import { NEXT, REPEAT, PREVIOUS, WHOLE_RECIPE, INGREDIENTS, RECEIVE_RECIPE_STEPS, RECEIVE_ALL_RECIPES } from '../actions/actionCreators'
+import { NEXT, REPEAT, PREVIOUS, WHOLE_RECIPE, INGREDIENTS, LISTENING, RECEIVE_RECIPE_STEPS, RECEIVE_ALL_RECIPES } from '../actions/actionCreators'
 import { combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
 
@@ -59,6 +59,9 @@ const recipe = (state = initialState, action) => {
 
     case RECEIVE_ALL_RECIPES:
     return Object.assign({}, {recipes: [...action.payload]})
+
+    case LISTENING:
+    return Object.assign({}, state, {listening: true})
 
     default:
       return state
