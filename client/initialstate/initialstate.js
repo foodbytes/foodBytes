@@ -9,6 +9,7 @@ export const initialState = {
     currentStep: 0,
     instructions:[],
     audio_path:[],
-    playing: false
+    playing: false,
+    listening: false
   }
 }
