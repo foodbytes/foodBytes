@@ -47,12 +47,5 @@
 
 
 }
-//
-// const splitString = (stringToSplit, separator)=> {
-// var arrayOfStrings = stringToSplit.split(separator)
-// }
-//
-// var atTheRate ='@'
-// splitString(ingredients,atTheRate)
 
 module.exports = transformJoin
