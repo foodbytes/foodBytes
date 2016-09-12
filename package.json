@@ -8,8 +8,10 @@
     "build": "NODE_ENV=production browserify client/index.js -o public/bundle.js -g uglifyify",
     "postinstall": "npm run build",
     "watch": "watchify client/index.js -o public/bundle.js -dv",
-    "server-test": "node ./helpers/test.js | tap-spec",
-    "test": "babel-tape-runner ./client/tests/**/*.js | tap-spec",
+    "test": "npm run test:unit && npm run test:server && npm run test:integration",
+    "test:server": "node ./helpers/test.js | tap-spec",
+    "test:unit": "babel-tape-runner ./client/tests/**/*.js | tap-spec",
+    "test:unit-all": "browserify ./client/tests/**/*.js | tape | tap-spec",
     "test:integration": "chimp --watch"
   },
   "browserify": {
@@ -53,12 +55,9 @@
   },
   "devDependencies": {
     "babel-tape-runner": "^2.0.1",
-    "budo": "^9.0.0",
     "chimp": "^0.40.6",
     "cucumber-assert": "^1.0.4",
     "expect": "^1.20.2",
-    "gh-pages": "^0.11.0",
-    "mocha": "^3.0.2",
     "nodemon": "^1.10.2",
     "react-addons-test-utils": "^15.3.1",
     "supertest": "^2.0.0",
