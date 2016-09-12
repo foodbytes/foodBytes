@@ -15,7 +15,7 @@ const moveStep = (state, stepIncrement) => {
 
 }
 
-const START_STEP = 2
+const START_STEP = 0
 const isAtStart = (state) => state.currentStep === START_STEP  // NOTE: CHECK THIS
 const isAtEnd   = (state) => state.currentStep === state.length -1
 
@@ -50,13 +50,11 @@ const recipe = (state = initialState, action) => {
 
     case WHOLE_RECIPE:
       console.log('Inside WHOLE_RECIPE');
-      newState = Object.assign({}, {audio_path: state.audio_path}, {playing: true}, {currentStep: state.currentStep})
-      return newState
+      return Object.assign({}, {audio_path: state.whole_recipe_audio_path}, {playing: true}, {currentStep: 0})
 
     case INGREDIENTS:
-      console.log('Inside REPEAT');
-      newState = Object.assign({}, {audio_path: state.audio_path}, {playing: true}, {currentStep: state.currentStep})
-      return newState
+      console.log('Inside INGREDIENTS');
+      return Object.assign({}, {audio_path: state.ingredients_audio_path}, {playing: true}, {currentStep: 0})
 
     case RECEIVE_ALL_RECIPES:
     return Object.assign({}, {recipes: [...action.payload]})

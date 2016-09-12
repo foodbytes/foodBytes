@@ -8,7 +8,7 @@ const WHOLE_RECIPE = 'whole recipe'
 const INGREDIENTS = 'ingredients'
 const RECEIVE_RECIPE_STEPS = 'RECEIVE_RECIPE_STEPS'
 const RECEIVE_ALL_RECIPES = 'RECEIVE_ALL_RECIPES'
-export { NEXT, PREVIOUS, REPEAT, RECEIVE_RECIPE_STEPS, RECEIVE_ALL_RECIPES }
+export { NEXT, PREVIOUS, REPEAT, WHOLE_RECIPE, INGREDIENTS, RECEIVE_RECIPE_STEPS, RECEIVE_ALL_RECIPES }
 
 export const receiveRecipeSteps = (state) => {
     console.log("Inside receiveRecipeSteps")
@@ -84,7 +84,7 @@ export const previousDispatch = (state) => {
 }
 
 export const repeatDispatch = (state) => {
-    console.log("Inside previousDispatch")
+    console.log("Inside repeatDispatch")
     return (dispatch) => {
       dispatch ({
         type: REPEAT,

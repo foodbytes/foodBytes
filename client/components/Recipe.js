@@ -17,6 +17,8 @@ class Recipe extends React.Component {
     this.handleClickNext = this.handleClickNext.bind(this)
     this.handleClickPrevious = this.handleClickPrevious.bind(this)
     this.handleClickRepeat = this.handleClickRepeat.bind(this)
+    this.handleClickIngredients = this.handleClickIngredients.bind(this)
+    this.handleClickWholeRecipe = this.handleClickWholeRecipe.bind(this)
   }
 
   handleClickNext() {
@@ -28,7 +30,15 @@ class Recipe extends React.Component {
   }
 
   handleClickRepeat() {
-    this.props.RepeatDispatch(this.props.data.audio_path)
+    this.props.repeatDispatch(this.props.data.audio_path)
+  }
+
+  handleClickIngredients() {
+    this.props.ingredientsDispatch(this.props.data.audio_path)
+  }
+
+  handleClickWholeRecipe() {
+    this.props.wholeRecipeDispatch(this.props.data.audio_path)
   }
 
   checkReady(){
@@ -86,6 +96,12 @@ class Recipe extends React.Component {
               </div>
               <div onClick={this.handleClickRepeat}>
                 <button id="Repeat" >Repeat</button>
+              </div>
+              <div onClick={this.handleClickWholeRecipe}>
+                <button id="Whole Recipe" >Whole Recipe</button>
+              </div>
+              <div onClick={this.handleClickIngredients}>
+                <button id="Ingredients" >Ingredients</button>
               </div>
             </div>
            <div className="thumbnail">
