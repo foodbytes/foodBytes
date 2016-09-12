@@ -4,11 +4,12 @@ import request from 'superagent'
 const NEXT = 'next'
 const PREVIOUS = 'previous'
 const REPEAT = 'repeat'
+const STOP = 'stop'
 const WHOLE_RECIPE = 'whole recipe'
 const INGREDIENTS = 'ingredients'
 const RECEIVE_RECIPE_STEPS = 'RECEIVE_RECIPE_STEPS'
 const RECEIVE_ALL_RECIPES = 'RECEIVE_ALL_RECIPES'
-export { NEXT, PREVIOUS, REPEAT, WHOLE_RECIPE, INGREDIENTS, RECEIVE_RECIPE_STEPS, RECEIVE_ALL_RECIPES }
+export { NEXT, PREVIOUS, REPEAT, STOP, WHOLE_RECIPE, INGREDIENTS, RECEIVE_RECIPE_STEPS, RECEIVE_ALL_RECIPES }
 
 export const receiveRecipeSteps = (state) => {
     console.log("Inside receiveRecipeSteps")
@@ -55,7 +56,6 @@ export const fetchRecipes = () => {
         return
       }
 
-      // console.log("getting the full recipes from the api", res.text);
       // This will get all the recipes from the api
       dispatch(receiveAllRecipes(JSON.parse(res.text)))
       // in this case, the doLater = the speech recognition thing that should be activated
@@ -88,6 +88,16 @@ export const repeatDispatch = (state) => {
     return (dispatch) => {
       dispatch ({
         type: REPEAT,
+        payload: state
+      })
+    }
+}
+
+export const stopDispatch = (state) => {
+    console.log("Inside stopDispatch")
+    return (dispatch) => {
+      dispatch ({
+        type: STOP,
         payload: state
       })
     }

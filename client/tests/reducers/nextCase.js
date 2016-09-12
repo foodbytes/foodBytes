@@ -1,24 +1,38 @@
 var test = require('tape')
 import reducer from '../../reducers'
 var freeze = require('deep-freeze')
+import {initialState} from '../../initialstate/initialstate.js'
+import {NEXT, REPEAT, PREVIOUS, WHOLE_RECIPE, INGREDIENTS, RECEIVE_RECIPE_STEPS} from '../../actions/actionCreators'
+
+// const initialState = {
+//   recipe:{
+//     id: 0,
+//     name: '',
+//     description: '',
+//     ingredients: '',
+//     cooking_time: '',
+//     length: 0,
+//     currentStep:0,
+//     instructions:[],
+//     audio_path:[]
+//   }
+// }
 
 test('reducer with basic NEXT action', t=> {
   var action = {
-    type: 'NEXT'
-  }
-  var initialState = {
-    recipe:{
-      id: 0,
-      currentStep:0,
-    }
+    type: NEXT
   }
 
   freeze(initialState)
 
   var expectedState = {
-    recipe:{
-      id: 0,
-      currentStep:1,
+    recipe: {
+      audio_path: [],
+      currentStep: 1,
+      playing: true
+    }, 
+    routing: {
+      locationBeforeTransitions: null
     }
   }
 
@@ -29,9 +43,9 @@ test('reducer with basic NEXT action', t=> {
 
 test('reducer with basic NEXT action when called at end of recipe steps', t=> {
   var action = {
-    type: 'NEXT'
+    type: NEXT
   }
-  var initialState = {
+  var fakeState = {
     recipe:{
       id: 0,
       currentStep: 4,
@@ -46,10 +60,13 @@ test('reducer with basic NEXT action when called at end of recipe steps', t=> {
       id: 0,
       currentStep: 4,
       length: 5
+    },
+    routing:{
+      locationBeforeTransitions: null
     }
   }
 
-  var actualState = reducer(initialState, action)
+  var actualState = reducer(fakeState, action)
   t.deepEqual(actualState, expectedState, 'the reducer does nothing')
   t.end()
 })
