@@ -2,11 +2,11 @@ import React from 'react'
 import speechRecognition from '../speechRecognition.js'
 import Audio from './Audio'
 import { bindActionCreators } from 'redux'
-import { nextDispatch, previousDispatch, repeatDispatch, fetchRecipeSteps, wholeRecipeDispatch, ingredientsDispatch } from '../actions/actionCreators'
+import { nextDispatch, previousDispatch, repeatDispatch, fetchRecipe, wholeRecipeDispatch, ingredientsDispatch } from '../actions/actionCreators'
 import { connect } from 'react-redux'
 
 
-class RecipePage extends React.Component {
+class Recipe extends React.Component {
 
 
   /* Checks if the data ready and if so then will create audio component and play the audio */
@@ -47,10 +47,10 @@ class RecipePage extends React.Component {
   }
 
   componentDidMount () {
-    const { fetchRecipeSteps } = this.props
+    const { fetchRecipe } = this.props
     const id = this.props.params.id
 
-    fetchRecipeSteps(id)
+    fetchRecipe(id)
       // go to the api, get recipes
       // dispatch RECEIVE_RECIPE_STEPS
       // run the speechRecognition(this.props, classToListenTo)  as a callback
@@ -104,7 +104,7 @@ class RecipePage extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
   //bindActionCreators is unknown. keep in mind
-  return bindActionCreators({ nextDispatch,  previousDispatch, repeatDispatch, fetchRecipeSteps, wholeRecipeDispatch, ingredientsDispatch }, dispatch)
+  return bindActionCreators({ nextDispatch,  previousDispatch, repeatDispatch, fetchRecipe, wholeRecipeDispatch, ingredientsDispatch }, dispatch)
 }
 
 const mapStateToProps = (state) => {
@@ -116,4 +116,4 @@ const mapStateToProps = (state) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(RecipePage)
+)(Recipe)
