@@ -4,7 +4,7 @@ import Audio from './Audio'
 import { bindActionCreators } from 'redux'
 import { nextDispatch, previousDispatch, repeatDispatch, fetchRecipe, wholeRecipeDispatch, ingredientsDispatch } from '../actions/actionCreators'
 import { connect } from 'react-redux'
-import playAudio from './AudioTest'
+import PlayAudio from './PlayAudio'
 
 
 
@@ -35,7 +35,7 @@ class Recipe extends React.Component {
     const { playing } = this.props.data
     if (playing !== undefined) {
       console.log("What is playing? ", playing)
-      playAudio(this.props)
+      PlayAudio(this.props)
     }
   }
 
