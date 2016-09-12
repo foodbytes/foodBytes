@@ -7,8 +7,7 @@ class Nav extends Component{
     return(
           <ul className="nav nav-tabs navbar-fixed-top">
             <li role="presentation" className="navli"><Link to="/">Home</Link></li>
-            <li role="presentation" className="navli contents"><Link to="/contents">Table of contents</Link></li>
-            <li role="presentation" className="navli"><Link to="/recipes">Recipes</Link></li>
+            <li role="presentation" className="navli contents"><Link to="/recipes">Recipes</Link></li>
           </ul>
     )
   }
