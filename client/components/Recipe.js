@@ -28,7 +28,7 @@ class Recipe extends React.Component {
   }
 
   handleClickRepeat() {
-    this.props.RepeatDispatch(this.props.data.audio_path)
+    this.props.repeatDispatch(this.props.data.audio_path)
   }
 
   checkReady(){
