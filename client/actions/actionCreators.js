@@ -7,9 +7,11 @@ const REPEAT = 'repeat'
 const STOP = 'stop'
 const WHOLE_RECIPE = 'whole recipe'
 const INGREDIENTS = 'ingredients'
+const LISTENING = 'listening'
 const RECEIVE_RECIPE_STEPS = 'RECEIVE_RECIPE_STEPS'
 const RECEIVE_ALL_RECIPES = 'RECEIVE_ALL_RECIPES'
-export { NEXT, PREVIOUS, REPEAT, STOP, WHOLE_RECIPE, INGREDIENTS, RECEIVE_RECIPE_STEPS, RECEIVE_ALL_RECIPES }
+
+export { NEXT, PREVIOUS, REPEAT, STOP, WHOLE_RECIPE, LISTENING, INGREDIENTS, RECEIVE_RECIPE_STEPS, RECEIVE_ALL_RECIPES }
 
 export const receiveRecipeSteps = (state) => {
     console.log("Inside receiveRecipeSteps")
@@ -118,6 +120,16 @@ export const ingredientsDispatch = (state) => {
     return (dispatch) => {
       dispatch ({
         type: INGREDIENTS,
+        payload: state
+      })
+    }
+}
+
+export const listeningDispatch = (state) => {
+    console.log("Inside listeningDispatch")
+    return (dispatch) => {
+      dispatch ({
+        type: LISTENING,
         payload: state
       })
     }

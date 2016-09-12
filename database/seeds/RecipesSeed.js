@@ -15,7 +15,7 @@ exports.seed = function(knex, Promise) {
           length: 3,
           whole_recipe_audio_path:'../audio/wholeRecipe.mp3',
           ingredients_audio_path:'../audio/ingredients.mp3',
-          image_path:'http://cook.sndimg.com/content/dam/images/cook/fullset/2012/9/24/0/CC-kelsey-nixon_grilled-cheese-sandwich-recipe-02_s4x3.jpg/jcr:content/renditions/cq5dam.web.266.200.jpeg'
+          image_path:'../images/cheese_sandwich.jpeg'
 
         }),
         knex('recipes').insert({
@@ -28,7 +28,7 @@ exports.seed = function(knex, Promise) {
           length: 3,
           whole_recipe_audio_path:'../audio/wholeRecipe.mp3',
           ingredients_audio_path:'../audio/ingredients.mp3',
-          image_path:'https://cdn.shopify.com/s/files/1/1043/3552/products/roast-chicken-with-apricot-stuffing_grande.jpeg?v=1457647233'
+          image_path:'../images/roast-chicken-with-apricot-stuffing_grande.jpeg'
         }),
         knex('recipes').insert({
           id: 2,
@@ -40,7 +40,7 @@ exports.seed = function(knex, Promise) {
           length: 3,
           whole_recipe_audio_path:'../audio/wholeRecipe.mp3',
           ingredients_audio_path:'../audio/ingredients.mp3',
-          image_path:'https://s-media-cache-ak0.pinimg.com/236x/18/e6/6f/18e66fd90df8201dbac873bcd8478ffd.jpg'
+          image_path:'../images/Prune_something.jpg'
         })
       ]);
     });

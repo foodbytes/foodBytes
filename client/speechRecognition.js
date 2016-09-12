@@ -38,7 +38,9 @@ module.exports = function speechRecogntion(props) {
 
 
   document.body.onclick = function() {
+    let { listening } = props.data
     recognition.start();
+    props.listeningDispatch(props.data.listening)
     console.log('Ready to receive a command.');
   }
 
@@ -105,7 +107,9 @@ module.exports = function speechRecogntion(props) {
   }
 
   recognition.onspeechend = function() {
+    let { listening } = props.data
     recognition.stop();
+    props.listeningDispatch(props.data.listening)
   }
 
   recognition.onnomatch = function(event) {
