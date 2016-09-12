@@ -48,12 +48,6 @@ class Recipe extends React.Component {
       PlayAudio(this.props)
     }
   }
-// let splitString = (stringToSplit, separator) => {
-//   let arrayOfStrings = stringToSplit.split(separator)
-//   }
-//
-// var atTheRate ='@'
-// const splitInstruction = splitString(instructions,atTheRate)
 
   /* This method gets the individual instruction and put it back to the <h3> tage  */
   getInstructions(instructions){
