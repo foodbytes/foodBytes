@@ -12,7 +12,7 @@
 //   }
 
  const transformJoin = (seedData)=> {
-   console.log('WOWOW',seedData);
+  //  console.log('WOWOW',seedData);
    let result = {id:null,
    name: null,
    description: null,
@@ -40,7 +40,7 @@
      prev.currentStep = row.currentStep
      prev.instructions.push(row.instructions)
      prev.audio_path.push(row.audio_path)
-     console.log("YAYAYA",prev);
+    //  console.log("YAYAYA",prev);
       return prev
 
    },result)
