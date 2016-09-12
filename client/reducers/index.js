@@ -16,7 +16,7 @@ const moveStep = (state, stepIncrement) => {
 
 }
 
-const START_STEP = 2
+const START_STEP = 0
 const isAtStart = (state) => state.currentStep === START_STEP  // NOTE: CHECK THIS
 const isAtEnd   = (state) => state.currentStep === state.length -1
 

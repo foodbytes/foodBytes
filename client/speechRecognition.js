@@ -12,13 +12,15 @@ module.exports = function speechRecogntion(props) {
   //contain our grammar using the SpeechGrammarList() constructor.
   let recognition = new SpeechRecognition();
   let speechRecognitionList = new SpeechGrammarList();
+  // let myContinuous = SpeechRecognition.continuous;
 
   speechRecognitionList.addFromString(grammar, 1);
   recognition.grammars = speechRecognitionList;
 
+  recognition.continuous = true;
   recognition.lang = 'en-US';
   recognition.interimResults = false;
-  recognition.maxAlternatives = 1;
+  recognition.maxAlternatives = 0;
 
   console.log('speechRecognition');
 
