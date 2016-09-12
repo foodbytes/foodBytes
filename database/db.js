@@ -5,7 +5,7 @@ let transformJoin = require('../helpers/transformjoin')
 
 const getRecipesTable =  ()=>{
 
-  return knex('recipes')
+  return knex('recipes').orderBy('id')
 }
 
 const getStepsTable =  (id)=>{

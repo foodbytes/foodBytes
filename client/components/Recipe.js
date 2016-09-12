@@ -69,6 +69,7 @@ class Recipe extends React.Component {
     return (
       <div className="jumbotron">
         {/* This is the placeholder the button */}
+        <h5>Available Commands: 'Next' 'Previous' 'Repeat'</h5>
         <h5>Click here and start talkin!</h5>
         <button id="speech">Start</button>
         <div className="row">
@@ -77,7 +78,6 @@ class Recipe extends React.Component {
               <h3>Food Bytes</h3>
             </div>
             <div>
-              <h5>Available Commands: 'Next' 'Previous' 'Repeat'</h5>
               <div onClick={this.handleClickNext}>
                 <button id="next" >Next</button>
               </div>
