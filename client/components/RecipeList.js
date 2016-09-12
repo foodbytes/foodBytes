@@ -6,13 +6,17 @@ import RecipeThumbnail from './RecipeThumbnail'
 class RecipeList extends Component {
 
   render () {
+
+    const { recipes } = this.props
+
+    console.log("say hello world",recipes);
     return (
       <div className="jumbotron">
         <div className="page-header">
           <h1 className="text-center">Recipes List</h1>
         </div>
         {
-          this.props.recipes.map(
+          recipes.map(
               (recipe)=> <RecipeThumbnail recipe={recipe} key={recipe.id}/>
           )
         }
@@ -23,19 +27,12 @@ class RecipeList extends Component {
 
 
 const mapStateToProps = (state) => {
-
-  console.log("this is the new state of the recipeList", state);
-  return {
-    // recipes: state.recipes
+  // return {
     // ultimately, the state should have an overview of all the recipes available. for the moment we've hard coded them in here
-    recipes: [{
-      id: 0,
-      name: "Grilled Cheese",
-    }, {
-      id: 1,
-      name: "Quesidilla",
-    }]
-  }
+  //   recipes: [state.recipe]
+  // }
+
+  return state.recipe
 }
 
 export default connect(

@@ -11,7 +11,7 @@ export default ({recipe}) => {
         </div>
         <div className=" col-xs-12 col-sm-6 col-md-9 col-lg-9">
           <h3>{recipe.name}</h3>
-          <span><h5>Indulge in an heavenly melt of cheese grilled in delicious slices</h5></span>
+          <span><h5>{recipe.description}</h5></span>
         </div>
       </Link>
     </div>

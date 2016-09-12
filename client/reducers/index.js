@@ -59,7 +59,7 @@ const recipe = (state = initialState, action) => {
       return newState
 
     case RECEIVE_ALL_RECIPES:
-    return Object.assign({}, action.payload)
+    return Object.assign({}, {recipes: [...action.payload]})
 
     default:
       return state
