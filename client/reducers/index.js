@@ -49,7 +49,7 @@ const recipe = (state = initialState, action) => {
 
     case REPEAT:
       console.log('Inside REPEAT');
-      return Object.assign({}, {audio_path: state.audio_path}, {playing: true}, {currentStep: state.currentStep})
+      return Object.assign({}, state, {audio_path: state.audio_path}, {playing: true}, {currentStep: state.currentStep})
 
     case WHOLE_RECIPE:
       console.log('Inside WHOLE_RECIPE');

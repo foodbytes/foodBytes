@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux'
 import { nextDispatch, previousDispatch, repeatDispatch, stopDispatch, fetchRecipe, wholeRecipeDispatch, ingredientsDispatch, listeningDispatch } from '../actions/actionCreators'
 
 import { connect } from 'react-redux'
-import PlayAudio from './PlayAudio'
+import Audio from './Audio'
 
 
 
