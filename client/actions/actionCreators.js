@@ -55,7 +55,7 @@ export const fetchRecipes = () => {
         return
       }
 
-      console.log("getting the full recipes from the api", res.text);
+      // console.log("getting the full recipes from the api", res.text);
       // This will get all the recipes from the api
       dispatch(receiveAllRecipes(JSON.parse(res.text)))
       // in this case, the doLater = the speech recognition thing that should be activated
