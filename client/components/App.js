@@ -5,6 +5,7 @@ import { fetchRecipes } from '../actions/actionCreators'
 import { Router, Route, hashHistory, Link } from 'react-router'
 import RecipeList from './RecipeList'
 import Nav from './layout/Nav';
+import playAudio from './AudioTest'
 
 class App extends Component {
 
@@ -29,6 +30,7 @@ class App extends Component {
   }
 
 }
+
 
 const mapStateToProps = (state) => {
   return {

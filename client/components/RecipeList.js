@@ -28,13 +28,7 @@ class RecipeList extends Component {
   }
 }
 
-
 const mapStateToProps = (state) => {
-  // return {
-    // ultimately, the state should have an overview of all the recipes available. for the moment we've hard coded them in here
-  //   recipes: [state.recipe]
-  // }
-
   return state.recipe
 }
 
