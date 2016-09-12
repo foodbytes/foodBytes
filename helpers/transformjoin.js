@@ -12,7 +12,7 @@
 //   }
 
  const transformJoin = (seedData)=> {
-   console.log('WOWOW',seedData);
+  //  console.log('WOWOW',seedData);
    let result = {id:null,
    name: null,
    description: null,
@@ -22,6 +22,7 @@
    length: 0,
    whole_recipe_audio_path: null,
    ingredients_audio_path: null,
+   image_path: null,
    currentStep:0,
    instructions:[],
    audio_path:[]}
@@ -35,14 +36,16 @@
      prev.length = row.length
      prev.whole_recipe_audio_path = row.whole_recipe_audio_path
      prev.ingredients_audio_path = row.ingredients_audio_path
+     prev.image_path = row.image_path
      prev.currentStep = row.currentStep
      prev.instructions.push(row.instructions)
      prev.audio_path.push(row.audio_path)
-     console.log("YAYAYA",prev);
+    //  console.log("YAYAYA",prev);
       return prev
 
    },result)
 
 
 }
+
 module.exports = transformJoin

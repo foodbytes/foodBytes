@@ -17,6 +17,8 @@ class Recipe extends React.Component {
     this.handleClickNext = this.handleClickNext.bind(this)
     this.handleClickPrevious = this.handleClickPrevious.bind(this)
     this.handleClickRepeat = this.handleClickRepeat.bind(this)
+    this.handleClickIngredients = this.handleClickIngredients.bind(this)
+    this.handleClickWholeRecipe = this.handleClickWholeRecipe.bind(this)
   }
 
   handleClickNext() {
@@ -28,7 +30,15 @@ class Recipe extends React.Component {
   }
 
   handleClickRepeat() {
-    this.props.RepeatDispatch(this.props.data.audio_path)
+    this.props.repeatDispatch(this.props.data.audio_path)
+  }
+
+  handleClickIngredients() {
+    this.props.ingredientsDispatch(this.props.data.audio_path)
+  }
+
+  handleClickWholeRecipe() {
+    this.props.wholeRecipeDispatch(this.props.data.audio_path)
   }
 
   checkReady(){
@@ -42,9 +52,23 @@ class Recipe extends React.Component {
   /* This method gets the individual instruction and put it back to the <h3> tage  */
   getInstructions(instructions){
     if (instructions !== undefined){
-      return instructions.map((ingredient) => ingredient)
+      return instructions.map((instruction, i) => {
+         return <li key={i}> {instruction.split(',')}</li>
+      })
     }
   }
+
+  getIngredients(ingredients){
+
+    if(ingredients){
+      const ingredientArray = ingredients.split('@')
+      console.log(ingredientArray);
+      return ingredientArray.map((ingredient, i) => {
+         return <li key={i}> {ingredient.split(',')}</li>
+      })
+    }
+  }
+
 
   componentDidMount () {
     const { fetchRecipe } = this.props
@@ -64,20 +88,20 @@ class Recipe extends React.Component {
     // destroy the listeners
   }
 
+
   render(){
-    const { cooking_time, ingredients, instructions } = this.props.data
+    const { cooking_time, ingredients, instructions, image_path } = this.props.data
+    // console.log("Ohh yeah", ingredients);
     return (
       <div className="jumbotron">
         {/* This is the placeholder the button */}
+        <h5>Available Commands: 'Next' 'Previous' 'Repeat'</h5>
         <h5>Click here and start talkin!</h5>
         <button id="speech">Start</button>
+        <h5>Available Commands: 'Next' 'Previous' 'Repeat'</h5>
         <div className="row">
           <div className="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-            <div className="caption text-center">
-              <h3>Food Bytes</h3>
-            </div>
             <div>
-              <h5>Available Commands: 'Next' 'Previous' 'Repeat'</h5>
               <div onClick={this.handleClickNext}>
                 <button id="next" >Next</button>
               </div>
@@ -87,15 +111,29 @@ class Recipe extends React.Component {
               <div onClick={this.handleClickRepeat}>
                 <button id="Repeat" >Repeat</button>
               </div>
+              <div onClick={this.handleClickWholeRecipe}>
+                <button id="Whole Recipe" >Whole Recipe</button>
+              </div>
+              <div onClick={this.handleClickIngredients}>
+                <button id="Ingredients" >Ingredients</button>
+              </div>
             </div>
            <div className="thumbnail">
-             <img src="http://cook.sndimg.com/content/dam/images/cook/fullset/2012/9/24/0/CC-kelsey-nixon_grilled-cheese-sandwich-recipe-02_s4x3.jpg/jcr:content/renditions/cq5dam.web.266.200.jpeg" alt="sandwich" ></img>
+            <img width ='300'height ='200'src={`${image_path}`} alt="sandwich"></img>
            </div>
           </div>
         </div>
         <h3>Cook time: {cooking_time}</h3>
-        <h3>Ingredients: {ingredients}</h3>
-        <h3>Instructions:{this.getInstructions(instructions)} </h3>
+        <div>Ingredients
+          <ul>
+           {this.getIngredients(ingredients)}
+          </ul>
+        </div>
+        <div>Method
+        <ul>
+          {this.getInstructions(instructions)}
+          </ul>
+        </div>
         {this.checkReady()}
       </div>
     )

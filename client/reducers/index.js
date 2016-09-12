@@ -8,6 +8,7 @@ const moveStep = (state, stepIncrement) => {
   console.log("the state inside moveStep", state);
   return Object.assign(
     {},
+    state,
     {audio_path: state.audio_path},
     {playing: true},
     {currentStep: state.currentStep + stepIncrement}
@@ -50,12 +51,13 @@ const recipe = (state = initialState, action) => {
 
     case WHOLE_RECIPE:
       console.log('Inside WHOLE_RECIPE');
-      return Object.assign({}, {audio_path: state.audio_path}, {playing: true}, {currentStep: state.currentStep})
+      return Object.assign({}, {audio_path: state.whole_recipe_audio_path}, {playing: true}, {currentStep: 0})
 
 
     case INGREDIENTS:
       console.log('Inside INGREDIENTS');
-      return Object.assign({}, {audio_path: state.audio_path}, {playing: true}, {currentStep: state.currentStep})
+      return Object.assign({}, {audio_path: state.ingredients_audio_path}, {playing: true}, {currentStep: 0})
+
 
     case RECEIVE_ALL_RECIPES:
     return Object.assign({}, {recipes: [...action.payload]})
@@ -64,10 +66,6 @@ const recipe = (state = initialState, action) => {
       return state
   }
 }
-
-
-
-
 
 const reducer = combineReducers({
   recipe,

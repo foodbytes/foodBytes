@@ -49,22 +49,52 @@ module.exports = function speechRecogntion(props) {
     var command = event.results[0][0].transcript;
     switch (command) {
        case NEXT:
+       case 'cc next':
+       case "cc's next":
+       case 'see sea next':
+       case 'sea sea next':
+       case 'si si next':
+       case 'dc next':
          props.nextDispatch(props.data.audio_path)
          break;
 
        case PREVIOUS:
+       case 'cc previous':
+       case "cc's previous":
+       case 'see sea previous':
+       case 'sea sea previous':
+       case 'si si previous':
+       case 'dc previous':
          props.previousDispatch(props.data.audio_path)
          break;
 
        case REPEAT:
+       case 'cc repeat':
+       case "cc's repeat":
+       case 'see sea repeat':
+       case 'sea sea repeat':
+       case 'si si repeat':
+       case 'dc repeat':
          props.repeatDispatch(props.data.audio_path)
          break;
 
        case WHOLE_RECIPE:
+       case 'cc whole recipe':
+       case "cc's whole recipe":
+       case 'see sea whole recipe':
+       case 'sea sea recipe':
+       case 'si si recipe':
+       case 'dc recipe':
          props.wholeRecipeDispatch(props.data.audio_path)
          break;
 
        case INGREDIENTS:
+       case 'cc ingredients':
+       case "cc's ingredients":
+       case 'see sea ingredients':
+       case 'sea sea ingredients':
+       case 'si si ingredients':
+       case 'dc ingredients':
          props.ingredientsDispatch(props.data.audio_path)
          break;
 
