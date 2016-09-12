@@ -69,9 +69,7 @@ class Recipe extends React.Component {
     return (
       <div className="jumbotron">
         {/* This is the placeholder the button */}
-        <div className="caption text-center">
-          <h3>Food Bytes</h3>
-        </div>
+        <h5>Available Commands: 'Next' 'Previous' 'Repeat'</h5>
         <h5>Click here and start talkin!</h5>
         <button id="speech">Start</button>
         <h5>Available Commands: 'Next' 'Previous' 'Repeat'</h5>
