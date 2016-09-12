@@ -18,7 +18,7 @@ module.exports = function speechRecogntion(props) {
   recognition.grammars = speechRecognitionList;
 
   recognition.continuous = true;
-  recognition.lang = 'en-US';
+  recognition.lang = 'en-NZ';
   recognition.interimResults = false;
   recognition.maxAlternatives = 0;
 
@@ -41,7 +41,8 @@ module.exports = function speechRecogntion(props) {
 
   document.body.onclick = function() {
     recognition.start();
-    console.log('Ready to receive a command.');
+    console.log('I have been clicked and started recognition');
+    console.log('recognition continuous?', recognition.continuous)
   }
 
   recognition.onresult = function(event) {
@@ -107,7 +108,8 @@ module.exports = function speechRecogntion(props) {
   }
 
   recognition.onspeechend = function() {
-    recognition.stop();
+    console.log('stopping SpeechRecognition')
+    // recognition.stop();
   }
 
   recognition.onnomatch = function(event) {
