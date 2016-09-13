@@ -15,12 +15,12 @@ class Audio extends React.Component {
   }
 
   render() {
-    const {audio_path, playing} = this.props
+    const {active_audio_path, playing} = this.props
 
     return (
       <div className="hidden">
         <ReactPlayer
-          url={audio_path}
+          url={active_audio_path}
           playing={playing}
           onStart={this.stopListening.bind(this)}
           onEnded={this.startListening.bind(this)}
