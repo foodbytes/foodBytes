@@ -114,59 +114,51 @@ class Recipe extends React.Component {
     const { cooking_time, ingredients, instructions, image_path } = this.props.data
     // console.log("Ohh yeah", ingredients);
     return (
-      <div className="jumbotron">
+      <div className="container">
+          <div className="row ">
         <Listner />
-        <div className="row well">
-          <div className= "col-xs-12 col-sm-6 col-md-3 col-lg-3"></div>
-            <div className= "col-xs-12 col-sm-6 col-md-6 col-lg-7">
-            <h5>Available Commands: 'Next' 'Previous' 'Repeat'</h5>
-            <h5>Click here and start talkin!</h5>
             <button onClick={this.startListening} id="speech" >Start</button>
-            <h5>Available Commands: 'Next' 'Previous' 'Repeat'</h5>
             {this.isListening()}
+              <div className="commands">
+                  <a className="">Available commands:</a>
+                  <a type ="button" className="btn" onClick={this.handleClickNext} id="next">Next</a>
+                  <a type ="button" className="btn" onClick={this.handleClickPrevious} id="Previous">Previous</a>
+                  <a type ="button" className="btn" onClick={this.handleClickRepeat} id="Repeat">Repeat</a>
+                  <a type ="button" className="btn" onClick={this.handleClickIngredients} id="Ingredients">Ingredients</a>
+                  <a type ="button" className="btn" onClick={this.handleClickWholeRecipe} id="Whole Recipe">Whole Recipe</a>
+              </div>
           </div>
-          <div className= "col-xs-12 col-sm-6 col-md-3 col-lg-3"></div>
-        </div>
 
-        <div className="row well">
-        <div className= "col-xs-12 col-sm-2 col-md-3 col-lg-3"></div>
-          <div className="col-xs-12 col-sm-8 col-md-6 col-lg-6">
-            <div className="btn-group-justified">
-                <button onClick={this.handleClickNext} id="next" >Next</button>
-                <button onClick={this.handleClickPrevious} id="Previous" >Previous</button>
-                <button onClick={this.handleClickRepeat} id="Repeat" >Repeat</button>
-                <button onClick={this.handleClickStop} id="Stop" >Stop</button>
-                <button onClick={this.handleClickWholeRecipe} id="Whole Recipe" >Whole Recipe</button>
-                <button onClick={this.handleClickIngredients} id="Ingredients" >Ingredients</button>
-            </div>
-            <div className= "col-xs-12 col-sm-2 col-md-3 col-lg-3"></div>
-          </div>
-        </div>
-
+          <div className="jumbotron">
         <div className="row well">
           <div className= "col-xs-12 col-sm-2 col-md-3 col-lg-3">
             <div className="thumbnail">
               <img width ='300'height ='200'src={`${image_path}`} alt="sandwich"></img>
             </div>
           </div>
-          <div className="col-xs-12 col-sm-8 col-md-6 col-lg-6">
+          <div className=" well col-xs-12 col-sm-6 col-md-5 col-lg-6">
 
-                <h3>Cook time: {cooking_time}</h3>
-                <div>Ingredients
+                <h3>Cook time</h3>
+                <h5>{cooking_time}</h5>
+                <div>
+                  <h3>Ingredients</h3>
                   <ul>
                    {this.getIngredients(ingredients)}
                   </ul>
                 </div>
-                <div>Method
+                <div>
+                  <h3>Method</h3>
                   <ul>
                   {this.getInstructions(instructions)}
                   </ul>
                 </div>
                 {this.checkReady()}
-                <div className= "col-xs-12 col-sm-2 col-md-3 col-lg-3"></div>
+                <div className= "col-xs-12 col-sm-6 col-md-3 col-lg-3"></div>
+         </div>
         </div>
       </div>
     </div>
+
     )
   }
 }
