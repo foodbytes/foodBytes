@@ -2,7 +2,6 @@ let knexConfig = require('../knexfile').development;
 let knex = require('knex')(knexConfig);
 let transformJoin = require('../helpers/transformjoin')
 
-
 const getRecipesTable =  ()=>{
 
   return knex('recipes').orderBy('id')

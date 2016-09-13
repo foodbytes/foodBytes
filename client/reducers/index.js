@@ -5,7 +5,6 @@ import { routerReducer } from 'react-router-redux'
 
 
 const moveStep = (state, stepIncrement) => {
-  console.log("the state inside moveStep", state);
   return Object.assign(
     {},
     state,
@@ -27,7 +26,7 @@ const recipe = (state = initialState, action) => {
   switch (action.type){
 
     case RECEIVE_RECIPE_STEPS:
-      length = action.payload.instructions.length
+      length = action.payload.steps_audio_path.length
       let apiData = Object.assign({}, action.payload, {length: length}, {currentStep: 0})
 
       return Object.assign({}, state, apiData)
@@ -49,7 +48,7 @@ const recipe = (state = initialState, action) => {
     case REPEAT:
       console.log('Inside REPEAT');
 
-      return Object.assign({}, state, {active_audio_path: state.steps_audio_path}, {playing: true}, {currentStep: state.currentStep})
+      return Object.assign({}, state, {playing: true}, {currentStep: state.currentStep})
 
     case WHOLE_RECIPE:
       console.log('Inside WHOLE_RECIPE');
