@@ -44,7 +44,7 @@ class Home extends Component {
           <div className="col-xs-12 col-sm-6 col-md-2 col-lg-4"></div>
           <div className="well col-xs-12 col-sm-6 col-md-4 col-lg-4">
            <div className="embed-responsive embed-responsive-16by9">
-           <iframe className="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/y9N2yFDaQ_8" frameborder="0" allowFullScreen></iframe>
+           <iframe className="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/y9N2yFDaQ_8" frameBorder="0" allowFullScreen></iframe>
            </div>
           </div>
          </div>

@@ -10,5 +10,6 @@ export const initialState = {
     instructions:[],
     audio_path:[],
     playing: false
-  }
+  },
+  routing: { locationBeforeTransitions: null }
 }
