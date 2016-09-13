@@ -48,10 +48,17 @@ class Recipe extends React.Component {
     this.props.wholeRecipeDispatch(this.props.data.audio_path)
   }
 
-  checkReady(){
-    const { playing } = this.props.data
-    if (playing !== undefined) {
-      return <Audio currentStep={this.props.data.currentStep} audio_path={this.props.data.audio_path[this.props.data.currentStep - 1]} playing={playing}/>
+  checkAudioReady(){
+    const { playing, currentStep, audio_path, whole_recipe_ingredients_audio_path } = this.props.data
+
+    // This case for an array of paths
+    if (audio_path !== undefined && whole_recipe_ingredients_audio_path === '') {
+      return <Audio currentStep={currentStep} audio_path={audio_path[currentStep - 1]} playing={playing}/>
+    }
+
+    // Here is for the whole or ingredients audio path
+     else if (whole_recipe_ingredients_audio_path !== undefined){
+      return <Audio currentStep={currentStep} audio_path={whole_recipe_ingredients_audio_path} playing={playing}/>
     }
   }
 
@@ -99,7 +106,7 @@ class Recipe extends React.Component {
     if (this.props.data.listening !== true){
       console.log(this.props.data.listening)
       return <img src='../images/not_listening.png' alt='not_listening_red' />
-    }else {
+    } else {
       console.log(this.props.data.listening)
       return <img src='../images/listening.png' alt='listening_green' />
     }
@@ -156,7 +163,7 @@ class Recipe extends React.Component {
                   {this.getInstructions(instructions)}
                   </ul>
                 </div>
-                {this.checkReady()}
+                {this.checkAudioReady()}
                 <div className= "col-xs-12 col-sm-2 col-md-3 col-lg-3"></div>
         </div>
       </div>
