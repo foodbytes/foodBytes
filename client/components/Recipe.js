@@ -115,8 +115,9 @@ class Recipe extends React.Component {
     const { cooking_time, ingredients, instructions, image_path } = this.props.data
     // console.log("Ohh yeah", ingredients);
     return (
+      <div>
       <div className="container">
-          <div className="row ">
+          <div className="row well">
               <div className="commands">
                   <a className="">Available commands:</a>
                   <a type ="button" className="btn" onClick={this.handleClickNext} id="next">Next</a>
@@ -127,41 +128,33 @@ class Recipe extends React.Component {
               </div>
           </div>
 
+          <div className="row"></div>
           <div className="jumbotron">
-
-        <div className="row well">
-        <div className= "col-xs-12 col-sm-6 col-md-3 col-lg-2">
-          {this.isListening()}
-          </div>
-        </div>
-
-        <div className="row well">
-          <div className= " well col-xs-12 col-sm-6 col-md-3 col-lg-3">
-            <img width ='300'height ='200'src={`${image_path}`} alt="sandwich"></img>
-          </div>
-          <div className=" well col-xs-12 col-sm-6 col-md-5 col-lg-6">
-
+            <div className="row well">
+              <div className= "col-xs-12 col-sm-6 col-md-3 col-lg-2">{this.isListening()}</div>
+            </div>
+            <div className="row well">
+              <div className= " well col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                <img width ='300'height ='200'src={`${image_path}`} alt="sandwich"></img>
+              </div>
+              <div className=" well col-xs-12 col-sm-6 col-md-5 col-lg-6">
                 <h3>Cook time</h3>
                 <h5>{cooking_time}</h5>
                 <div>
                   <h3>Ingredients</h3>
-                  <ul>
-                   {this.getIngredients(ingredients)}
-                  </ul>
+                  <ul>{this.getIngredients(ingredients)}</ul>
                 </div>
                 <div>
                   <h3>Method</h3>
-                  <ul>
-                  {this.getInstructions(instructions)}
-                  </ul>
+                  <ul>{this.getInstructions(instructions)}</ul>
                 </div>
                 {this.checkReady()}
                 <div className= "col-xs-12 col-sm-6 col-md-3 col-lg-3"></div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    </div>
-
+        </div>
     )
   }
 }

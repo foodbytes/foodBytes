@@ -9,10 +9,22 @@ body {
 
 }
 
+
+.commands{
+  position:fixed;
+  z-index: 999;
+  background-color: black;
+  a{
+    margin:2px;
+    color:black;
+  }
+}
 .jumbotron{
-  background-color: white;
+  // background-color: white;
   border: none;
+  .header-fix{
   padding-top: 0px;
+  }
 }
 
 .page-header{
@@ -20,12 +32,12 @@ body {
   margin-top: 10px;
 }
 
-.nav{
-  margin: 10px;
-  padding: 10px;
-  padding-top: 10px;
-  border-bottom: 0;
-}
+// .nav{
+//   margin: 10px;
+//   padding: 10px;
+//   padding-top: 10px;
+//   border-bottom: 0;
+// }
 
 .navli{
 
@@ -37,15 +49,6 @@ button{
 }
 }
 
-.commands{
-  position:fixed;
-  z-index: 888;
-  background-color: white;
-  a{
-    margin:2px;
-    color:black;
-  }
-}
 
 .well{
   border: none;

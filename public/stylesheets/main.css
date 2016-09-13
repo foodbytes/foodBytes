@@ -5,20 +5,22 @@ body {
   body a {
     color: #00B7FF; }
 
+.commands {
+  position: fixed;
+  z-index: 999;
+  background-color: black; }
+  .commands a {
+    margin: 2px;
+    color: black; }
+
 .jumbotron {
-  background-color: white;
-  border: none;
-  padding-top: 0px; }
+  border: none; }
+  .jumbotron .header-fix {
+    padding-top: 0px; }
 
 .page-header {
   border-bottom: 0;
   margin-top: 10px; }
-
-.nav {
-  margin: 10px;
-  padding: 10px;
-  padding-top: 10px;
-  border-bottom: 0; }
 
 .navli {
   background-color: white; }
@@ -26,14 +28,6 @@ body {
     margin: 5px;
     color: black;
     background-color: aqua; }
-
-.commands {
-  position: fixed;
-  z-index: 888;
-  background-color: white; }
-  .commands a {
-    margin: 2px;
-    color: black; }
 
 .well {
   border: none;
