@@ -12,7 +12,7 @@ import Listener from './Listener'
 
 class Recipe extends React.Component {
 
-  //const id = this.props.params.id
+
   /* Checks if the data ready and if so then will create audio component and play the audio */
   constructor (props) {
     super(props)
@@ -30,28 +30,28 @@ class Recipe extends React.Component {
   }
 
   handleClickNext() {
-    let id = this.props.params.id
-    this.props.nextDispatch(this.props.data.steps_audio_path)
+    this.props.nextDispatch(this.props.data.audio_path)
   }
 
   handleClickPrevious() {
-    this.props.previousDispatch(this.props.data.steps_audio_path)
+    this.props.previousDispatch(this.props.data.audio_path)
   }
 
   handleClickRepeat() {
-    this.props.repeatDispatch(this.props.data.steps_audio_path)
+    this.props.repeatDispatch(this.props.data.audio_path)
   }
 
+  /* this method will stop the audio from being played*/
   handleClickStop() {
-    this.props.stopDispatch(this.props.data.steps_audio_path)
+    this.props.stopDispatch(this.props.data.audio_path)
   }
 
   handleClickIngredients() {
-    this.props.ingredientsDispatch(this.props.data.steps_audio_path)
+    this.props.ingredientsDispatch(this.props.data.audio_path)
   }
 
   handleClickWholeRecipe() {
-    this.props.wholeRecipeDispatch(this.props.data.steps_audio_path)
+    this.props.wholeRecipeDispatch(this.props.data.audio_path)
   }
 
   checkReady(){
@@ -62,7 +62,6 @@ class Recipe extends React.Component {
         return <Audio active_audio_path={this.props.data.active_audio_path} playing={playing}/>
       }
       return <Audio active_audio_path={this.props.data.active_audio_path[this.props.data.currentStep - 1]} playing={playing}/>
-
     }
   }
 
@@ -76,8 +75,10 @@ class Recipe extends React.Component {
   }
 
   getIngredients(ingredients){
+
     if(ingredients){
       const ingredientArray = ingredients.split('@')
+
       return ingredientArray.map((ingredient, i) => {
         return <li key={i}> {ingredient}</li>
       })
@@ -87,7 +88,7 @@ class Recipe extends React.Component {
 
   componentDidMount () {
     const { fetchRecipe } = this.props
-    let id = this.props.params.id
+    const id = this.props.params.id
 
     fetchRecipe(id)
     // go to the api, get recipes
