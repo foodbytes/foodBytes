@@ -19,15 +19,6 @@ body {
   border-bottom: 0;
   margin-top: 10px;
 }
-/*
-.row.content{
-
-margin:10px;
-padding: 5px;
-
-}
-*/
-
 
 .nav{
   margin: 10px;
@@ -35,17 +26,31 @@ padding: 5px;
   padding-top: 10px;
   border-bottom: 0;
 }
-/* adds padding to navigation links on header*/
+
 .navli{
-  padding:5px;
+
+background-color: white;
+button{
+  margin:5px;
+  color:black;
+  background-color: aqua;
+}
 }
 
-/*
+.commands{
+  position:fixed;
+  z-index: 888;
+  background-color: white;
+  a{
+    margin:2px;
+    color:black;
+  }
+}
+
 .well{
   border: none;
   background-color: white;
 }
-*/
 
 .recipeImage{
   margin: auto;
@@ -61,7 +66,6 @@ padding: 5px;
       text-align: center;
     }
   }
-
 
 .thumbnail{
   border: none;
