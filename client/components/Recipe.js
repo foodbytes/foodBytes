@@ -174,9 +174,18 @@ class Recipe extends React.Component {
 const mapDispatchToProps = (dispatch) => {
   //bindActionCreators is unknown. keep in mind
   return bindActionCreators(
-    { nextDispatch,  previousDispatch, repeatDispatch, stopDispatch, fetchRecipe, wholeRecipeDispatch, ingredientsDispatch, listeningDispatch },
-    dispatch
-  )
+    {
+      nextDispatch,
+      previousDispatch,
+      repeatDispatch,
+      stopDispatch,
+      fetchRecipe,
+      wholeRecipeDispatch,
+      ingredientsDispatch,
+      listeningDispatch
+    },
+      dispatch
+    )
 }
 
 const mapStateToProps = (state) => {
