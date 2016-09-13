@@ -29,33 +29,33 @@ class Recipe extends React.Component {
   }
 
   handleClickPrevious() {
-    this.props.previousDispatch(this.props.data.audio_path)
+    this.props.previousDispatch(this.props.data.steps_audio_path)
   }
 
   handleClickRepeat() {
-    this.props.repeatDispatch(this.props.data.audio_path)
+    this.props.repeatDispatch(this.props.data.steps_audio_path)
   }
 
   handleClickStop() {
-    this.props.stopDispatch(this.props.data.audio_path)
+    this.props.stopDispatch(this.props.data.steps_audio_path)
   }
 
   handleClickIngredients() {
-    this.props.ingredientsDispatch(this.props.data.audio_path)
+    this.props.ingredientsDispatch(this.props.data.steps_audio_path)
   }
 
   handleClickWholeRecipe() {
-    this.props.wholeRecipeDispatch(this.props.data.audio_path)
+    this.props.wholeRecipeDispatch(this.props.data.steps_audio_path)
   }
 
   checkReady(){
     const { playing } = this.props.data
     if (playing !== undefined) {
-      console.log('This is the data before Audio ', this.props.data);
-      if (typeof(this.props.data.audio_path) === 'string') {
-      return <Audio currentStep={this.props.data.currentStep} audio_path={this.props.data.audio_path} playing={playing}/>
+      console.log('This is the data before Audio ', this.props.data.active_audio_path);
+      if (typeof(this.props.data.active_audio_path) === 'string') {
+      return <Audio currentStep={this.props.data.currentStep} active_audio_path={this.props.data.active_audio_path} playing={playing}/>
       }
-      return <Audio currentStep={this.props.data.currentStep} audio_path={this.props.data.audio_path[this.props.data.currentStep - 1]} playing={playing}/>
+      return <Audio currentStep={this.props.data.currentStep} active_audio_path={this.props.data.active_audio_path[this.props.data.currentStep - 1]} playing={playing}/>
 
     }
   }
@@ -70,7 +70,6 @@ class Recipe extends React.Component {
   }
 
   getIngredients(ingredients){
-
     if(ingredients){
       const ingredientArray = ingredients.split('@')
       return ingredientArray.map((ingredient, i) => {

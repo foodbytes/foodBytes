@@ -9,7 +9,7 @@ const moveStep = (state, stepIncrement) => {
   return Object.assign(
     {},
     state,
-    {audio_path: state.audio_path},
+    {active_audio_path: state.steps_audio_path},
     {playing: true},
     {currentStep: state.currentStep + stepIncrement}
   )
@@ -18,7 +18,7 @@ const moveStep = (state, stepIncrement) => {
 
 const START_STEP = 0
 const isAtStart = (state) => state.currentStep === START_STEP  // NOTE: CHECK THIS
-const isAtEnd   = (state) => state.currentStep === state.length -1
+const isAtEnd   = (state) => state.currentStep === state.length
 
 
 const recipe = (state = initialState, action) => {
@@ -33,7 +33,7 @@ const recipe = (state = initialState, action) => {
       return Object.assign({}, state, apiData)
 
     case NEXT:
-      if (isAtEnd(state) && typeof(state.audio_path)!=='string') return state
+      if (isAtEnd(state) && typeof(active_audio_path)!=='string') return state
 
       return moveStep(state, 1)
 
@@ -43,22 +43,22 @@ const recipe = (state = initialState, action) => {
       return moveStep(state, -1)
 
     case STOP:
-      return Object.assign({},state,{audio_path: state.audio_path},{playing: false},{currentStep: state.currentStep})
+      return Object.assign({},state,{playing: false})
 
 
     case REPEAT:
       console.log('Inside REPEAT');
 
-      return Object.assign({}, state, {audio_path: state.audio_path}, {playing: true}, {currentStep: state.currentStep})
+      return Object.assign({}, state, {active_audio_path: state.steps_audio_path}, {playing: true}, {currentStep: state.currentStep})
 
     case WHOLE_RECIPE:
       console.log('Inside WHOLE_RECIPE');
-      return Object.assign({}, state, {audio_path: state.whole_recipe_audio_path}, {playing: true})
+      return Object.assign({}, state, {active_audio_path: state.whole_recipe_audio_path}, {playing: true})
 
 
     case INGREDIENTS:
       console.log('Inside INGREDIENTS');
-      return Object.assign({}, state, {audio_path: state.ingredients_audio_path}, {playing: true})
+      return Object.assign({}, state, {active_audio_path: state.ingredients_audio_path}, {playing: true})
 
 
     case RECEIVE_ALL_RECIPES:

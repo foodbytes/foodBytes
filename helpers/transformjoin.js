@@ -8,7 +8,7 @@
 //     length: 0,
 //     currentStep:0,
 //     instructions:['step one', 'step two', 'step three'],
-//     audio_path:['../audio/stepOne.mp3', '../audio/stepTwo.mp3', '../audio/stepThree.mp3']
+//     steps_audio_path:['../audio/stepOne.mp3', '../audio/stepTwo.mp3', '../audio/stepThree.mp3']
 //   }
 
  const transformJoin = (seedData)=> {
@@ -24,7 +24,9 @@
    image_path: null,
    currentStep:0,
    instructions:[],
-   audio_path:[]}
+   steps_audio_path:[]
+ }
+
    return seedData.reduce((prev,row)=>{
      prev.id = row.recipe_id
      prev.name = row.name
@@ -38,7 +40,7 @@
      prev.image_path = row.image_path
      prev.currentStep = row.currentStep
      prev.instructions.push(row.instructions)
-     prev.audio_path.push(row.audio_path)
+     prev.steps_audio_path.push(row.steps_audio_path)
       return prev
 
    },result)
