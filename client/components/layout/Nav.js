@@ -6,8 +6,8 @@ class Nav extends Component{
   render(){
     return(
       <ul className="nav nav-tabs">
-        <li role="presentation" className="navli"><Link to="/">Home</Link></li>
-        <li role="presentation" className="navli contents"><Link to="/recipes">Recipes</Link></li>
+        <li role="presentation" className="navli home"><Link to="/">Home</Link></li>
+        <li role="presentation" className="navli recipes"><Link to="/recipes">Recipes</Link></li>
       </ul>
     )
   }
