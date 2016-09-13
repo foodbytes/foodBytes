@@ -25,7 +25,7 @@ test('reducer with basic PREVIOUS action', t=> {
         "Step Two: Heat a fry pan to a hot temperature",
         "Step Three: Heat one tablespoon of butter in the fry pan"
       ],
-      audio_path: [
+      steps_audio_path: [
         "../audio/stepOne.mp3",
         "../audio/stepTwo.mp3",
         "../audio/stepThree.mp3"
@@ -39,7 +39,7 @@ test('reducer with basic PREVIOUS action', t=> {
   var expectedState = {
 
       recipe: {
-        audio_path: [ '../audio/stepOne.mp3', '../audio/stepTwo.mp3', '../audio/stepThree.mp3' ],
+        steps_audio_path: [ '../audio/stepOne.mp3', '../audio/stepTwo.mp3', '../audio/stepThree.mp3' ],
         cooking_time: '10 mins',
         currentStep: 1,
         description: 'Indulge in an heavenly melt of cheese grilled in delicious slices',
