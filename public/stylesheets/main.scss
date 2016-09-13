@@ -1,5 +1,6 @@
 body {
   padding: 50px;
+  padding-top: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 
   a {
@@ -11,29 +12,60 @@ body {
 .jumbotron{
   background-color: white;
   border: none;
-}
-.row.content{
-
-margin:10px;
-padding: 5px;
-
+  padding-top: 0px;
 }
 
-
+.page-header{
+  border-bottom: 0;
+  margin-top: 10px;
+}
 
 .nav{
   margin: 10px;
   padding: 10px;
+  padding-top: 10px;
+  border-bottom: 0;
 }
-/* adds padding to navigation links on header*/
+
 .navli{
-  padding:5px;
+
+background-color: white;
+button{
+  margin:5px;
+  color:black;
+  background-color: aqua;
+}
+}
+
+.commands{
+  position:fixed;
+  z-index: 888;
+  background-color: white;
+  a{
+    margin:2px;
+    color:black;
+  }
 }
 
 .well{
   border: none;
   background-color: white;
 }
+
+.recipeImage{
+  margin: auto;
+  align-items: flex-end;
+}
+
+/*responsive design, text centers on small screens*/
+.recipeDescription{
+  text-align: left;
+  }
+  @media only screen and (max-width: 641px){
+    .recipeDescription{
+      text-align: center;
+    }
+  }
 
 .thumbnail{
   border: none;

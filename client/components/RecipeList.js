@@ -20,7 +20,7 @@ class RecipeList extends Component {
     return (
       <div className="jumbotron">
         <div className="page-header">
-          <h1 className="text-center">Recipes List</h1>
+          <h1 className="text-center">Recipes</h1>
         </div>
         {this.getRecipes(recipes)}
       </div>

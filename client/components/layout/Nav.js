@@ -5,10 +5,11 @@ class Nav extends Component{
 
   render(){
     return(
-      <ul className="nav nav-tabs">
-        <li role="presentation" className="navli home"><Link to="/">Home</Link></li>
-        <li role="presentation" className="navli recipes"><Link to="/recipes">Recipes</Link></li>
-      </ul>
+      <div className=" nav navbar-fixed-top navli">
+      <Link to="/"><button  role="presentation" className=" home btn btn-md">Home</button></Link>
+      <Link to="/recipes"><button role="presentation" className=" recipes btn btn-md">Recipes</button></Link>
+
+    </div>
     )
   }
 }
