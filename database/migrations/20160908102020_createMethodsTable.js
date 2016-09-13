@@ -4,7 +4,7 @@ exports.up = function(knex, Promise) {
     table.integer('recipe_id');
     table.integer('step_id');
     table.text('instructions');
-    table.text('audio_path');
+    table.text('steps_audio_path');
   });
 };
 
