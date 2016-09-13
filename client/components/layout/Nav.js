@@ -5,9 +5,9 @@ class Nav extends Component{
 
   render(){
     return(
-      <ul className="nav nav-tabs">
-        <li role="presentation" className="navli"><Link to="/">Home</Link></li>
-        <li role="presentation" className="navli contents"><Link to="/recipes">Recipes</Link></li>
+      <ul className="container  navbar-header">
+        <button  role="presentation" className="btn btn-primary"><Link to="/">Home</Link></button>
+        <button role="presentation" className=" contents"><Link to="/recipes">Recipes</Link></button>
       </ul>
     )
   }
