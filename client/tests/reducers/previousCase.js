@@ -10,26 +10,26 @@ test('reducer with basic PREVIOUS action', t=> {
 
   var fakeState = {
     recipe: {
-id: 0,
-name: "Grilled cheese sandwich",
-description: "Indulge in an heavenly melt of cheese grilled in delicious slices",
-notes: "Cheddar cheese with brown bread works as well",
-ingredients: "Two slices of cheddar or swiss cheese@Two slices of white bread@Two tablespoons of butter",
-cooking_time: "10 mins",
-currentStep: 1,
-length: 3,
-whole_recipe_audio_path: "../audio/wholeRecipe.mp3",
-ingredients_audio_path: "../audio/ingredients.mp3",
-instructions: [
-"Step One: Put the cheese between the slices of bread ",
-"Step Two: Heat a fry pan to a hot temperature",
-"Step Three: Heat one tablespoon of butter in the fry pan"
-],
-audio_path: [
-"../audio/stepOne.mp3",
-"../audio/stepTwo.mp3",
-"../audio/stepThree.mp3"
-]
+      id: 0,
+      name: "Grilled cheese sandwich",
+      description: "Indulge in an heavenly melt of cheese grilled in delicious slices",
+      notes: "Cheddar cheese with brown bread works as well",
+      ingredients: "Two slices of cheddar or swiss cheese@Two slices of white bread@Two tablespoons of butter",
+      cooking_time: "10 mins",
+      currentStep: 1,
+      length: 3,
+      whole_recipe_audio_path: "../audio/wholeRecipe.mp3",
+      ingredients_audio_path: "../audio/ingredients.mp3",
+      instructions: [
+        "Step One: Put the cheese between the slices of bread ",
+        "Step Two: Heat a fry pan to a hot temperature",
+        "Step Three: Heat one tablespoon of butter in the fry pan"
+      ],
+      audio_path: [
+        "../audio/stepOne.mp3",
+        "../audio/stepTwo.mp3",
+        "../audio/stepThree.mp3"
+      ]
 }
 }
 
@@ -37,6 +37,7 @@ audio_path: [
 
   var action = previousDispatch(fakeState)
   var expectedState = {
+
       recipe: {
         audio_path: [ '../audio/stepOne.mp3', '../audio/stepTwo.mp3', '../audio/stepThree.mp3' ],
         cooking_time: '10 mins',
@@ -58,6 +59,7 @@ audio_path: [
 
   var actualState = reducer(fakeState, action)
   console.log(action, actualState)
+
   t.deepEqual(actualState, expectedState, 'the reducer decreases current step by 1')
   t.end()
 })

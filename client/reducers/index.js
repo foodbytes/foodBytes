@@ -1,5 +1,5 @@
 import { initialState } from '../initialstate/initialstate'
-import { NEXT, REPEAT, PREVIOUS, WHOLE_RECIPE, INGREDIENTS, RECEIVE_RECIPE_STEPS, RECEIVE_ALL_RECIPES } from '../actions/actionCreators'
+import { NEXT, REPEAT, PREVIOUS, STOP, WHOLE_RECIPE, LISTENING, INGREDIENTS, RECEIVE_RECIPE_STEPS, RECEIVE_ALL_RECIPES } from '../actions/actionCreators'
 import { combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
 
@@ -43,11 +43,14 @@ const recipe = (state = initialState, action) => {
 
       return moveStep(state, -1)
 
+    case STOP:
+      return Object.assign({},state,{audio_path: state.audio_path},{playing: false},{currentStep: state.currentStep})
+
 
     case REPEAT:
       console.log('Inside REPEAT');
-      return Object.assign({}, {audio_path: state.audio_path}, {playing: true}, {currentStep: state.currentStep})
 
+      return Object.assign({}, state, {audio_path: state.audio_path}, {playing: true}, {currentStep: state.currentStep})
 
     case WHOLE_RECIPE:
       console.log('Inside WHOLE_RECIPE');
@@ -60,7 +63,10 @@ const recipe = (state = initialState, action) => {
 
 
     case RECEIVE_ALL_RECIPES:
-    return Object.assign({}, {recipes: [...action.payload]})
+      return Object.assign({}, {recipes: [...action.payload]})
+
+    case LISTENING:
+    return Object.assign({}, state, {listening: true})
 
     default:
       return state
