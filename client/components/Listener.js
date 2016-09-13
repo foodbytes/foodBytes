@@ -18,9 +18,8 @@ class Listener extends Component {
       // Let's define our first command. First the text we expect, and then the function it should call
       var commands = {
         'cc next': () => { this.props.nextDispatch() },
-        'cc previous': function() {
-           console.log('PREV');
-        }
+        'cc previous': () => { this.props.previousDispatch() },
+        'cc repeat': () => { this.props.repeatDispatch() }
       };
       // Add our commands to annyang
       annyang.addCommands(commands);
@@ -73,6 +72,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(Listener)
-
-
-

@@ -11,7 +11,7 @@ let seedData = [
     ingredients: 'Two slices of cheddar or swiss cheese,Two slices of white bread,Two tablespoons of butter',
     recipe_id: 0,
     instructions: 'step_two',
-    audio_path: '../audio/stepTwo.mp3' },
+    steps_audio_path: '../audio/stepTwo.mp3' },
    {
     id: 0,
     name: 'Grilled cheese sandwich',
@@ -20,7 +20,7 @@ let seedData = [
     ingredients: 'Two slices of cheddar or swiss cheese,Two slices of white bread,Two tablespoons of butter',
     recipe_id: 0,
     instructions: 'step_one',
-    audio_path: '../audio/stepOne.mp3' },
+    steps_audio_path: '../audio/stepOne.mp3' },
    {
     id: 2,
     name: 'Grilled cheese sandwich',
@@ -29,7 +29,7 @@ let seedData = [
     ingredients: 'Two slices of cheddar or swiss cheese,Two slices of white bread,Two tablespoons of butter',
     recipe_id: 0,
     instructions: 'step_three',
-    audio_path: '../audio/stepThree.mp3' }
+    steps_audio_path: '../audio/stepThree.mp3' }
 
 ]
 
@@ -42,7 +42,7 @@ let initialState = {
     length: 0,
     currentStep:0,
     instructions:['step one', 'step two', 'step three'],
-    audio_path:['../audio/stepOne.mp3', '../audio/stepTwo.mp3', '../audio/stepThree.mp3']
+    steps_audio_path:['../audio/stepOne.mp3', '../audio/stepTwo.mp3', '../audio/stepThree.mp3']
   }
 
 test('transformJoin transforms a join into initialState',  function (t) {
