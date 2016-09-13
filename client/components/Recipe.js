@@ -65,7 +65,7 @@ class Recipe extends React.Component {
   getInstructions(instructions){
     if (instructions !== undefined){
       return instructions.map((instruction, i) => {
-         return <li key={i}> {instruction.split(',')}</li>
+        return <li key={i}> {instruction.split(',')}</li>
       })
     }
   }
@@ -76,7 +76,7 @@ class Recipe extends React.Component {
       const ingredientArray = ingredients.split('@')
 
       return ingredientArray.map((ingredient, i) => {
-         return <li key={i}> {ingredient}</li>
+        return <li key={i}> {ingredient}</li>
       })
     }
   }
@@ -87,9 +87,9 @@ class Recipe extends React.Component {
     const id = this.props.params.id
 
     fetchRecipe(id)
-      // go to the api, get recipes
-      // dispatch RECEIVE_RECIPE_STEPS
-      // run the speechRecognition(this.props, classToListenTo)  as a callback
+    // go to the api, get recipes
+    // dispatch RECEIVE_RECIPE_STEPS
+    // run the speechRecognition(this.props, classToListenTo)  as a callback
 
     // bad mvp
     // speechRecognition(this.props)
@@ -105,7 +105,7 @@ class Recipe extends React.Component {
 
     if (this.props.data.listening !== true){
       return <img src='../images/not_listening.png' alt='not_listening_red' />
-    }else {
+    } else {
       return <img src='../images/listening.png' alt='listening_green' />
     }
   }
@@ -118,7 +118,7 @@ class Recipe extends React.Component {
         <Listener />
         <div className="row well">
           <div className= "col-xs-12 col-sm-6 col-md-3 col-lg-3"></div>
-            <div className= "col-xs-12 col-sm-6 col-md-6 col-lg-7">
+          <div className= "col-xs-12 col-sm-6 col-md-6 col-lg-7">
             <h5>Available Commands: 'Next' 'Previous' 'Repeat'</h5>
             <h5>Click here and start talkin!</h5>
             <button onClick={this.startListening} id="speech" >Start</button>
@@ -129,15 +129,15 @@ class Recipe extends React.Component {
         </div>
 
         <div className="row well">
-        <div className= "col-xs-12 col-sm-2 col-md-3 col-lg-3"></div>
+          <div className= "col-xs-12 col-sm-2 col-md-3 col-lg-3"></div>
           <div className="col-xs-12 col-sm-8 col-md-6 col-lg-6">
             <div className="btn-group-justified">
-                <button onClick={this.handleClickNext} id="next" >Next</button>
-                <button onClick={this.handleClickPrevious} id="Previous" >Previous</button>
-                <button onClick={this.handleClickRepeat} id="Repeat" >Repeat</button>
-                <button onClick={this.handleClickStop} id="Stop" >Stop</button>
-                <button onClick={this.handleClickWholeRecipe} id="Whole Recipe" >Whole Recipe</button>
-                <button onClick={this.handleClickIngredients} id="Ingredients" >Ingredients</button>
+              <button onClick={this.handleClickNext} id="next" >Next</button>
+              <button onClick={this.handleClickPrevious} id="Previous" >Previous</button>
+              <button onClick={this.handleClickRepeat} id="Repeat" >Repeat</button>
+              <button onClick={this.handleClickStop} id="Stop" >Stop</button>
+              <button onClick={this.handleClickWholeRecipe} id="Whole Recipe" >Whole Recipe</button>
+              <button onClick={this.handleClickIngredients} id="Ingredients" >Ingredients</button>
             </div>
             <div className= "col-xs-12 col-sm-2 col-md-3 col-lg-3"></div>
           </div>
@@ -151,22 +151,22 @@ class Recipe extends React.Component {
           </div>
           <div className="col-xs-12 col-sm-8 col-md-6 col-lg-6">
 
-                <h3>Cook time: {cooking_time}</h3>
-                <div>Ingredients
-                  <ul>
-                   {this.getIngredients(ingredients)}
-                  </ul>
-                </div>
-                <div>Method
-                  <ul>
-                  {this.getInstructions(instructions)}
-                  </ul>
-                </div>
-                {this.checkReady()}
-                <div className= "col-xs-12 col-sm-2 col-md-3 col-lg-3"></div>
+            <h3>Cook time: {cooking_time}</h3>
+            <div>Ingredients
+              <ul>
+                {this.getIngredients(ingredients)}
+              </ul>
+            </div>
+            <div>Method
+              <ul>
+                {this.getInstructions(instructions)}
+              </ul>
+            </div>
+            {this.checkReady()}
+            <div className= "col-xs-12 col-sm-2 col-md-3 col-lg-3"></div>
+          </div>
         </div>
       </div>
-    </div>
     )
   }
 }
