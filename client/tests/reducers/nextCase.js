@@ -34,6 +34,7 @@ test('reducer with basic NEXT action', t=> {
       id: 0, ingredients: '',
       instructions: [],
       length: 0,
+      listening: false,
       name: '',
       playing: true
     },
