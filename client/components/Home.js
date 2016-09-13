@@ -26,6 +26,10 @@ class Home extends Component {
           </div>
         </div>
 
+        <div className="spinnerDiv">
+          <div className="spinner spinner-4"></div>
+        </div>
+
        {/* Foodbytes description with iframe header*/}
 
        <div className=" well row">

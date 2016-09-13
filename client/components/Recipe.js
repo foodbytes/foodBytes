@@ -138,8 +138,8 @@ class Recipe extends React.Component {
         </div>
 
         <div className="row well">
-          <div className= " well col-xs-12 col-sm-6 col-md-3 col-lg-3">
-            <img className=pulse-button width ='300'height ='200'src={`${image_path}`} alt="sandwich"></img>
+          <div className="well col-xs-12 col-sm-6 col-md-3 col-lg-3">
+            <img className="pulseButton" width ='300'height ='200'src={`${image_path}`} alt="sandwich"></img>
           </div>
           <div className=" well col-xs-12 col-sm-6 col-md-5 col-lg-6">
 
