@@ -98,28 +98,25 @@ class Recipe extends React.Component {
 
     if (this.props.data.listening !== true){
       console.log(this.props.data.listening)
-      return <div> <img width="100" height="100" src='../images/not_listening.png'alt='not_listening_red'/>
-      <h5>Click me to take your command</h5>
+      return <div className="thumbnail"> <img width="100" height="100" src='../images/not_listening.png'alt='not_listening_red'/>
       </div>
     }else {
       console.log(this.props.data.listening)
-      return <div> <img width="100" height="100" src='../images/listening.png' alt='listening_green' />
-      <h5>I am now listening</h5>
-      <h5>Say Next or click the next button</h5>
-
+      return <div className="thumbnail"> <img  width="100" height="100" src='../images/listening.png' alt='listening_green' />
       </div>
     }
   }
 
   render(){
-    const { cooking_time, ingredients, instructions, image_path } = this.props.data
+    const { cooking_time, ingredients, instructions, image_path, name, notes } = this.props.data
     // console.log("Ohh yeah", ingredients);
     return (
-      <div>
-      <div className="container">
-          <div className="row well">
-              <div className="commands">
-                  <a className="">Available commands:</a>
+
+      <div className="jumbotron container">
+                    {/* row commands*/}
+          <div className="row well ">
+              <div className="commands col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <a>Available commands:</a>
                   <a type ="button" className="btn" onClick={this.handleClickNext} id="next">Next</a>
                   <a type ="button" className="btn" onClick={this.handleClickPrevious} id="Previous">Previous</a>
                   <a type ="button" className="btn" onClick={this.handleClickRepeat} id="Repeat">Repeat</a>
@@ -127,33 +124,34 @@ class Recipe extends React.Component {
                   <a type ="button" className="btn" onClick={this.handleClickWholeRecipe} id="Whole Recipe">Whole Recipe</a>
               </div>
           </div>
-
-          <div className="row"></div>
-          <div className="jumbotron">
-            <div className="row well">
-              <div className= "col-xs-12 col-sm-6 col-md-3 col-lg-2">{this.isListening()}</div>
+            <div className="row well ">
+              <div className= "col-xs-12 col-sm-6 col-md-4 col-lg-4">{this.isListening()}</div>
+              <div className= "col-xs-12 col-sm-6 col-md-4 col-lg-4">{this.isListening()}</div>
+              <div className= "col-xs-12 col-sm-6 col-md-4 col-lg-4">{this.isListening()}</div>
             </div>
-            <div className="row well">
-              <div className= " well col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                <img width ='300'height ='200'src={`${image_path}`} alt="sandwich"></img>
-              </div>
-              <div className=" well col-xs-12 col-sm-6 col-md-5 col-lg-6">
-                <h3>Cook time</h3>
-                <h5>{cooking_time}</h5>
+
+            <div className="row well text-justify menu">
+              {/*<div className= " well col-xs-12 col-sm-12 col-md-1 col-lg-2"></div>*/}
+              <div>
+                <h2 className="text-center">{name}</h2>
+                <h4 className="text-justify">{notes}</h4>
+
+                <h4><b className="bold">Cooking time</b>:{cooking_time}</h4>
+
                 <div>
                   <h3>Ingredients</h3>
                   <ul>{this.getIngredients(ingredients)}</ul>
                 </div>
+
                 <div>
                   <h3>Method</h3>
                   <ul>{this.getInstructions(instructions)}</ul>
                 </div>
                 {this.checkReady()}
-                <div className= "col-xs-12 col-sm-6 col-md-3 col-lg-3"></div>
+                {/*<div className= "col-xs-12 col-sm-12 col-md-1 col-lg-2"></div>*/}
               </div>
             </div>
-          </div>
-        </div>
+
         </div>
     )
   }

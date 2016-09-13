@@ -9,6 +9,7 @@ class Home extends Component {
 
   render () {
     return(
+      <div className="container">
       <div className="jumbotron">
         {/* Image with foodbytes header*/}
         <div className="well row">
@@ -49,6 +50,7 @@ class Home extends Component {
           </div>
          </div>
        </div>
+     </div>
      </div>
     )
   }

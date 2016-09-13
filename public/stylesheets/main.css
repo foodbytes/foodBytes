@@ -6,28 +6,27 @@ body {
     color: #00B7FF; }
 
 .commands {
-  position: fixed;
-  z-index: 999;
-  background-color: black; }
+  background-color: none; }
   .commands a {
     margin: 2px;
     color: black; }
 
-.jumbotron {
-  border: none; }
-  .jumbotron .header-fix {
-    padding-top: 0px; }
+li {
+  font-size: 16px;
+  margin-bottom: 10px;
+  padding-bottom: 5px; }
 
-.page-header {
-  border-bottom: 0;
-  margin-top: 10px; }
+.menu .bold {
+  font-weight: bold; }
 
-.navli {
-  background-color: white; }
-  .navli button {
-    margin: 5px;
-    color: black;
-    background-color: aqua; }
+@media only screen and (max-width: 641px) {
+  .menu .recipeDescription {
+    text-align: center; } }
+
+.navli button {
+  margin: 5px;
+  color: black;
+  background-color: aqua; }
 
 .well {
   border: none;
@@ -37,7 +36,6 @@ body {
   margin: auto;
   align-items: flex-end; }
 
-/*responsive design, text centers on small screens*/
 .recipeDescription {
   text-align: left; }
 

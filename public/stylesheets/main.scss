@@ -9,44 +9,40 @@ body {
 
 }
 
-
 .commands{
-  position:fixed;
-  z-index: 999;
-  background-color: black;
+  background-color: none;
   a{
     margin:2px;
     color:black;
   }
 }
-.jumbotron{
-  // background-color: white;
-  border: none;
-  .header-fix{
-  padding-top: 0px;
+
+
+li{
+  font-size: 16px;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+}
+
+.menu{
+  .bold{
+    font-weight: bold;
+  }
+  @media only screen and (max-width: 641px){
+    .recipeDescription{
+        text-align: center;
+    }
   }
 }
 
-.page-header{
-  border-bottom: 0;
-  margin-top: 10px;
-}
-
-// .nav{
-//   margin: 10px;
-//   padding: 10px;
-//   padding-top: 10px;
-//   border-bottom: 0;
-// }
-
 .navli{
 
-background-color: white;
-button{
+// background-color: white;
+  button{
   margin:5px;
   color:black;
   background-color: aqua;
-}
+  }
 }
 
 
@@ -60,7 +56,6 @@ button{
   align-items: flex-end;
 }
 
-/*responsive design, text centers on small screens*/
 .recipeDescription{
   text-align: left;
   }

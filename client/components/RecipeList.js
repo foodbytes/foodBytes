@@ -18,11 +18,13 @@ class RecipeList extends Component {
     const { recipes } = this.props
 
     return (
+      <div className="container">
       <div className="jumbotron header-fix">
         <div className="page-header">
           <h1 className="text-center">Recipes</h1>
         </div>
         {this.getRecipes(recipes)}
+      </div>
       </div>
     )
   }
