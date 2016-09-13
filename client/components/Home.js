@@ -20,9 +20,14 @@ class Home extends Component {
         </div>
         <div className="well row">
           <div className="col-xs-12 col-sm-6 col-md-2"></div>
-          <div className=" thumbnail col-xs-12 col-sm-6 col-md-8">
-          <img width="400" height="400" src="http://pngimg.com/upload/banana_PNG817.png" alt=""></img>
-          </div>
+
+            <div className=" spinnerDiv col-xs-12 col-sm-6 col-md-8 ">
+              <div className=" spinner spinner-4 "></div>
+            </div>
+
+        { /* <div className=" spinnerDiv thumbnail col-xs-12 col-sm-6 col-md-8">
+          <img className="spinner spinner-4" width="400" height="400" src="../../images/bananas_icon_speaker_cartoon.png" alt=""></img>
+          </div>*/}
           <div className="col-lg-12 col-sm-6 col-md-2"></div>
         </div>
         <div className=" well row">
