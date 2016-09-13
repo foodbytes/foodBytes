@@ -7,7 +7,9 @@
     "dev": "nodemon ./bin/www",
     "build": "NODE_ENV=production browserify client/index.js -o public/bundle.js -g uglifyify",
     "postinstall": "npm run build",
+    "build:css": "node-sass --include-path public/stylesheets --output-style compressed public/stylesheets/main.scss public/stylesheets/main.css",
     "watch": "watchify client/index.js -o public/bundle.js -dv",
+    "watch:css": "node-sass --include-path public/stylesheets -w public/stylesheets/main.scss public/stylesheets/main.css",
     "server-test": "node ./helpers/test.js | tap-spec",
     "test": "babel-tape-runner ./client/tests/**/*.js | tap-spec",
     "test:integration": "chimp --watch"
@@ -38,6 +40,7 @@
     "knex": "0.11.10",
     "latest-version": "^2.0.0",
     "morgan": "~1.7.0",
+    "node-sass": "^3.9.3",
     "pg": "6.1.0",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
