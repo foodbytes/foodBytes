@@ -2,7 +2,7 @@ import React from 'react'
 import speechRecognition from '../speechRecognition.js'
 import { bindActionCreators } from 'redux'
 
-import { nextDispatch, previousDispatch, repeatDispatch, stopDispatch, fetchRecipe, wholeRecipeDispatch, ingredientsDispatch, listeningDispatch, fetchNextRecipeStep } from '../actions/actionCreators'
+import { nextDispatch, previousDispatch, repeatDispatch, stopDispatch, fetchRecipe, wholeRecipeDispatch, ingredientsDispatch, listeningDispatch } from '../actions/actionCreators'
 
 import { connect } from 'react-redux'
 import Audio from './Audio'
@@ -25,7 +25,7 @@ class Recipe extends React.Component {
 
   handleClickNext() {
     let id = this.props.params.id
-    this.props.fetchNextRecipeStep(id)
+    this.props.nextDispatch(this.props.data.steps_audio_path)
   }
 
   handleClickPrevious() {
@@ -170,7 +170,7 @@ class Recipe extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
   //bindActionCreators is unknown. keep in mind
-  return bindActionCreators({ nextDispatch,  previousDispatch, repeatDispatch, stopDispatch, fetchRecipe, wholeRecipeDispatch, ingredientsDispatch, listeningDispatch, fetchNextRecipeStep }, dispatch)
+  return bindActionCreators({ nextDispatch,  previousDispatch, repeatDispatch, stopDispatch, fetchRecipe, wholeRecipeDispatch, ingredientsDispatch, listeningDispatch }, dispatch)
 }
 
 const mapStateToProps = (state) => {

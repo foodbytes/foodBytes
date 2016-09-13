@@ -47,23 +47,6 @@ export const fetchRecipe = (id) => {
   }
 }
 
-export const fetchNextRecipeStep = (id) => {
-  return (dispatch) => {
-    request
-    .get(`/api/v1/recipes/${id}`)
-    .end((err, res) => {
-      if (err) {
-        console.error(err.message)
-        return
-      }
-      // This will get single the recipe from the api
-      dispatch(nextDispatch(JSON.parse(res.text)))
-      // in this case, the doLater = the speech recognition thing that should be activated
-    })
-  }
-}
-
-
 export const fetchRecipes = () => {
   console.log('Inside fetchRecipes');
   return (dispatch) => {
