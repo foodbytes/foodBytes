@@ -110,19 +110,19 @@ class Recipe extends React.Component {
     // console.log("Ohh yeah", ingredients);
     return (
       <div className="jumbotron">
-        {/* This is the placeholder the button */}
-        <div className="row">
-          <div className= "col-xs-12 col-sm-6 col-md-4 col-lg-3"></div>
-            <div className= "col-xs-12 col-sm-6 col-md-4 col-lg-3">
+        <div className="row well">
+          <div className= "col-xs-12 col-sm-6 col-md-3 col-lg-3"></div>
+            <div className= "col-xs-12 col-sm-6 col-md-6 col-lg-7">
             <h5>Available Commands: 'Next' 'Previous' 'Repeat'</h5>
             <h5>Click here and start talkin!</h5>
             <button id="speech">Start</button>
             <h5>Available Commands: 'Next' 'Previous' 'Repeat'</h5>
             {this.isListening()}
           </div>
+          <div className= "col-xs-12 col-sm-6 col-md-3 col-lg-3"></div>
         </div>
 
-        <div className="row">
+        <div className="row well">
         <div className= "col-xs-12 col-sm-2 col-md-3 col-lg-3"></div>
           <div className="col-xs-12 col-sm-8 col-md-6 col-lg-6">
             <div className="btn-group-justified">
@@ -137,13 +137,14 @@ class Recipe extends React.Component {
             </div>
             </div>
 
-        <div className="row">
-          <div className= "col-xs-12 col-sm-2 col-md-3 col-lg-3"></div>
+        <div className="row well">
+          <div className= "col-xs-12 col-sm-2 col-md-3 col-lg-3">
+            <div className="thumbnail">
+            <img width ='300'height ='200'src={`${image_path}`} alt="sandwich"></img>
+            </div>
+          </div>
           <div className="col-xs-12 col-sm-8 col-md-6 col-lg-6">
 
-                <div className="thumbnail">
-                <img width ='300'height ='200'src={`${image_path}`} alt="sandwich"></img>
-                </div>
                 <h3>Cook time: {cooking_time}</h3>
                 <div>Ingredients
                   <ul>
