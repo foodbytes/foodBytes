@@ -20,22 +20,7 @@ module.exports = function speechRecogntion(props) {
   recognition.interimResults = false;
   recognition.maxAlternatives = 1;
 
-  console.log('speechRecognition');
-
   let diagnostic = document.querySelector('.output');
-
-  // // parent file
-  // const listener = ( runThis ) => {
-  //    document.getElementById('.startButton').addEventListener('click', (ev)=> { runThis() })
-  // }
-
-  // props.listener(recognition.start)
-
-  // document.querySelector(props.classToListenTo).addEventListener('click', () => {
-  //   recognition.start();
-  //   console.log('Ready to receive a command.');
-  // })
-
 
   document.body.onclick = function() {
     let { listening } = props.data
@@ -46,7 +31,7 @@ module.exports = function speechRecogntion(props) {
 
   recognition.onresult = function(event) {
 
-    let { audio_path } = props.data
+    let { steps_audio_path } = props.data
 
     var command = event.results[0][0].transcript;
     switch (command) {
@@ -57,7 +42,7 @@ module.exports = function speechRecogntion(props) {
        case 'sea sea next':
        case 'si si next':
        case 'dc next':
-         props.nextDispatch(props.data.audio_path)
+         props.nextDispatch(props.data.steps_audio_path)
          break;
 
        case PREVIOUS:
@@ -67,7 +52,7 @@ module.exports = function speechRecogntion(props) {
        case 'sea sea previous':
        case 'si si previous':
        case 'dc previous':
-         props.previousDispatch(props.data.audio_path)
+         props.previousDispatch(props.data.steps_audio_path)
          break;
 
        case REPEAT:
@@ -77,7 +62,7 @@ module.exports = function speechRecogntion(props) {
        case 'sea sea repeat':
        case 'si si repeat':
        case 'dc repeat':
-         props.repeatDispatch(props.data.audio_path)
+         props.repeatDispatch(props.data.steps_audio_path)
          break;
 
        case WHOLE_RECIPE:
@@ -87,7 +72,7 @@ module.exports = function speechRecogntion(props) {
        case 'sea sea recipe':
        case 'si si recipe':
        case 'dc recipe':
-         props.wholeRecipeDispatch(props.data.audio_path)
+         props.wholeRecipeDispatch(props.data.steps_audio_path)
          break;
 
        case INGREDIENTS:
@@ -97,7 +82,7 @@ module.exports = function speechRecogntion(props) {
        case 'sea sea ingredients':
        case 'si si ingredients':
        case 'dc ingredients':
-         props.ingredientsDispatch(props.data.audio_path)
+         props.ingredientsDispatch(props.data.steps_audio_path)
          break;
 
        default:

@@ -14,7 +14,7 @@ import {NEXT, REPEAT, PREVIOUS, WHOLE_RECIPE, INGREDIENTS, RECEIVE_RECIPE_STEPS}
 //     length: 0,
 //     currentStep:0,
 //     instructions:[],
-//     audio_path:[]
+//     steps_audio_path:[]
 //   }
 // }
 
@@ -27,7 +27,7 @@ test('reducer with basic NEXT action', t=> {
 
   var expectedState = {
     recipe: {
-      audio_path: [],
+      steps_audio_path: [],
       cooking_time: '',
       currentStep: 1,
       description: '',
