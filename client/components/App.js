@@ -1,38 +1,49 @@
-
 import React, { Component } from 'react'
-import Audio from './audio.js'
-import speechRecognition from '../speechRecognition.js'
-import {connect} from 'react-redux'
-import * as actionCreators from '../actions/actionCreators'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { fetchRecipes } from '../actions/actionCreators'
+import { Router, Route, hashHistory, Link } from 'react-router'
+import RecipeList from './RecipeList'
+import Nav from './layout/Nav';
 
 class App extends Component {
 
   constructor (props) {
-    super(props)
+    super(props);
   }
 
   componentDidMount () {
-    speechRecognition(this.props)
+    const { fetchRecipes } = this.props
+    fetchRecipes()
   }
 
-  render () {
-    return(
-        <div>
-          <Audio step={this.props.step} audio={this.props.audio}/>
-        </div>
-        )
-    }
+  render() {
+    const { location } = this.props;
+
+    return (
+      <div>
+        {/* default nav bar */}
+        <Nav />
+        {this.props.children}
+      </div>
+    );
+  }
 
 }
+
 
 const mapStateToProps = (state) => {
   return {
-    step: state.step[state.position],
-    audio: state.audio[state.position]
+    data: state.recipe
   }
 }
 
-export const AppContainer = connect(
+const mapDispatchToProps = (dispatch) => {
+  //bindActionCreators is unknown. keep in mind
+  return bindActionCreators({ fetchRecipes }, dispatch)
+}
+
+export default connect(
   mapStateToProps,
-  actionCreators
-  )(App)
+  mapDispatchToProps
+)(App)

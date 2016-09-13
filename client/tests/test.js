@@ -2,11 +2,6 @@ var request = require('supertest')
 var test = require('tape')
 var router = require('../../routes/index')
 
-test('testing', function (t) {
-  t.ok(true)
-  t.end()
-})
-
 request(router)
   .get('/api/v1/recipes/:id')
   .expect('Content-Type', /json/)
@@ -26,33 +21,3 @@ request(router)
       process.exit()
     })
   })
-
-
-
-  //reducer testing
-
-
-
-  //join testing?
-
-// var audioArray = [
-//  document.getElementById('stepOne'),
-//  document.getElementById('stepTwo'),
-//  document.getElementById('stepThree')
-// ]
-
-// var index = -1
-
-// recognition.onresult = function(event) {
-//   console.log(event)
-//   var command = event.results[0][0].transcript;
-//   switch (command) {
-//       case "next":
-//         if (audioArray[index+1]) {
-//           index++
-//           audioArray[index].play()
-//       };
-
-
-
-

@@ -2,8 +2,9 @@ exports.up = function(knex, Promise) {
   return knex.schema.createTableIfNotExists('steps', function (table) {
     table.integer('id').primary();
     table.integer('recipe_id');
-    table.string('instructions');
-    table.string('audio_path');
+    table.integer('step_id');
+    table.text('instructions');
+    table.text('steps_audio_path');
   });
 };
 

@@ -1,9 +1,10 @@
 let knexConfig = require('../knexfile').development;
 let knex = require('knex')(knexConfig);
+let transformJoin = require('../helpers/transformjoin')
 
-const getRecipesTable =  (id)=>{
+const getRecipesTable =  ()=>{
 
-  return knex('recipes').where('id', id)
+  return knex('recipes').orderBy('id')
 }
 
 const getStepsTable =  (id)=>{
@@ -11,15 +12,15 @@ const getStepsTable =  (id)=>{
   return knex('steps').where('recipe_id', id)
 }
 
-// call getStepsTable and store in a variable
-// attach that var to the end getRecipesTable
+const getJoinTable = (id) => {
 
-const getJoinTable = () => {
-
-  return knex.table('recipes').innerJoin('steps', 'recipes.id', '=', 'steps.recipe_id')
+  return knex.table('recipes').where('recipe_id',id).innerJoin('steps', 'recipes.id', '=', 'steps.recipe_id')
+        .orderBy('steps.id')
+        .then(function (rows){
+          return transformJoin(rows)
+        })
 
 }
-
 
 module.exports = {
   getRecipesTable,
