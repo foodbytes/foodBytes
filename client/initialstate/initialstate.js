@@ -9,6 +9,7 @@ export const initialState = {
     currentStep: 0,
     instructions:[],
     audio_path:[],
+    whole_recipe_ingredients_audio_path: '',
     playing: false,
     listening: false
   },
