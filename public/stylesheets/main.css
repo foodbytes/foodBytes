@@ -1,0 +1,43 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+  body a {
+    color: #00B7FF; }
+
+.jumbotron {
+  background-color: white;
+  border: none; }
+
+.row.content {
+  margin: 10px;
+  padding: 5px; }
+
+.nav {
+  margin: 10px;
+  padding: 10px; }
+
+/* adds padding to navigation links on header*/
+.navli {
+  padding: 5px; }
+
+.well {
+  border: none;
+  background-color: white; }
+
+.thumbnail {
+  border: none; }
+
+.accordion {
+  background-color: crimson;
+  color: white; }
+
+.collapse {
+  margin: 10px;
+  padding: 5px; }
+  .collapse h5 {
+    color: black;
+    font-weight: 400; }
+
+.left-text {
+  font-weight: bold;
+  padding-bottom: 15px; }
