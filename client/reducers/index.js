@@ -63,7 +63,7 @@ const recipe = (state = initialState, action) => {
       return Object.assign({}, {recipes: [...action.payload]})
 
     case LISTENING:
-    return Object.assign({}, state, {listening: true})
+     return Object.assign({}, state, {listening: action.payload})
 
     default:
       return state

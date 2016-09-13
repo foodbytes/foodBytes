@@ -126,7 +126,7 @@ export const ingredientsDispatch = (state) => {
 }
 
 export const listeningDispatch = (state) => {
-    console.log("Inside listeningDispatch")
+    console.log("! listeningDispatch : listening:", state)
     return (dispatch) => {
       dispatch ({
         type: LISTENING,

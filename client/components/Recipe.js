@@ -1,11 +1,12 @@
 import React from 'react'
-import speechRecognition from '../speechRecognition.js'
+// import speechRecognition from '../speechRecognition.js'
 import { bindActionCreators } from 'redux'
 
 import { nextDispatch, previousDispatch, repeatDispatch, stopDispatch, fetchRecipe, wholeRecipeDispatch, ingredientsDispatch, listeningDispatch } from '../actions/actionCreators'
 
 import { connect } from 'react-redux'
 import Audio from './Audio'
+import Listner from './Listner'
 
 
 
@@ -86,7 +87,8 @@ class Recipe extends React.Component {
       // run the speechRecognition(this.props, classToListenTo)  as a callback
 
     // bad mvp
-    speechRecognition(this.props)
+    // speechRecognition(this.props)
+
   }
 
   componentWillUnmount () {
@@ -110,6 +112,7 @@ class Recipe extends React.Component {
     return (
       <div className="jumbotron">
         {/* This is the placeholder the button */}
+        <Listner />
         <h5>Available Commands: 'Next' 'Previous' 'Repeat'</h5>
         <h5>Click here and start talkin!</h5>
         <button id="speech">Start</button>
@@ -161,7 +164,10 @@ class Recipe extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
   //bindActionCreators is unknown. keep in mind
-  return bindActionCreators({ nextDispatch,  previousDispatch, repeatDispatch, stopDispatch, fetchRecipe, wholeRecipeDispatch, ingredientsDispatch, listeningDispatch }, dispatch)
+  return bindActionCreators(
+    { nextDispatch,  previousDispatch, repeatDispatch, stopDispatch, fetchRecipe, wholeRecipeDispatch, ingredientsDispatch, listeningDispatch },
+    dispatch
+  )
 }
 
 const mapStateToProps = (state) => {

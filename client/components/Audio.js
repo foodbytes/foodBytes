@@ -1,10 +1,59 @@
 import React from 'react'
 import ReactPlayer from 'react-player'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { listeningDispatch } from '../actions/actionCreators'
 
-export default ({audio_path, playing}) => {
-    return (
-      <div className="hidden">
-        <ReactPlayer url={audio_path} playing={playing} />
-      </div>
-    )
+
+
+class Audio extends React.Component {
+
+
+    stopListening() {
+        this.props.listeningDispatch(false)
+    }
+
+    startListening() {
+        this.props.listeningDispatch(true)
+    }
+
+
+
+    render() {
+        const {audio_path, playing} = this.props
+
+        return (
+          <div className="hidden">
+            <ReactPlayer
+                url={audio_path}
+                playing={playing}
+                onStart={this.stopListening.bind(this)}
+                onEnded={this.startListening.bind(this)}
+            />
+          </div>
+        )
+    }
 }
+
+
+
+const mapStateToProps = (state) => {
+  return {
+    listening: state.recipe.listening
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  //bindActionCreators is unknown. keep in mind
+  return bindActionCreators(
+    { listeningDispatch },
+    dispatch
+  )
+}
+
+
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Audio)
