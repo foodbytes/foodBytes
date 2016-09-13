@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux'
 import { nextDispatch, previousDispatch, repeatDispatch, stopDispatch } from '../actions/actionCreators'
 //, , fetchRecipe, wholeRecipeDispatch, ingredientsDispatch, listeningDispatch
 
-class Listner extends Component {
+class Listener extends Component {
 
 
   componentDidMount() {
@@ -72,7 +72,7 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Listner)
+)(Listener)
 
 
 

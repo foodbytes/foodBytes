@@ -6,7 +6,7 @@ import { nextDispatch, previousDispatch, repeatDispatch, stopDispatch, fetchReci
 
 import { connect } from 'react-redux'
 import Audio from './Audio'
-import Listner from './Listner'
+import Listener from './Listener'
 
 
 
@@ -115,7 +115,7 @@ class Recipe extends React.Component {
     // console.log("Ohh yeah", ingredients);
     return (
       <div className="jumbotron">
-        <Listner />
+        <Listener />
         <div className="row well">
           <div className= "col-xs-12 col-sm-6 col-md-3 col-lg-3"></div>
             <div className= "col-xs-12 col-sm-6 col-md-6 col-lg-7">
