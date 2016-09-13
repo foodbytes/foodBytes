@@ -1,7 +1,9 @@
 body {
   padding: 50px;
   padding-top: 0px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Rubik', sans-serif;
+
+  // font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 
   a {
     color: #00B7FF;
@@ -24,6 +26,11 @@ li{
   padding-bottom: 5px;
 }
 
+.page-header{
+  margin-top: 0;
+  font-weight: bold;
+  font-size: 50px;
+}
 .menu{
   .bold{
     font-weight: bold;
@@ -40,8 +47,8 @@ li{
 // background-color: white;
   button{
   margin:5px;
-  color:black;
-  background-color: aqua;
+  color:white;
+  background-color: green;
   }
 }
 
