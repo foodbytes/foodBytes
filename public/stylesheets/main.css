@@ -1,28 +1,54 @@
 body {
   padding: 50px;
+  padding-top: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
   body a {
     color: #00B7FF; }
 
 .jumbotron {
   background-color: white;
-  border: none; }
+  border: none;
+  padding-top: 0px; }
 
-.row.content {
-  margin: 10px;
-  padding: 5px; }
+.page-header {
+  border-bottom: 0;
+  margin-top: 10px; }
 
+/*
+.row.content{
+
+margin:10px;
+padding: 5px;
+
+}
+*/
 .nav {
   margin: 10px;
-  padding: 10px; }
+  padding: 10px;
+  padding-top: 10px;
+  border-bottom: 0; }
 
 /* adds padding to navigation links on header*/
 .navli {
   padding: 5px; }
 
-.well {
+/*
+.well{
   border: none;
-  background-color: white; }
+  background-color: white;
+}
+*/
+.recipeImage {
+  margin: auto;
+  align-items: flex-end; }
+
+/*responsive design, text centers on small screens*/
+.recipeDescription {
+  text-align: left; }
+
+@media only screen and (max-width: 641px) {
+  .recipeDescription {
+    text-align: center; } }
 
 .thumbnail {
   border: none; }
