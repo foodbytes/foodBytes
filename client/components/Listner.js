@@ -8,8 +8,7 @@ class Listner extends Component {
 
 
   componentDidMount() {
-    console.log('script')
-    if (annyang && this.props.listening) {
+    if (annyang) {
       console.log('starting listening')
          // OPTIONAL: activate debug mode for detailed logging in the console
       annyang.debug();
@@ -25,25 +24,36 @@ class Listner extends Component {
       };
       // Add our commands to annyang
       annyang.addCommands(commands);
+    }
+  }
 
-      // Start listening. You can call this here, or attach this call to an event, button, etc.
-      annyang.start();
+  componentWillReceiveProps(nextProps) {
+    console.log('Listener receiving new props', nextProps.listening)
+          // Start listening. You can call this here, or attach this call to an event, button, etc.
+    if (nextProps.listening) {
+      console.log('annyang starting')
+      annyang.start()
+    } else {
+      console.log('annyang pausing')
+      // annyang.pause()
+      annyang.abort()
+
     }
   }
 
   componentWillUnmount() {
-    if (annyang) anyang.abort()
+    if (annyang) annyang.abort()
   }
 
   render() {
-    console.log('drawing Listener component')
-    console.log('listening props', this.props.listening)
     return (
-      <div>Listner {this.props.listening}</div>
+      <div>
+        <div>Listener {this.props.listening == undefined ? 'undefined' : 'defined'}</div>
+        <div>Listening {this.props.listening ? 'true' : 'false'}</div>
+      </div>
     )
   }
 }
-
 
 const mapStateToProps = (state) => {
   return {
@@ -58,8 +68,6 @@ const mapDispatchToProps = (dispatch) => {
     dispatch
   )
 }
-
-
 
 export default connect(
   mapStateToProps,

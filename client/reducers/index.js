@@ -13,7 +13,6 @@ const moveStep = (state, stepIncrement) => {
     {playing: true},
     {currentStep: state.currentStep + stepIncrement}
   )
-
 }
 
 const START_STEP = 0
@@ -26,9 +25,13 @@ const recipe = (state = initialState, action) => {
 
   switch (action.type){
 
+    case RECEIVE_ALL_RECIPES:
+
+      return Object.assign({}, {recipes: [...action.payload]})
+
     case RECEIVE_RECIPE_STEPS:
       length = action.payload.instructions.length
-      let apiData = Object.assign({}, action.payload, {length: length}, {currentStep: 0})
+      let apiData = Object.assign({}, action.payload, {length: length}, {currentStep: 0}, {listening: false})
 
       return Object.assign({}, state, apiData)
 
@@ -36,7 +39,6 @@ const recipe = (state = initialState, action) => {
       if (isAtEnd(state)) return state
 
       return moveStep(state, 1)
-
 
     case PREVIOUS:
       if (isAtStart(state)) return state
@@ -60,10 +62,6 @@ const recipe = (state = initialState, action) => {
     case INGREDIENTS:
       console.log('Inside INGREDIENTS');
       return Object.assign({}, {audio_path: state.ingredients_audio_path}, {playing: true}, {currentStep: 0})
-
-
-    case RECEIVE_ALL_RECIPES:
-      return Object.assign({}, {recipes: [...action.payload]})
 
     case LISTENING:
       const payload = action.payload || !state.listening

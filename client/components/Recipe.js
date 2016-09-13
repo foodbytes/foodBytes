@@ -16,12 +16,17 @@ class Recipe extends React.Component {
   /* Checks if the data ready and if so then will create audio component and play the audio */
   constructor (props) {
     super(props)
+    this.startListening = this.startListening.bind(this)
     this.handleClickNext = this.handleClickNext.bind(this)
     this.handleClickPrevious = this.handleClickPrevious.bind(this)
     this.handleClickRepeat = this.handleClickRepeat.bind(this)
     this.handleClickStop = this.handleClickStop.bind(this)
     this.handleClickIngredients = this.handleClickIngredients.bind(this)
     this.handleClickWholeRecipe = this.handleClickWholeRecipe.bind(this)
+  }
+
+  startListening() {
+    this.props.listeningDispatch(true)
   }
 
   handleClickNext() {
@@ -69,7 +74,7 @@ class Recipe extends React.Component {
 
     if(ingredients){
       const ingredientArray = ingredients.split('@')
-      console.log(ingredientArray);
+
       return ingredientArray.map((ingredient, i) => {
          return <li key={i}> {ingredient}</li>
       })
@@ -99,10 +104,8 @@ class Recipe extends React.Component {
   isListening() {
 
     if (this.props.data.listening !== true){
-      console.log(this.props.data.listening)
       return <img src='../images/not_listening.png' alt='not_listening_red' />
     }else {
-      console.log(this.props.data.listening)
       return <img src='../images/listening.png' alt='listening_green' />
     }
   }
@@ -118,7 +121,7 @@ class Recipe extends React.Component {
             <div className= "col-xs-12 col-sm-6 col-md-6 col-lg-7">
             <h5>Available Commands: 'Next' 'Previous' 'Repeat'</h5>
             <h5>Click here and start talkin!</h5>
-            <button id="speech">Start</button>
+            <button onClick={this.startListening} id="speech" >Start</button>
             <h5>Available Commands: 'Next' 'Previous' 'Repeat'</h5>
             {this.isListening()}
           </div>
@@ -177,7 +180,6 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 const mapStateToProps = (state) => {
-console.log("the state in recipe is ", state);
   return {
     data: state.recipe
   }
