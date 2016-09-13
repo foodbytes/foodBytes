@@ -20,22 +20,7 @@ module.exports = function speechRecogntion(props) {
   recognition.interimResults = false;
   recognition.maxAlternatives = 1;
 
-  console.log('speechRecognition');
-
   let diagnostic = document.querySelector('.output');
-
-  // // parent file
-  // const listener = ( runThis ) => {
-  //    document.getElementById('.startButton').addEventListener('click', (ev)=> { runThis() })
-  // }
-
-  // props.listener(recognition.start)
-
-  // document.querySelector(props.classToListenTo).addEventListener('click', () => {
-  //   recognition.start();
-  //   console.log('Ready to receive a command.');
-  // })
-
 
   document.body.onclick = function() {
     let { listening } = props.data

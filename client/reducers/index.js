@@ -33,10 +33,9 @@ const recipe = (state = initialState, action) => {
       return Object.assign({}, state, apiData)
 
     case NEXT:
-      if (isAtEnd(state)) return state
+      if (isAtEnd(state) && typeof(state.audio_path)!=='string') return state
 
       return moveStep(state, 1)
-
 
     case PREVIOUS:
       if (isAtStart(state)) return state
@@ -53,11 +52,11 @@ const recipe = (state = initialState, action) => {
 
     case WHOLE_RECIPE:
       console.log('Inside WHOLE_RECIPE');
-      return Object.assign({}, {audio_path: state.whole_recipe_audio_path}, {playing: true}, {currentStep: 0})
+      return Object.assign({}, state, {audio_path: state.whole_recipe_audio_path}, {playing: true})
 
     case INGREDIENTS:
       console.log('Inside INGREDIENTS');
-      return Object.assign({}, {audio_path: state.ingredients_audio_path}, {playing: true}, {currentStep: 0})
+      return Object.assign({}, state, {audio_path: state.ingredients_audio_path}, {playing: true})
 
     case RECEIVE_ALL_RECIPES:
       return Object.assign({}, {recipes: [...action.payload]})

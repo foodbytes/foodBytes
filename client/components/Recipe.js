@@ -2,7 +2,7 @@ import React from 'react'
 import speechRecognition from '../speechRecognition.js'
 import { bindActionCreators } from 'redux'
 
-import { nextDispatch, previousDispatch, repeatDispatch, stopDispatch, fetchRecipe, wholeRecipeDispatch, ingredientsDispatch, listeningDispatch } from '../actions/actionCreators'
+import { nextDispatch, previousDispatch, repeatDispatch, stopDispatch, fetchRecipe, wholeRecipeDispatch, ingredientsDispatch, listeningDispatch, fetchNextRecipeStep } from '../actions/actionCreators'
 
 import { connect } from 'react-redux'
 import Audio from './Audio'
@@ -11,7 +11,7 @@ import Audio from './Audio'
 
 class Recipe extends React.Component {
 
-
+  //const id = this.props.params.id
   /* Checks if the data ready and if so then will create audio component and play the audio */
   constructor (props) {
     super(props)
@@ -24,7 +24,8 @@ class Recipe extends React.Component {
   }
 
   handleClickNext() {
-    this.props.nextDispatch(this.props.data.audio_path)
+    let id = this.props.params.id
+    this.props.fetchNextRecipeStep(id)
   }
 
   handleClickPrevious() {
@@ -35,7 +36,6 @@ class Recipe extends React.Component {
     this.props.repeatDispatch(this.props.data.audio_path)
   }
 
-  /* this method will stop the audio from being played*/
   handleClickStop() {
     this.props.stopDispatch(this.props.data.audio_path)
   }
@@ -51,7 +51,12 @@ class Recipe extends React.Component {
   checkReady(){
     const { playing } = this.props.data
     if (playing !== undefined) {
+      console.log('This is the data before Audio ', this.props.data);
+      if (typeof(this.props.data.audio_path) === 'string') {
+      return <Audio currentStep={this.props.data.currentStep} audio_path={this.props.data.audio_path} playing={playing}/>
+      }
       return <Audio currentStep={this.props.data.currentStep} audio_path={this.props.data.audio_path[this.props.data.currentStep - 1]} playing={playing}/>
+
     }
   }
 
@@ -68,7 +73,6 @@ class Recipe extends React.Component {
 
     if(ingredients){
       const ingredientArray = ingredients.split('@')
-      console.log(ingredientArray);
       return ingredientArray.map((ingredient, i) => {
          return <li key={i}> {ingredient.split(',')}</li>
       })
@@ -78,7 +82,7 @@ class Recipe extends React.Component {
 
   componentDidMount () {
     const { fetchRecipe } = this.props
-    const id = this.props.params.id
+    let id = this.props.params.id
 
     fetchRecipe(id)
       // go to the api, get recipes
@@ -96,17 +100,14 @@ class Recipe extends React.Component {
 
   isListening() {
     if (this.props.data.listening !== true){
-      console.log(this.props.data.listening)
       return <img src='../images/not_listening.png' alt='not_listening_red' />
     }else {
-      console.log(this.props.data.listening)
       return <img src='../images/listening.png' alt='listening_green' />
     }
   }
 
   render(){
     const { cooking_time, ingredients, instructions, image_path } = this.props.data
-    // console.log("Ohh yeah", ingredients);
     return (
       <div className="jumbotron">
         {/* This is the placeholder the button */}
@@ -161,11 +162,10 @@ class Recipe extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
   //bindActionCreators is unknown. keep in mind
-  return bindActionCreators({ nextDispatch,  previousDispatch, repeatDispatch, stopDispatch, fetchRecipe, wholeRecipeDispatch, ingredientsDispatch, listeningDispatch }, dispatch)
+  return bindActionCreators({ nextDispatch,  previousDispatch, repeatDispatch, stopDispatch, fetchRecipe, wholeRecipeDispatch, ingredientsDispatch, listeningDispatch, fetchNextRecipeStep }, dispatch)
 }
 
 const mapStateToProps = (state) => {
-console.log("the state in recipe is ", state);
   return {
     data: state.recipe
   }
