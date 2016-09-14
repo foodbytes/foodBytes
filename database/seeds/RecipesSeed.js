@@ -28,7 +28,7 @@ exports.seed = function(knex, Promise) {
           whole_recipe_audio_path:'../audio/grilledCheese/wholeRecipe.mp3',
           ingredients_audio_path:'../audio/roastChicken/roastChickenIngredients.mp3',
           recipeList_image_path:'../images/roast_chicken_border_p.png',
-          recipePage_image_path: '../images/roast_chicken_hushed_p.png'
+          recipePage_image_path: '../images/roast_chicken_hushed.png'
         }),
 
         knex('recipes').insert({
@@ -42,7 +42,7 @@ exports.seed = function(knex, Promise) {
           whole_recipe_audio_path:'../audio/grilledCheese/wholeRecipe.mp3',
           ingredients_audio_path:'../audio/grilledCheese/ingredients.mp3',
           recipeList_image_path:'../images/stuffing_border_p.png',
-          recipePage_image_path: '../images/stuffing_hushed_p.png'
+          recipePage_image_path: '../images/stuffing_hushed.png'
         })
       ]);
     });
