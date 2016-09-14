@@ -11,7 +11,7 @@ module.exports = function () {
   })
 
   this.When('I click on the "$string" tab', (className) => {
-    browser.waitForExist(`.nav.${className}`)
+    browser.waitForExist(`.nav.${className}`, 3000)
     browser.click(`.nav.${className}`)
   })
 
@@ -20,7 +20,7 @@ module.exports = function () {
   })
 
   this.Then(/^I see the header "([^"]*)"$/, (text) => {
-    browser.waitForExist("h1")
+    browser.waitForExist("h1", 3000)
     var actualText = browser.getText('h1')
     expect(actualText).toEqual(text)
   });
