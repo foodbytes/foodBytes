@@ -114,11 +114,11 @@ li {
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-top: -50px;
+  margin-top: -80px;
   margin-left: -50px;
   background: red;
-  -webkit-animation: pulse 3s linear infinite;
-  animation: pulse 3s linear infinite;
+  -webkit-animation: pulse 2s linear infinite;
+  animation: pulse 2s linear infinite;
   opacity: 0; }
 
 .spinner-4:after {

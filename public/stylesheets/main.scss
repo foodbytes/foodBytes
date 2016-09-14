@@ -2,13 +2,9 @@ body {
   padding: 50px;
   padding-top: 0px;
   font-family: 'Rubik', sans-serif;
-
-  // font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-
   a {
     color: #00B7FF;
   }
-
 }
 
 .commands{
@@ -45,13 +41,14 @@ li{
     color:black;
   }
 }
+
 #imageClick{
   margin: auto;
   text-align: center;
 }
 .navli{
 
-background-color: #333333;
+  background-color: #333333;
   button{
   margin:5px;
   color:white;
@@ -63,8 +60,8 @@ background-color: #333333;
   margin:5px;
   color:white;
   background-color: #B0BF75;
-
 }
+
 .jumbotron{
   background-color: white;
   h1{
@@ -101,10 +98,10 @@ background-color: #333333;
 }
 
 .accordion{
-
  background-color: crimson;
  color: white;
 }
+
 .collapse{
    margin: 0px;
    padding: 0px;
@@ -113,6 +110,7 @@ background-color: #333333;
    font-weight: 400;
   }
 }
+
 .left-text{
  font-weight: bold;
  padding-bottom: 15px;
@@ -133,14 +131,12 @@ background-color: #333333;
   height: 100%;
   background:none;
   background-repeat: no-repeat;
-  // border-radius: 50%;
   position: relative;
   margin: auto;
-  // display: block;
 }
+
 .spinner:after, .spinner:before {
   content: "";
-  // display: inline-block;
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -150,13 +146,14 @@ background-color: #333333;
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-top: -50px;
+  margin-top: -80px;
   margin-left: -50px;
   background: red;
-  -webkit-animation: pulse 3s linear infinite;
-          animation: pulse 3s linear infinite;
+  -webkit-animation: pulse 2s linear infinite;
+          animation: pulse 2s linear infinite;
   opacity: 0;
 }
+
 .spinner-4:after {
   -webkit-animation: pulse 2s linear 2.3s infinite;
           animation: pulse 2s linear 2.3s infinite;
