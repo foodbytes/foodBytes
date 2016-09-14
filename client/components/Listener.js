@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { nextDispatch, previousDispatch, repeatDispatch, stopDispatch, ingredientsDispatch } from '../actions/actionCreators'
+import { startDispatch, nextDispatch, previousDispatch, repeatDispatch, stopDispatch, ingredientsDispatch } from '../actions/actionCreators'
 //, , fetchRecipe, wholeRecipeDispatch, ingredientsDispatch, listeningDispatch
 
 class Listener extends Component {
@@ -17,6 +17,8 @@ class Listener extends Component {
 
       // Let's define our first command. First the text we expect, and then the function it should call
       var commands = {
+        /* cc start set to call nextDispatch for presentation only! */
+        'cc start': () => { this.props.nextDispatch() },
         'cc next': () => { this.props.nextDispatch() },
         'cc previous': () => { this.props.previousDispatch() },
         'cc repeat': () => { this.props.repeatDispatch(true) },
@@ -63,7 +65,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   //bindActionCreators is unknown. keep in mind
   return bindActionCreators(
-    { nextDispatch,  previousDispatch, repeatDispatch, stopDispatch, ingredientsDispatch }, // , wholeRecipeDispatch, ingredientsDispatch, listeningDispatch
+    { startDispatch, nextDispatch,  previousDispatch, repeatDispatch, stopDispatch, ingredientsDispatch }, // , wholeRecipeDispatch, ingredientsDispatch, listeningDispatch
     dispatch
   )
 }
