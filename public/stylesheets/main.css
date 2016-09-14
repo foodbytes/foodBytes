@@ -24,14 +24,26 @@ li {
   .menu .recipeDescription {
     text-align: center; } }
 
+.buttonbar {
+  text-align: center; }
+  .buttonbar .glyphicon {
+    color: black; }
+
 #imageClick {
   margin: auto;
   text-align: center; }
 
-.navli button {
+.navli {
+  background-color: #333333; }
+  .navli button {
+    margin: 5px;
+    color: white;
+    background-color: #B0BF75; }
+
+.recipes {
   margin: 5px;
   color: white;
-  background-color: green; }
+  background-color: #B0BF75; }
 
 .jumbotron {
   background-color: white; }
@@ -49,7 +61,9 @@ li {
   align-items: flex-end; }
 
 .recipeDescription {
-  text-align: left; }
+  text-align: left;
+  font-weight: bolder;
+  color: #FA948A; }
 
 @media only screen and (max-width: 641px) {
   .recipeDescription {
@@ -63,8 +77,8 @@ li {
   color: white; }
 
 .collapse {
-  margin: 5px;
-  padding: 5px; }
+  margin: 0px;
+  padding: 0px; }
   .collapse h5 {
     color: black;
     font-weight: 400; }

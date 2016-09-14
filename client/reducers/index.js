@@ -16,7 +16,6 @@ const moveStep = (state, stepIncrement) => {
 }
 
 const repeatStep = (state, payload) => {
-  console.log('ingredients_audio_path: ', state.ingredients_audio_path);
   return Object.assign(
     {},
     state,
