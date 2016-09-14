@@ -27,7 +27,7 @@ exports.seed = function(knex, Promise) {
           ingredients: '1.3-1.5kg (1 size 14) chicken@Prune and Apricot Stuffing@3-4 rashers streaky rindless bacon@2 tablespoons olive oil + extra for oiling roasting pan@3-4 small rosemary sprigs@2 cups white wine, chicken stock liquid, a mixture of both, or half of either  with cold  water. added for volume@½ teaspoon flaky sea salt@1/8 teaspoon freshly ground black pepper@2 tablespoons olive oil',
           length: 3,
           whole_recipe_audio_path:'../audio/wholeRecipe.mp3',
-          ingredients_audio_path:'../audio/ingredients.mp3',
+          ingredients_audio_path:'../audio/roastChicken/roastChickenIngredients.mp3',
           image_path:'../images/roast-chicken-with-apricot-stuffing_grande.jpeg'
         }),
         knex('recipes').insert({

@@ -7,6 +7,8 @@ import RecipeList from './RecipeList'
 
 class Home extends Component {
 
+
+
   render () {
     return(
       <div className="jumbotron">

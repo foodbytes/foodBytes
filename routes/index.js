@@ -3,14 +3,9 @@ let router = express.Router();
 
 let {getRecipesTable, getStepsTable, getJoinTable} = require('../database/db.js');
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
   res.send('index.html');
 });
-
-// router.get('/api/v1/*', (req, res, next) => {
-//     res.redirect('/')
-// })
 
 router.get('/api/v1/recipes/:id', (req, res) => {
   let id = req.params.id
@@ -38,6 +33,5 @@ router.get('/api/v1/recipes/:id/steps', (req, res) => {
     })
     .catch( err => res.status(500).send(err) )
 })
-
 
 module.exports = router;
