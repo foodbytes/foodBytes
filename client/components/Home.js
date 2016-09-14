@@ -31,7 +31,7 @@ class Home extends Component {
 
         <div className="well row">
           <div className="col-xs-12 col-sm-6 col-md-4"></div>
-              <div className=" col-xs-12 col-sm-6 col-md-4" data-toggle="collapse" data-target="#demo" onClick={`${this.handleClickImage}`} id="imageClick">
+              <div className=" col-xs-12 col-sm-6 col-md-4" data-toggle="collapse" data-target="#demo" onClick={this.handleClickImage} id="imageClick">
                 <img src="../images/bananas_icon_speaker_cartoon.png" alt="home page"/>
               </div>
           <div className="col-lg-12 col-sm-6 col-md-4"></div>
