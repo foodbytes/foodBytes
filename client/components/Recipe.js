@@ -28,7 +28,7 @@ class Recipe extends React.Component {
 
   handleClickStartAtBeginning() {
     console.log(this.props.data, "data!")
-    this.props.startDispatch(this.props.data.audio_path)
+    this.props.startDispatch()
   }
 
   startListening() {
