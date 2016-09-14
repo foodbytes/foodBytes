@@ -2,7 +2,7 @@ import React from 'react'
 import ReactPlayer from 'react-player'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { listeningDispatch } from '../actions/actionCreators'
+import { listeningDispatch, repeatDispatch } from '../actions/actionCreators'
 
 class Audio extends React.Component {
 
@@ -12,6 +12,7 @@ class Audio extends React.Component {
 
   startListening() {
     this.props.listeningDispatch(true)
+    this.props.repeatDispatch(false)
   }
 
   render() {
@@ -41,7 +42,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   //bindActionCreators is unknown. keep in mind
   return bindActionCreators(
-    { listeningDispatch },
+    { listeningDispatch, repeatDispatch },
     dispatch
   )
 }

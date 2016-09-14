@@ -14,6 +14,15 @@ const moveStep = (state, stepIncrement) => {
   )
 }
 
+const repatStep = (state, payload) => {
+  return Object.assign(
+    {},
+    state,
+    {active_audio_path: state.steps_audio_path || state.ingredients_audio_path},
+    {playing: payload}
+  )
+}
+
 const START_STEP = 0
 const isAtStart = (state) => state.currentStep === START_STEP  // NOTE: CHECK THIS
 const isAtEnd   = (state) => state.currentStep === state.length
@@ -49,9 +58,9 @@ const recipe = (state = initialState, action) => {
 
 
     case REPEAT:
-      console.log('Inside REPEAT');
+      console.log('Inside REPEAT', action.payload);
 
-      return Object.assign({}, state, {playing: true}, {currentStep: state.currentStep})
+      return repatStep(state, action.payload);
 
     case WHOLE_RECIPE:
       console.log('Inside WHOLE_RECIPE');

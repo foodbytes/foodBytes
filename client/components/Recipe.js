@@ -38,7 +38,7 @@ class Recipe extends React.Component {
   }
 
   handleClickRepeat() {
-    this.props.repeatDispatch(this.props.data.audio_path)
+    this.props.repeatDispatch(true)
   }
 
   /* this method will stop the audio from being played*/
@@ -55,13 +55,14 @@ class Recipe extends React.Component {
   }
 
   checkReady(){
-    const { playing } = this.props.data
+    const { playing, active_audio_path, currentStep } = this.props.data
     if (playing !== undefined) {
-      console.log('This is the data before Audio ', this.props.data.active_audio_path);
-      if (typeof(this.props.data.active_audio_path) === 'string') {
-        return <Audio active_audio_path={this.props.data.active_audio_path} playing={playing}/>
+      console.log('This is the data before Audio ', active_audio_path);
+      console.log("!!!!!!!!!!!!! Current step is: ", currentStep);
+      if (typeof(active_audio_path) === 'string') {
+        return <Audio active_audio_path={active_audio_path} playing={playing}/>
       }
-      return <Audio active_audio_path={this.props.data.active_audio_path[this.props.data.currentStep - 1]} playing={playing}/>
+      return <Audio active_audio_path={active_audio_path[currentStep - 1]} playing={playing}/>
     }
   }
 
