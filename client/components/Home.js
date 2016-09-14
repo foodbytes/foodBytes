@@ -9,7 +9,6 @@ import RecipeList from './RecipeList'
 class Home extends Component {
 
   constructor(props){
-
     super(props)
     this.handleClickImage= this.handleClickImage.bind(this)
   }
@@ -31,9 +30,9 @@ class Home extends Component {
 
         <div className="well row">
           <div className="col-xs-12 col-sm-6 col-md-4"></div>
-              <div className=" col-xs-12 col-sm-6 col-md-4" data-toggle="collapse" data-target="#demo" onClick={this.handleClickImage} id="imageClick">
-                <img src="../images/bananas_icon_speaker_cartoon.png" alt="home page"/>
-              </div>
+            <div className=" col-xs-12 col-sm-6 col-md-4" data-toggle="collapse" data-target="#demo" onClick={this.handleClickImage} id="imageClick">
+              <img src="../images/bananas_icon_speaker_cartoon.png" alt="home page"/>
+            </div>
           <div className="col-lg-12 col-sm-6 col-md-4"></div>
         </div>
 
@@ -52,7 +51,7 @@ class Home extends Component {
         <div className=" row">
           <div className="col-xs-12 col-sm-6 col-md-2"></div>
           <div className="well col-xs-12 col-sm-6 col-md-8 text-center">
-          <Link to="/recipes"><button role="presentation" className=" recipes btn btn-md">Recipes</button></Link>
+            <Link to="/recipes"><button role="presentation" className=" recipes btn btn-md">Recipes</button></Link>
           </div>
           <div className="col-lg-12 col-sm-6 col-md-2"></div>
         </div>
