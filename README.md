@@ -7,6 +7,7 @@ Food Bytes reads the recipe back to the user and is prompted to play audio files
 A detailed project planning overview including user stories, scamps and learning objectives can be found in the planning repository: https://github.com/foodbytes/Planning
 
 **SCREENSHOTS**
+![alt text](Screen Shot 2016-09-14 at 11.17.25 PM.png "Homepage")
 
 (need to update)
 
