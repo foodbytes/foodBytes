@@ -24,6 +24,11 @@ li {
   .menu .recipeDescription {
     text-align: center; } }
 
+.buttonbar {
+  text-align: center; }
+  .buttonbar .glyphicon {
+    color: black; }
+
 #imageClick {
   margin: auto;
   text-align: center; }
