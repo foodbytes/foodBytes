@@ -18,7 +18,7 @@ class RecipeList extends Component {
     const { recipes } = this.props
 
     return (
-      <div>
+      <div className="jumbotron">
         <div className="page-header">
           <h1 className="text-center">Recipes</h1>
         </div>

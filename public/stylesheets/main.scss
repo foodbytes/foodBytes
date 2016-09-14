@@ -51,6 +51,9 @@ li{
   h1{
     font-weight: bold;
   }
+  .page-header{
+    margin-top: 0;
+  }
 }
 
 .well{
@@ -100,7 +103,7 @@ li{
 .spinner {
   width: 253px;
   height: 304px;
-  background-image: url("../images/bananas.png");
+  background:none;
   background-repeat: no-repeat;
   // border-radius: 50%;
   position: relative;
