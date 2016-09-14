@@ -23,11 +23,8 @@ class Home extends Component {
     return(
       <div className="jumbotron">
         <div className="row">
-          <div className=" header text-center">
-            <h1>Food Bytes</h1>
-          </div>
-
-          <div  className="well row">
+            <h1 className=" header text-center">Food Bytes</h1>
+          <div  className=" row">
             <h3 className=" well text-center">Online recipe support, so you can focus on cooking and keep food well away from your electronic device.</h3>
           </div>
         </div>
@@ -40,7 +37,7 @@ class Home extends Component {
           <div className="col-lg-12 col-sm-6 col-md-4"></div>
         </div>
 
-        <div className="well row">
+        <div className=" row">
           <div className="col-xs-12 col-sm-6 col-md-2"></div>
           <div className="well col-xs-12 col-sm-6 col-md-8 text-center collapse" id="demo" >
             <h4> Hi and welcome to FoodBytes. I am CC, your guide. </h4>

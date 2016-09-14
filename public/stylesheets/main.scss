@@ -45,11 +45,11 @@ li{
 }
 .navli{
 
-// background-color: white;
+background-color: #333333;
   button{
   margin:5px;
   color:white;
-  background-color: green;
+  background-color: #B0BF75;
   }
 }
 .jumbotron{
@@ -74,6 +74,8 @@ li{
 
 .recipeDescription{
   text-align: left;
+  font-weight: bolder;
+  color: #FA948A
   }
   @media only screen and (max-width: 641px){
     .recipeDescription{
@@ -91,8 +93,8 @@ li{
  color: white;
 }
 .collapse{
-   margin: 5px;
-   padding: 5px;
+   margin: 0px;
+   padding: 0px;
   h5{
    color:black;
    font-weight: 400;
