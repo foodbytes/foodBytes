@@ -36,11 +36,11 @@ class Recipe extends React.Component {
   }
 
   handleClickNext() {
-    this.props.nextDispatch(this.props.data.audio_path)
+    this.props.nextDispatch()
   }
 
   handleClickPrevious() {
-    this.props.previousDispatch(this.props.data.audio_path)
+    this.props.previousDispatch()
   }
 
   handleClickRepeat() {
@@ -49,15 +49,15 @@ class Recipe extends React.Component {
 
   /* this method will stop the audio from being played*/
   handleClickStop() {
-    this.props.stopDispatch(this.props.data.audio_path)
+    this.props.stopDispatch()
   }
 
   handleClickIngredients() {
-    this.props.ingredientsDispatch(this.props.data.audio_path)
+    this.props.ingredientsDispatch()
   }
 
   handleClickWholeRecipe() {
-    this.props.wholeRecipeDispatch(this.props.data.audio_path)
+    this.props.wholeRecipeDispatch()
   }
 
   checkReady(){

@@ -18,8 +18,6 @@ class Audio extends React.Component {
   render() {
     const {active_audio_path, playing} = this.props
 
-    console.log(active_audio_path, "going in the react player");
-
     return (
       <div className="hidden">
         <ReactPlayer
