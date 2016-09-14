@@ -1,10 +1,8 @@
 
 exports.seed = function(knex, Promise) {
-  // Deletes ALL existing entries
   return knex('recipes').del()
     .then(function () {
       return Promise.all([
-        // Inserts seed entries
         knex('recipes').insert({
           id: 0,
           name: 'Grilled cheese sandwich',
@@ -15,9 +13,10 @@ exports.seed = function(knex, Promise) {
           length: 3,
           whole_recipe_audio_path:'../audio/grilledCheese/wholeRecipe.mp3',
           ingredients_audio_path:'../audio/grilledCheese/ingredients.mp3',
-          image_path:'../images/cheese_sandwich.jpeg'
-
+          recipeList_image_path:'../images/grilled_cheese_border_p.png',
+          recipePage_image_path: '../images/grilled_cheese_hushed.png'
         }),
+
         knex('recipes').insert({
           id: 1,
           name: 'Roast Chicken with Prune and Apricot Stuffing and Pan Jus',
@@ -28,8 +27,10 @@ exports.seed = function(knex, Promise) {
           length: 3,
           whole_recipe_audio_path:'../audio/grilledCheese/wholeRecipe.mp3',
           ingredients_audio_path:'../audio/roastChicken/roastChickenIngredients.mp3',
-          image_path:'../images/roast-chicken-with-apricot-stuffing_grande.jpeg'
+          recipeList_image_path:'../images/roast_chicken_border_p.png',
+          recipePage_image_path: '../images/roast_chicken_hushed_p.png'
         }),
+
         knex('recipes').insert({
           id: 2,
           name: 'Prune and Apricot Stuffing',
@@ -40,7 +41,8 @@ exports.seed = function(knex, Promise) {
           length: 3,
           whole_recipe_audio_path:'../audio/grilledCheese/wholeRecipe.mp3',
           ingredients_audio_path:'../audio/grilledCheese/ingredients.mp3',
-          image_path:'../images/Prune_something.jpg'
+          recipeList_image_path:'../images/stuffing_border_p.png',
+          recipePage_image_path: '../images/stuffing_hushed_p.png'
         })
       ]);
     });
