@@ -21,7 +21,8 @@
    length: 0,
    whole_recipe_audio_path: null,
    ingredients_audio_path: null,
-   image_path: null,
+   recipeList_image_path: null,
+   recipePage_image_path: null,
    currentStep:0,
    instructions:[],
    steps_audio_path:[]
@@ -37,7 +38,8 @@
      prev.length = row.length
      prev.whole_recipe_audio_path = row.whole_recipe_audio_path
      prev.ingredients_audio_path = row.ingredients_audio_path
-     prev.image_path = row.image_path
+     prev.recipeList_image_path = row.recipeList_image_path
+     prev.recipePage_image_path = row.recipePage_image_path
      prev.currentStep = row.currentStep
      prev.instructions.push(row.instructions)
      prev.steps_audio_path.push(row.steps_audio_path)
