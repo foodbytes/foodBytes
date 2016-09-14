@@ -125,8 +125,9 @@ class Recipe extends React.Component {
               <div className= "col-xs-12 col-sm-3 col-md-2 col-lg-2"></div>
               <div className="commands col-xs-12 col-sm-6 col-md-8 col-lg-8">
                   <a>Available commands:</a>
-                  <a type ="button" className="btn" onClick={this.handleClickNext} id="next"> Next</a>
+                  <a type ="button" className="btn" onClick={this.handleClickPrevious} id="Previous">Start</a>
                   <a type ="button" className="btn" onClick={this.handleClickPrevious} id="Previous">Previous</a>
+                  <a type ="button" className="btn" onClick={this.handleClickNext} id="next"> Next</a>
                   <a type ="button" className="btn" onClick={this.handleClickRepeat} id="Repeat">Repeat</a>
                   <a type ="button" className="btn" onClick={this.handleClickIngredients} id="Ingredients">Ingredients</a>
               </div>
@@ -139,8 +140,9 @@ class Recipe extends React.Component {
                 <div className={`thumbnail ${spinnerClass}`}> <img width="300" height="400" src={recipePage_image_path} alt={thumbnailAlt} onClick={this.startListening}/>
                   <div className="buttonbar">
                     <a type ="button " className="btn-lg glyphicon glyphicon-play" onClick={this.handleClickNext} id="next"></a>
-                    <a type ="button" className="btn-lg glyphicon glyphicon-step-forward" onClick={this.handleClickNext} id="next"></a>
                     <a type ="button" className="btn-lg glyphicon glyphicon-step-backward" onClick={this.handleClickPrevious} id="Previous"></a>
+                    <a type ="button" className="btn-lg glyphicon glyphicon-step-forward" onClick={this.handleClickNext} id="next"></a>
+                    <a type ="button" className="btn-lg glyphicon glyphicon glyphicon-stop" onClick={this.handleClickNext} id="next"></a>
                     <a type ="button" className="btn-lg glyphicon glyphicon-repeat" onClick={this.handleClickRepeat} id="Repeat"></a>
                     <a type ="button" className="btn-lg glyphicon glyphicon-grain" onClick={this.handleClickIngredients} id="Ingredients"></a>
                   </div>
