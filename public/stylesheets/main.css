@@ -16,12 +16,16 @@ li {
   margin-bottom: 10px;
   padding-bottom: 5px; }
 
-.menu .bold {
+.bold {
   font-weight: bold; }
 
 @media only screen and (max-width: 641px) {
   .menu .recipeDescription {
     text-align: center; } }
+
+#imageClick {
+  margin: auto;
+  text-align: center; }
 
 .navli button {
   margin: 5px;
@@ -58,7 +62,7 @@ li {
   color: white; }
 
 .collapse {
-  margin: 10px;
+  margin: 5px;
   padding: 5px; }
   .collapse h5 {
     color: black;

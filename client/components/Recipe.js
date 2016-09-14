@@ -97,21 +97,21 @@ class Recipe extends React.Component {
     // destroy the listeners
   }
 
-  isListening(image_path) {
+  isListening(recipePage_image_path) {
 
     if (this.props.data.listening !== true){
       console.log(this.props.data.listening)
-      return <div className="thumbnail spinnerDiv"> <img width="200" height="300" src={image_path} alt='not_listening_red'/>
+      return <div className="thumbnail spinnerDiv"> <img width="200" height="300" src={recipePage_image_path} alt='not_listening_red'/>
       </div>
     }else {
       console.log(this.props.data.listening)
-      return <div className="thumbnail spinner spinner-4"> <img  width="200" height="300" src={image_path} alt='listening_green' />
+      return <div className="thumbnail spinner spinner-4"> <img  width="200" height="300" src={recipePage_image_path} alt='listening_green' />
       </div>
     }
   }
 
   render(){
-    const { cooking_time, ingredients, instructions, image_path, name, notes } = this.props.data
+    const { cooking_time, ingredients, instructions, recipePage_image_path, name, notes } = this.props.data
     return (
 
       <div className="jumbotron container">
@@ -128,7 +128,7 @@ class Recipe extends React.Component {
           </div>
             <div className="row well ">
               <div className= "col-xs-12 col-sm-6 col-md-4 col-lg-4"></div>
-              <div className= "col-xs-12 col-sm-6 col-md-4 col-lg-4">{this.isListening(image_path)}</div>
+              <div className= "col-xs-12 col-sm-6 col-md-4 col-lg-4">{this.isListening(recipePage_image_path)}</div>
               <div className= "col-xs-12 col-sm-6 col-md-4 col-lg-4"></div>
             </div>
 
