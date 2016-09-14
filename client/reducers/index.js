@@ -11,14 +11,16 @@ const moveStep = (state, stepIncrement) => {
     {active_audio_path: state.steps_audio_path},
     {playing: true},
     {currentStep: state.currentStep + stepIncrement}
+    // {ingredients_audio_path: ''}
   )
 }
 
 const repatStep = (state, payload) => {
+  console.log('ingredients_audio_path: ', state.ingredients_audio_path);
   return Object.assign(
     {},
     state,
-    {active_audio_path: state.steps_audio_path || state.ingredients_audio_path},
+    {active_audio_path: state.steps_audio_path},
     {playing: payload}
   )
 }
@@ -44,7 +46,7 @@ const recipe = (state = initialState, action) => {
       return Object.assign({}, state, apiData)
 
     case NEXT:
-      if (isAtEnd(state) && typeof(active_audio_path)!=='string') return state
+      if (isAtEnd(state) && typeof(active_audio_path) !=='string') return state
 
       return moveStep(state, 1)
 
