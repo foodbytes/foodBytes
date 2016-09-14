@@ -1,49 +1,53 @@
 body {
   padding: 50px;
   padding-top: 0px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+  font-family: 'Rubik', sans-serif; }
   body a {
     color: #00B7FF; }
 
-.jumbotron {
-  background-color: white;
-  border: none;
-  padding-top: 0px; }
-
-.page-header {
-  border-bottom: 0;
-  margin-top: 10px; }
-
-.nav {
-  margin: 10px;
-  padding: 10px;
-  padding-top: 10px;
-  border-bottom: 0; }
-
-.navli {
-  background-color: white; }
-  .navli button {
-    margin: 5px;
-    color: black;
-    background-color: aqua; }
-
 .commands {
-  position: fixed;
-  z-index: 888;
-  background-color: white; }
+  background-color: none;
+  text-align: center; }
   .commands a {
     margin: 2px;
     color: black; }
 
-.well {
-  border: none;
+li {
+  font-size: 16px;
+  margin-bottom: 10px;
+  padding-bottom: 5px; }
+
+.bold {
+  font-weight: bold; }
+
+@media only screen and (max-width: 641px) {
+  .menu .recipeDescription {
+    text-align: center; } }
+
+#imageClick {
+  margin: auto;
+  text-align: center; }
+
+.navli button {
+  margin: 5px;
+  color: white;
+  background-color: green; }
+
+.jumbotron {
   background-color: white; }
+  .jumbotron h1 {
+    font-weight: bold; }
+  .jumbotron .page-header {
+    margin-top: 0; }
+
+.well {
+  background-color: white;
+  border: none; }
 
 .recipeImage {
   margin: auto;
   align-items: flex-end; }
 
-/*responsive design, text centers on small screens*/
 .recipeDescription {
   text-align: left; }
 
@@ -59,7 +63,7 @@ body {
   color: white; }
 
 .collapse {
-  margin: 10px;
+  margin: 5px;
   padding: 5px; }
   .collapse h5 {
     color: black;
@@ -79,17 +83,15 @@ body {
 
 /*SPINNER*/
 .spinner {
-  width: 100px;
-  height: 100px;
-  background: #eee;
-  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  background: none;
+  background-repeat: no-repeat;
   position: relative;
-  margin: 50px;
-  display: inline-block; }
+  margin: auto; }
 
 .spinner:after, .spinner:before {
   content: "";
-  display: block;
   width: 100px;
   height: 100px;
   border-radius: 50%; }
@@ -100,7 +102,7 @@ body {
   left: 50%;
   margin-top: -50px;
   margin-left: -50px;
-  background: orangered;
+  background: red;
   -webkit-animation: pulse 3s linear infinite;
   animation: pulse 3s linear infinite;
   opacity: 0; }

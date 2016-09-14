@@ -10,12 +10,12 @@ module.exports = function () {
     browser.url(Url.format(extend(config.proxy, { pathname: '/recipe/0' })))
   })
 
-  this.When('I click on the image', (className) => {
-    browser.waitForExist('.notListening')
-    browser.click('.listening')
+  this.When(/^I click on the 'Next' button$/, () => {
+    browser.waitForExist('#next#=Next', 3000)
+
   })
 
-  this.Then(/^the image starts to pulse$/, () => {
-    browser.waitForExist('.listening')
+  this.Then(/^CC reads the first step$/, () => {
+    browser.waitForExist("listening_green")
   })
 }

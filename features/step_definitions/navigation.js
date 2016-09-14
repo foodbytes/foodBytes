@@ -20,7 +20,6 @@ module.exports = function () {
   })
 
   this.Then(/^I see the header "([^"]*)"$/, (text) => {
-    console.log(text, expect);
     browser.waitForExist("h1")
     var actualText = browser.getText('h1')
     expect(actualText).toEqual(text)

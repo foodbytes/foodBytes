@@ -19,6 +19,6 @@ module.exports = function () {
 
   this.Then(/^I see the sub-header "([^"]*)"$/, (text) => {
     // console.log(text, expect);
-    browser.waitForExist(`h3=${text}`, 5000)
+    browser.waitForExist(`h2=${text}`, 5000)
   });
 }

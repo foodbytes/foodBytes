@@ -47,8 +47,6 @@ class Listener extends Component {
   render() {
     return (
       <div>
-        <div>Listener {this.props.listening == undefined ? 'undefined' : 'defined'}</div>
-        <div>Listening {this.props.listening ? 'true' : 'false'}</div>
       </div>
     )
   }

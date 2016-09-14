@@ -38,7 +38,7 @@ class Recipe extends React.Component {
   }
 
   handleClickRepeat() {
-    this.props.repeatDispatch(this.props.data.audio_path)
+    this.props.repeatDispatch(true)
   }
 
   /* this method will stop the audio from being played*/
@@ -55,13 +55,14 @@ class Recipe extends React.Component {
   }
 
   checkReady(){
-    const { playing } = this.props.data
+    const { playing, active_audio_path, currentStep } = this.props.data
     if (playing !== undefined) {
-      console.log('This is the data before Audio ', this.props.data.active_audio_path);
-      if (typeof(this.props.data.active_audio_path) === 'string') {
-        return <Audio active_audio_path={this.props.data.active_audio_path} playing={playing}/>
+      // console.log('This is the data before Audio ', active_audio_path);
+      // console.log("!!!!!!!!!!!!! Current step is: ", currentStep);
+      if (typeof(active_audio_path) === 'string') {
+        return <Audio active_audio_path={active_audio_path} playing={playing}/>
       }
-      return <Audio active_audio_path={this.props.data.active_audio_path[this.props.data.currentStep - 1]} playing={playing}/>
+      return <Audio active_audio_path={active_audio_path[currentStep - 1]} playing={playing}/>
     }
   }
 
@@ -96,8 +97,7 @@ class Recipe extends React.Component {
     // run the speechRecognition(this.props, classToListenTo)  as a callback
 
     // bad mvp
-    // speechRecognition(this.props)
-
+    //speechRecognition(this.props)
   }
 
   componentWillUnmount () {
@@ -105,80 +105,69 @@ class Recipe extends React.Component {
     // destroy the listeners
   }
 
-  isListening() {
 
-    if (this.props.data.listening !== true){
-      console.log(this.props.data.listening)
-      return (
-        <div> <img className= "notListening" width="100" height="100" src='../images/not_listening.png'alt='not_listening_red'/>
-        <h5>Click me to take your command</h5>
-      </div>
-    )
-  } else {
-    console.log(this.props.data.listening)
+
+  render(){
+    const { cooking_time, ingredients, instructions, recipePage_image_path, name, notes, listening } = this.props.data
+
+    if (listening !== true) {
+      var spinnerClass = "spinnerDiv"
+      var thumbnailAlt = "not_listening_red"
+    } else {
+      var spinnerClass = "spinner spinner-4"
+      var thumbnailAlt = "listening_green"
+    }
+
     return (
-      <div> <img className= "listening" width="100" height="100" src='../images/listening.png' alt='listening_green' />
-      <h5>I am now listening</h5>
-      <h5>Say Next or click the next button</h5>
-    </div>
-  )}
-}
-
-render(){
-  const { cooking_time, ingredients, instructions, image_path } = this.props.data
-  return (
-    <div className="container">
-      <div className="row ">
-        <div className="commands">
-          <a className="">Available commands:</a>
-          <a type ="button" className="btn" onClick={this.handleClickNext} id="next">Next</a>
-          <a type ="button" className="btn" onClick={this.handleClickPrevious} id="Previous">Previous</a>
-          <a type ="button" className="btn" onClick={this.handleClickRepeat} id="Repeat">Repeat</a>
-          <a type ="button" className="btn" onClick={this.handleClickIngredients} id="Ingredients">Ingredients</a>
-          <a type ="button" className="btn" onClick={this.handleClickWholeRecipe} id="Whole Recipe">Whole Recipe</a>
-        </div>
-      </div>
 
       <div className="jumbotron">
         <Listener />
-        <div className="row well">
-          <div className= "col-xs-12 col-sm-6 col-md-3 col-lg-2">
-            <h5>Available Commands: 'Next' 'Previous' 'Repeat'</h5>
-            <h5>Click here and start talkin!</h5>
-            <button onClick={this.startListening} id="speech" >Start</button>
-            {this.isListening()}
-          </div>
-        </div>
+          <div className="row well ">
+              <div className= "col-xs-12 col-sm-3 col-md-2 col-lg-2"></div>
+              <div className="commands col-xs-12 col-sm-6 col-md-8 col-lg-8">
+                  <a>Available commands:</a>
+                  <a type ="button" className="btn" onClick={this.handleClickNext} id="next">Next</a>
+                  <a type ="button" className="btn" onClick={this.handleClickPrevious} id="Previous">Previous</a>
+                  <a type ="button" className="btn" onClick={this.handleClickRepeat} id="Repeat">Repeat</a>
+                  <a type ="button" className="btn" onClick={this.handleClickIngredients} id="Ingredients">Ingredients</a>
+                  <a type ="button" className="btn" onClick={this.handleClickWholeRecipe} id="Whole Recipe">Whole Recipe</a>
+              </div>
+              <div className= "col-xs-12 col-sm-3 col-md-2 col-lg-2"></div>
 
-        <div className="row well">
-          <div className="well col-xs-12 col-sm-6 col-md-3 col-lg-3">
-            <img className="" width ='300'height ='200'src={`${image_path}`} alt="sandwich"></img>
           </div>
-          <div className=" well col-xs-12 col-sm-6 col-md-5 col-lg-6">
-
-            <h3>Cook time</h3>
-            <h5>{cooking_time}</h5>
-            <div>
-              <h3>Ingredients</h3>
-              <ul>
-                {this.getIngredients(ingredients)}
-              </ul>
+            <div className="row well ">
+              <div className= "col-xs-12 col-sm-6 col-md-4 col-lg-4"></div>
+              <div className= "col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                <div className={`thumbnail ${spinnerClass}`}> <img width="300" height="400" src={recipePage_image_path} alt={thumbnailAlt} onClick={this.startListening}/>
+                </div>
+              </div>
+              <div className= "col-xs-12 col-sm-6 col-md-4 col-lg-4"></div>
             </div>
-            <div>
-              <h3>Method</h3>
-              <ul>
-                {this.getInstructions(instructions)}
-              </ul>
-            </div>
-            {this.checkReady()}
-            <div className= "col-xs-12 col-sm-6 col-md-3 col-lg-3"></div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-  )
-}
+            <div className="row well text-justify menu">
+              {/*<div className= " well col-xs-12 col-sm-12 col-md-1 col-lg-2"></div>*/}
+              <div>
+                <h2 className="text-center">{name}</h2>
+                <h4 className="text-justify">{notes}</h4>
+
+                <h4><b className="bold">Cooking time</b>:{cooking_time}</h4>
+                <div>
+                  <h3>Ingredients</h3>
+                  <ul>{this.getIngredients(ingredients)}</ul>
+                </div>
+
+                <div>
+                  <h3>Method</h3>
+                  <ul>{this.getInstructions(instructions)}</ul>
+                </div>
+                {this.checkReady()}
+                {/*<div className= "col-xs-12 col-sm-12 col-md-1 col-lg-2"></div>*/}
+              </div>
+            </div>
+
+        </div>
+    )
+  }
 }
 
 const mapDispatchToProps = (dispatch) => {
@@ -196,7 +185,7 @@ const mapDispatchToProps = (dispatch) => {
     },
     dispatch
   )
-}
+  }
 
 const mapStateToProps = (state) => {
   return {
