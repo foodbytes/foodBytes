@@ -46,7 +46,7 @@ const recipe = (state = initialState, action) => {
 
     case START:
 
-      const newState = Object.assign({}, {active_audio_path: state.steps_audio_path[0]}, {playing: true}, {currentStep: 1}, state)
+      const newState = Object.assign({}, {active_audio_path: state.steps_audio_path[0]}, {playing: true}, {currentStep: 2}, state)
       console.log(newState, 'the state!')
 
       return newState
