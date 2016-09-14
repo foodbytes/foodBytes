@@ -152,6 +152,26 @@ render(){
 
         <div className="row well">
           <div className= " well col-xs-12 col-sm-6 col-md-3 col-lg-3">
+            <div>
+              <div onClick={this.handleClickNext}>
+                <button id="next" >Next</button>
+              </div>
+              <div onClick={this.handleClickPrevious}>
+                <button id="Previous" >Previous</button>
+              </div>
+              <div onClick={this.handleClickRepeat}>
+                <button id="Repeat" >Repeat</button>
+              </div>
+              <div onClick={this.handleClickStop}>
+                <button id="Stop" >Stop</button>
+              </div>
+              <div onClick={this.handleClickWholeRecipe}>
+                <button id="Whole Recipe" >Whole Recipe</button>
+              </div>
+              <div onClick={this.handleClickIngredients}>
+                <button id="Ingredients" >Ingredients</button>
+              </div>
+            </div>
             <img width ='300'height ='200'src={`${image_path}`} alt="sandwich"></img>
           </div>
           <div className=" well col-xs-12 col-sm-6 col-md-5 col-lg-6">
