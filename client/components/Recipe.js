@@ -119,7 +119,7 @@ class Recipe extends React.Component {
 
     return (
 
-      <div className="jumbotron">
+      <div className="">
         <Listener />
           <div className="row well ">
               <div className= "col-xs-12 col-sm-3 col-md-2 col-lg-2"></div>
@@ -142,7 +142,7 @@ class Recipe extends React.Component {
                     <a type ="button " className="btn-lg glyphicon glyphicon-play" onClick={this.handleClickNext} id="next"></a>
                     <a type ="button" className="btn-lg glyphicon glyphicon-step-backward" onClick={this.handleClickPrevious} id="Previous"></a>
                     <a type ="button" className="btn-lg glyphicon glyphicon-step-forward" onClick={this.handleClickNext} id="next"></a>
-                    <a type ="button" className="btn-lg glyphicon glyphicon glyphicon-stop" onClick={this.handleClickNext} id="next"></a>
+                    <a type ="button" className="btn-lg glyphicon glyphicon glyphicon-stop" onClick={this.handleClickStop} id="Stop"></a>
                     <a type ="button" className="btn-lg glyphicon glyphicon-repeat" onClick={this.handleClickRepeat} id="Repeat"></a>
                     <a type ="button" className="btn-lg glyphicon glyphicon-grain" onClick={this.handleClickIngredients} id="Ingredients"></a>
                   </div>
