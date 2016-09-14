@@ -110,14 +110,14 @@ class Recipe extends React.Component {
     if (this.props.data.listening !== true){
       console.log(this.props.data.listening)
       return (
-        <div> <img width="100" height="100" src='../images/not_listening.png'alt='not_listening_red'/>
+        <div> <img className= "notListening" width="100" height="100" src='../images/not_listening.png'alt='not_listening_red'/>
         <h5>Click me to take your command</h5>
       </div>
     )
   } else {
     console.log(this.props.data.listening)
     return (
-      <div> <img width="100" height="100" src='../images/listening.png' alt='listening_green' />
+      <div> <img className= "listening" width="100" height="100" src='../images/listening.png' alt='listening_green' />
       <h5>I am now listening</h5>
       <h5>Say Next or click the next button</h5>
     </div>
@@ -152,7 +152,7 @@ render(){
 
         <div className="row well">
           <div className="well col-xs-12 col-sm-6 col-md-3 col-lg-3">
-            <img className="pulseButton" width ='300'height ='200'src={`${image_path}`} alt="sandwich"></img>
+            <img className="" width ='300'height ='200'src={`${image_path}`} alt="sandwich"></img>
           </div>
           <div className=" well col-xs-12 col-sm-6 col-md-5 col-lg-6">
 
