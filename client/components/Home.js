@@ -22,7 +22,6 @@ class Home extends Component {
     audio.play()
   }
 
-
   render () {
     return(
       <div className="jumbotron">

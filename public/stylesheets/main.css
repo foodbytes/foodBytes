@@ -6,7 +6,8 @@ body {
     color: #00B7FF; }
 
 .commands {
-  background-color: none; }
+  background-color: none;
+  text-align: center; }
   .commands a {
     margin: 2px;
     color: black; }
