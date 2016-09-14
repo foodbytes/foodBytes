@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux'
 import { fetchRecipe} from '../actions/actionCreators'
 import { Router, Route, hashHistory, Link } from 'react-router'
 import RecipeList from './RecipeList'
-import Audio from './Audio'
+import ReactPlayer from 'react-player'
 
 
 class Home extends Component {
@@ -28,7 +28,7 @@ class Home extends Component {
 
   renderAudio(){
     if (this.state.homePageListening) {
-      return <Audio active_audio_path='./audio/foodBytesIntroduction.mp3' playing={true} />
+      return <ReactPlayer className="hidden" url='./audio/foodBytesIntroduction.mp3' playing={true} />
     }
   }
 
