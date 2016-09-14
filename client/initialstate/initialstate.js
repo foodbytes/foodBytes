@@ -14,7 +14,6 @@ export const initialState = {
     active_audio_path: null,
     playing: false,
     listening: false,
-    repeating: false
   },
   routing: { locationBeforeTransitions: null }
 }
