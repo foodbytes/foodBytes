@@ -16,11 +16,6 @@ li {
   margin-bottom: 10px;
   padding-bottom: 5px; }
 
-.page-header {
-  margin-top: 0;
-  font-weight: bold;
-  font-size: 50px; }
-
 .menu .bold {
   font-weight: bold; }
 
@@ -33,9 +28,14 @@ li {
   color: white;
   background-color: green; }
 
-.well {
-  border: none;
+.jumbotron {
   background-color: white; }
+  .jumbotron h1 {
+    font-weight: bold; }
+
+.well {
+  background-color: white;
+  border: none; }
 
 .recipeImage {
   margin: auto;

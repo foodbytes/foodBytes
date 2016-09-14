@@ -18,7 +18,7 @@ class Home extends Component {
 
   handleClickImage(){
     console.log('bananas');
-    let audio= new Audio("./audio/stepOne.mp3");
+    let audio= new Audio("./audio/foodBytesIntroduction.mp3");
     audio.play()
   }
 
@@ -27,10 +27,11 @@ class Home extends Component {
     return(
       <div className="jumbotron">
         <div className="row">
-          <div className="page-header text-center">
+          <div className="text-center">
             <h1>Foodbytes</h1>
           </div>
-          <div>
+
+          <div  className="well row">
             <h2 className="text-center">Your talking recipe guide</h2>
           </div>
         </div>
@@ -46,7 +47,9 @@ class Home extends Component {
         <div className="well row">
           <div className="col-xs-12 col-sm-6 col-md-2"></div>
           <div className="well col-xs-12 col-sm-6 col-md-8 text-justify collapse" id="demo" >
-            <h4> Hi and welcome to FoodBytes. I am CC, your guide. Foodbytes is an interactive audio recipe book. By reading the recipes out to you your hands are free to get on with the cooking. To talk to me, say my name and a command. The commands I understand are "CC next", "CC previous" and "CC repeat". So head on over to the recipe page to get started...I will meet you there. </h4>
+            <h4> Hi and welcome to FoodBytes. I am CC, your guide. </h4>
+            <h4>Foodbytes is an interactive audio recipe book. By reading the recipes out to you your hands are free to get on with the cooking. </h4>
+            <h4>To talk to me, say my name and a command. The commands I understand are "CC next", "CC previous" and "CC repeat". So head on over to the recipe page to get started...I will meet you there. </h4>
           </div>
           <div className="col-lg-12 col-sm-6 col-md-2"></div>
         </div>
