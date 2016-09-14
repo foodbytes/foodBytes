@@ -18,7 +18,7 @@ const repeatStep = (state, payload) => {
   return Object.assign(
     {},
     state,
-    {active_audio_path: state.steps_audio_path},
+    {active_audio_path: state.active_audio_path},
     {playing: payload},
   )
 }
