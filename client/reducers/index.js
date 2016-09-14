@@ -1,5 +1,5 @@
 import { initialState } from '../initialstate/initialstate'
-import { NEXT, REPEAT, PREVIOUS, STOP, WHOLE_RECIPE, LISTENING, INGREDIENTS, RECEIVE_RECIPE_STEPS, RECEIVE_ALL_RECIPES } from '../actions/actionCreators'
+import { START, NEXT, REPEAT, PREVIOUS, STOP, WHOLE_RECIPE, LISTENING, INGREDIENTS, RECEIVE_RECIPE_STEPS, RECEIVE_ALL_RECIPES } from '../actions/actionCreators'
 import { combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
 
@@ -43,6 +43,13 @@ const recipe = (state = initialState, action) => {
       let apiData = Object.assign({}, action.payload, {length: length}, {currentStep: 0})
 
       return Object.assign({}, state, apiData)
+
+    case START:
+
+      const newState = Object.assign({}, {active_audio_path: state.steps_audio_path[0]}, {playing: true}, {currentStep: 2}, state)
+      console.log(newState, 'the state!')
+
+      return newState
 
     case NEXT:
       if (isAtEnd(state) && typeof(active_audio_path) !=='string') return state
