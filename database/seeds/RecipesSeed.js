@@ -13,8 +13,8 @@ exports.seed = function(knex, Promise) {
           cooking_time: '10 mins',
           ingredients: 'Two slices of cheddar or swiss cheese@Two slices of white bread@Two tablespoons of butter',
           length: 3,
-          whole_recipe_audio_path:'../audio/wholeRecipe.mp3',
-          ingredients_audio_path:'../audio/ingredients.mp3',
+          whole_recipe_audio_path:'../audio/grilledCheese/wholeRecipe.mp3',
+          ingredients_audio_path:'../audio/grilledCheese/ingredients.mp3',
           image_path:'../images/cheese_sandwich.jpeg'
 
         }),
@@ -26,7 +26,7 @@ exports.seed = function(knex, Promise) {
           cooking_time: '1 hours 30 mins',
           ingredients: '1.3-1.5kg (1 size 14) chicken@Prune and Apricot Stuffing@3-4 rashers streaky rindless bacon@2 tablespoons olive oil + extra for oiling roasting pan@3-4 small rosemary sprigs@2 cups white wine, chicken stock liquid, a mixture of both, or half of either  with cold  water. added for volume@½ teaspoon flaky sea salt@1/8 teaspoon freshly ground black pepper@2 tablespoons olive oil',
           length: 3,
-          whole_recipe_audio_path:'../audio/wholeRecipe.mp3',
+          whole_recipe_audio_path:'../audio/grilledCheese/wholeRecipe.mp3',
           ingredients_audio_path:'../audio/roastChicken/roastChickenIngredients.mp3',
           image_path:'../images/roast-chicken-with-apricot-stuffing_grande.jpeg'
         }),
@@ -38,8 +38,8 @@ exports.seed = function(knex, Promise) {
           cooking_time: '20 Mins',
           ingredients: '3 cups fresh breadcrumbs@1/2 cup pitted prunes (roughly chopped)@1/2 cup dried apricots (roughly chopped)@1/4 cup pine nuts ( lightly toasted)@finely grated zest of 1 lemon@3 tablespoons butter@90g (3/4-1) small onion (diced)@1 tablespoon finely chopped rosemary leaves@1 egg (lightly whisked)@1 teaspoon flaky sea salt@¼ teaspoon freshly ground black pepper',
           length: 3,
-          whole_recipe_audio_path:'../audio/wholeRecipe.mp3',
-          ingredients_audio_path:'../audio/ingredients.mp3',
+          whole_recipe_audio_path:'../audio/grilledCheese/wholeRecipe.mp3',
+          ingredients_audio_path:'../audio/grilledCheese/ingredients.mp3',
           image_path:'../images/Prune_something.jpg'
         })
       ]);
