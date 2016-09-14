@@ -4,8 +4,6 @@ import { bindActionCreators } from 'redux'
 import { fetchRecipe} from '../actions/actionCreators'
 import { Router, Route, hashHistory, Link } from 'react-router'
 import RecipeList from './RecipeList'
-import ReactPlayer from 'react-player'
-
 
 
 class Home extends Component {
@@ -17,7 +15,6 @@ class Home extends Component {
   }
 
   handleClickImage(){
-    console.log('bananas');
     let audio= new Audio("./audio/foodBytesIntroduction.mp3");
     audio.play()
   }
