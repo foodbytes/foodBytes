@@ -19,7 +19,7 @@ const repeatStep = (state, payload) => {
     {},
     state,
     {active_audio_path: state.steps_audio_path},
-    {playing: payload}
+    {playing: payload},
   )
 }
 

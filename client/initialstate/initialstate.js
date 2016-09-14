@@ -13,7 +13,8 @@ export const initialState = {
     whole_recipe_audio_path: '',
     active_audio_path: null,
     playing: false,
-    listening: false
+    listening: false,
+    repeating: false
   },
   routing: { locationBeforeTransitions: null }
 }

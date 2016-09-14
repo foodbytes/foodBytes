@@ -1,8 +1,9 @@
 import React from 'react'
 import { bindActionCreators } from 'redux'
-import { startDispatch, nextDispatch, previousDispatch, repeatDispatch, stopDispatch, fetchRecipe, wholeRecipeDispatch, ingredientsDispatch, listeningDispatch } from '../actions/actionCreators'
 import { connect } from 'react-redux'
 
+
+import { startDispatch, nextDispatch, previousDispatch, repeatDispatch, stopDispatch, fetchRecipe, wholeRecipeDispatch, ingredientsDispatch, listeningDispatch } from '../actions/actionCreators'
 import Audio from './Audio'
 import Listener from './Listener'
 
@@ -21,8 +22,8 @@ class Recipe extends React.Component {
   }
 
   handleClickStartAtBeginning() {
-    console.log(this.props.data, "data!")
-    this.props.startDispatch()
+    /* set to call nextDispatch for presentation only! */
+    this.props.nextDispatch()
   }
 
   startListening() {
@@ -104,7 +105,7 @@ class Recipe extends React.Component {
 
     return (
 
-      <div className="jumbotron">
+      <div className="">
         <Listener />
           <div className="row well ">
               <div className= "col-xs-12 col-sm-3 col-md-2 col-lg-2"></div>
