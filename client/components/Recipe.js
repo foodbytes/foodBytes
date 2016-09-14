@@ -92,18 +92,9 @@ class Recipe extends React.Component {
     const id = this.props.params.id
 
     fetchRecipe(id)
-    // go to the api, get recipes
-    // dispatch RECEIVE_RECIPE_STEPS
-    // run the speechRecognition(this.props, classToListenTo)  as a callback
 
-    // bad mvp
-    //speechRecognition(this.props)
   }
 
-  componentWillUnmount () {
-    // later
-    // destroy the listeners
-  }
 
 
   render(){
@@ -113,7 +104,7 @@ class Recipe extends React.Component {
       var spinnerClass = "spinnerDiv"
       var thumbnailAlt = "not_listening_red"
     } else {
-      var spinnerClass = "spinner spinner-4"
+      var spinnerPulse = "spinner spinner-4"
       var thumbnailAlt = "listening_green"
     }
 
@@ -137,7 +128,7 @@ class Recipe extends React.Component {
             <div className="row well ">
               <div className= "col-xs-12 col-sm-6 col-md-4 col-lg-4"></div>
               <div className= "col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                <div className={`thumbnail ${spinnerClass}`}> <img width="300" height="400" src={recipePage_image_path} alt={thumbnailAlt} onClick={this.startListening}/>
+                <div className={`thumbnail ${spinnerClass, spinnerPulse}`}> <img width="300" height="400" src={recipePage_image_path} alt={thumbnailAlt} onClick={this.startListening}/>
                   <div className="buttonbar">
                     <a type ="button " className="btn-lg glyphicon glyphicon-play" onClick={this.handleClickNext} id="next"></a>
                     <a type ="button" className="btn-lg glyphicon glyphicon-step-backward" onClick={this.handleClickPrevious} id="Previous"></a>
@@ -152,25 +143,15 @@ class Recipe extends React.Component {
             </div>
 
             <div className="row well text-justify menu">
-              {/*<div className= " well col-xs-12 col-sm-12 col-md-1 col-lg-2"></div>*/}
-              <div>
-                <h2 className="text-center">{name}</h2>
-                <h4 className="text-justify">{notes}</h4>
-
-                <h4><b className="bold">Cooking time</b>:{cooking_time}</h4>
-                <div>
-                  <h3>Ingredients</h3>
-                  <ul>{this.getIngredients(ingredients)}</ul>
-                </div>
-
-                <div>
-                  <h3>Method</h3>
-                  <ul>{this.getInstructions(instructions)}</ul>
-                </div>
+                <h2 className="text-center">{name}</h2><br></br>
+                <h4 className="text-justify">{notes}</h4><br></br>
+                <h4><b className="bold">Cooking time</b>:{cooking_time}</h4><br></br>
+                <h3>Ingredients</h3><br></br>
+                <ul>{this.getIngredients(ingredients)}</ul><br></br>
+                <h3>Method</h3><br></br>
+                <ul>{this.getInstructions(instructions)}</ul><br></br>
                 {this.checkReady()}
-                {/*<div className= "col-xs-12 col-sm-12 col-md-1 col-lg-2"></div>*/}
               </div>
-            </div>
 
         </div>
     )
