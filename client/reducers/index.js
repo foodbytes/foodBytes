@@ -15,7 +15,7 @@ const moveStep = (state, stepIncrement) => {
   )
 }
 
-const repatStep = (state, payload) => {
+const repeatStep = (state, payload) => {
   console.log('ingredients_audio_path: ', state.ingredients_audio_path);
   return Object.assign(
     {},
@@ -62,7 +62,7 @@ const recipe = (state = initialState, action) => {
     case REPEAT:
       console.log('Inside REPEAT', action.payload);
 
-      return repatStep(state, action.payload);
+      return repeatStep(state, action.payload);
 
     case WHOLE_RECIPE:
       console.log('Inside WHOLE_RECIPE');
