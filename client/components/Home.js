@@ -27,12 +27,12 @@ class Home extends Component {
     return(
       <div className="jumbotron">
         <div className="row">
-          <div className="text-center">
+          <div className=" header text-center">
             <h1>Foodbytes</h1>
           </div>
 
           <div  className="well row">
-            <h2 className="text-center">Your talking recipe guide</h2>
+            <h3 className=" well text-center">Online recipe support, so you can focus on cooking and keep food well away from your electronic device.</h3>
           </div>
         </div>
 
