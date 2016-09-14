@@ -101,11 +101,11 @@ class Recipe extends React.Component {
 
     if (this.props.data.listening !== true){
       console.log(this.props.data.listening)
-      return <div className="thumbnail spinnerDiv"> <img width="200" height="300" src={recipePage_image_path} alt='not_listening_red'/>
+      return <div className="thumbnail spinnerDiv"> <img width="300" height="400" src={recipePage_image_path} alt='not_listening_red'/>
       </div>
     }else {
       console.log(this.props.data.listening)
-      return <div className="thumbnail spinner spinner-4"> <img  width="200" height="300" src={recipePage_image_path} alt='listening_green' />
+      return <div className="thumbnail spinner spinner-4"> <img  width="300" height="400" src={recipePage_image_path} alt='listening_green' />
       </div>
     }
   }

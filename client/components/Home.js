@@ -28,7 +28,7 @@ class Home extends Component {
       <div className="jumbotron">
         <div className="row">
           <div className=" header text-center">
-            <h1>Foodbytes</h1>
+            <h1>Food Bytes</h1>
           </div>
 
           <div  className="well row">

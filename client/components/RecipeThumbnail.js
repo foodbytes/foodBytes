@@ -6,7 +6,7 @@ export default ({recipe}) => {
     <div className="row well content">
       <Link to={`/recipes/${recipe.id}`}>
         <div className="recipeImage thumbnail col-xs-12 col-sm-6 col-md-3">
-          <img className="img-circle" width ='100'height ='100'src={`${recipe.recipeList_image_path}`}alt="sandwich"></img>
+          <img className="img-circle" width ='150'height ='150'src={`${recipe.recipeList_image_path}`}alt="sandwich"></img>
         </div>
         <div className="recipeDescription col-xs-12 col-sm-6 col-md-9">
           <h3>{recipe.name}</h3>
