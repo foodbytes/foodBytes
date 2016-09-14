@@ -33,7 +33,6 @@ return seedData.reduce((prev,row)=>{
 
    },result)
 
-
 }
 
 module.exports = transformJoin

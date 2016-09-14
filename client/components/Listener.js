@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { nextDispatch, previousDispatch, repeatDispatch, stopDispatch, ingredientsDispatch } from '../actions/actionCreators'
+
+import { startDispatch, nextDispatch, previousDispatch, repeatDispatch, stopDispatch, ingredientsDispatch } from '../actions/actionCreators'
 
 class Listener extends Component {
 
@@ -11,6 +12,7 @@ class Listener extends Component {
       annyang.debug()
       annyang.setLanguage('en-NZ')
       var commands = {
+        'cc start': () => { this.props.startDispatch() },
         'cc next': () => { this.props.nextDispatch() },
         'cc previous': () => { this.props.previousDispatch() },
         'cc repeat': () => { this.props.repeatDispatch(true) },
@@ -53,7 +55,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators(
-    { nextDispatch,  previousDispatch, repeatDispatch, stopDispatch, ingredientsDispatch }, // , wholeRecipeDispatch, ingredientsDispatch, listeningDispatch
+    { startDispatch, nextDispatch,  previousDispatch, repeatDispatch, stopDispatch, ingredientsDispatch }, // , wholeRecipeDispatch, ingredientsDispatch, listeningDispatch
     dispatch
   )
 }

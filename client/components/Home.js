@@ -24,7 +24,7 @@ class Home extends Component {
         <div className="row">
             <h1 className=" header text-center">Food Bytes</h1>
           <div  className=" row">
-            <h3 className=" well text-center">Online recipe support, so you can focus on cooking and keep food well away from your electronic device.</h3>
+            <h3 className=" well text-center">An interactive audio recipe book.</h3>
           </div>
         </div>
 

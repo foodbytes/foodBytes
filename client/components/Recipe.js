@@ -1,6 +1,6 @@
 import React from 'react'
 import { bindActionCreators } from 'redux'
-import { nextDispatch, previousDispatch, repeatDispatch, stopDispatch, fetchRecipe, wholeRecipeDispatch, ingredientsDispatch, listeningDispatch } from '../actions/actionCreators'
+import { startDispatch, nextDispatch, previousDispatch, repeatDispatch, stopDispatch, fetchRecipe, wholeRecipeDispatch, ingredientsDispatch, listeningDispatch } from '../actions/actionCreators'
 import { connect } from 'react-redux'
 
 import Audio from './Audio'
@@ -10,6 +10,7 @@ class Recipe extends React.Component {
 
   constructor (props) {
     super(props)
+    this.handleClickStartAtBeginning = this.handleClickStartAtBeginning.bind(this)
     this.startListening = this.startListening.bind(this)
     this.handleClickNext = this.handleClickNext.bind(this)
     this.handleClickPrevious = this.handleClickPrevious.bind(this)
@@ -19,16 +20,21 @@ class Recipe extends React.Component {
     this.handleClickWholeRecipe = this.handleClickWholeRecipe.bind(this)
   }
 
+  handleClickStartAtBeginning() {
+    console.log(this.props.data, "data!")
+    this.props.startDispatch()
+  }
+
   startListening() {
     this.props.listeningDispatch(true)
   }
 
   handleClickNext() {
-    this.props.nextDispatch(this.props.data.audio_path)
+    this.props.nextDispatch()
   }
 
   handleClickPrevious() {
-    this.props.previousDispatch(this.props.data.audio_path)
+    this.props.previousDispatch()
   }
 
   handleClickRepeat() {
@@ -37,15 +43,15 @@ class Recipe extends React.Component {
 
   /* this method will stop the audio from being played*/
   handleClickStop() {
-    this.props.stopDispatch(this.props.data.audio_path)
+    this.props.stopDispatch()
   }
 
   handleClickIngredients() {
-    this.props.ingredientsDispatch(this.props.data.audio_path)
+    this.props.ingredientsDispatch()
   }
 
   handleClickWholeRecipe() {
-    this.props.wholeRecipeDispatch(this.props.data.audio_path)
+    this.props.wholeRecipeDispatch()
   }
 
   checkReady(){
@@ -104,7 +110,7 @@ class Recipe extends React.Component {
               <div className= "col-xs-12 col-sm-3 col-md-2 col-lg-2"></div>
               <div className="commands col-xs-12 col-sm-6 col-md-8 col-lg-8">
                   <a>Available commands:</a>
-                  <a type ="button" className="btn" onClick={this.handleClickPrevious} id="Previous">Start</a>
+                  <a type ="button" className="btn" onClick={this.handleClickStartAtBeginning} id="start">Start</a>
                   <a type ="button" className="btn" onClick={this.handleClickPrevious} id="Previous">Previous</a>
                   <a type ="button" className="btn" onClick={this.handleClickNext} id="next"> Next</a>
                   <a type ="button" className="btn" onClick={this.handleClickRepeat} id="Repeat">Repeat</a>
@@ -118,10 +124,10 @@ class Recipe extends React.Component {
               <div className= "col-xs-12 col-sm-6 col-md-4 col-lg-4">
                 <div className={`thumbnail ${spinnerClass, spinnerPulse}`}> <img width="300" height="400" src={recipePage_image_path} alt={thumbnailAlt} onClick={this.startListening}/>
                   <div className="buttonbar">
-                    <a type ="button " className="btn-lg glyphicon glyphicon-play" onClick={this.handleClickNext} id="next"></a>
+                    <a type ="button " className="btn-lg glyphicon glyphicon-play" onClick={this.handleClickStartAtBeginning} id="start"></a>
                     <a type ="button" className="btn-lg glyphicon glyphicon-step-backward" onClick={this.handleClickPrevious} id="Previous"></a>
                     <a type ="button" className="btn-lg glyphicon glyphicon-step-forward" onClick={this.handleClickNext} id="next"></a>
-                    <a type ="button" className="btn-lg glyphicon glyphicon glyphicon-stop" onClick={this.handleClickNext} id="next"></a>
+                    <a type ="button" className="btn-lg glyphicon glyphicon glyphicon-stop" onClick={this.handleClickStop} id="stop"></a>
                     <a type ="button" className="btn-lg glyphicon glyphicon-repeat" onClick={this.handleClickRepeat} id="Repeat"></a>
                     <a type ="button" className="btn-lg glyphicon glyphicon-grain" onClick={this.handleClickIngredients} id="Ingredients"></a>
                   </div>
@@ -149,6 +155,7 @@ class Recipe extends React.Component {
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators(
     {
+      startDispatch,
       nextDispatch,
       previousDispatch,
       repeatDispatch,
