@@ -11,6 +11,16 @@ const moveStep = (state, stepIncrement) => {
     {active_audio_path: state.steps_audio_path},
     {playing: true},
     {currentStep: state.currentStep + stepIncrement}
+    // {ingredients_audio_path: ''}
+  )
+}
+
+const repeatStep = (state, payload) => {
+  return Object.assign(
+    {},
+    state,
+    {active_audio_path: state.steps_audio_path},
+    {playing: payload}
   )
 }
 
@@ -35,7 +45,7 @@ const recipe = (state = initialState, action) => {
       return Object.assign({}, state, apiData)
 
     case NEXT:
-      if (isAtEnd(state) && typeof(active_audio_path)!=='string') return state
+      if (isAtEnd(state) && typeof(active_audio_path) !=='string') return state
 
       return moveStep(state, 1)
 
@@ -49,9 +59,9 @@ const recipe = (state = initialState, action) => {
 
 
     case REPEAT:
-      console.log('Inside REPEAT');
+      console.log('Inside REPEAT', action.payload);
 
-      return Object.assign({}, state, {playing: true}, {currentStep: state.currentStep})
+      return repeatStep(state, action.payload);
 
     case WHOLE_RECIPE:
       console.log('Inside WHOLE_RECIPE');
