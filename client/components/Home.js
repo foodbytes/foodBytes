@@ -10,7 +10,6 @@ import ReactPlayer from 'react-player'
 class Home extends Component {
 
   constructor(props){
-
     super(props)
     this.handleClickImage= this.handleClickImage.bind(this)
 
@@ -36,18 +35,18 @@ class Home extends Component {
     return(
       <div className="jumbotron">
         <div className="row">
-            <h1 className=" header text-center">Food Bytes</h1>
+          <h1 className=" header text-center">Food Bytes</h1>
           <div  className=" row">
-            <h3 className=" well text-center">Online recipe support, so you can focus on cooking and keep food well away from your electronic device.</h3>
+            <h3 className=" well text-center">An interactive audio recipe book.</h3>
           </div>
         </div>
 
         <div className="well row">
           <div className="col-xs-12 col-sm-6 col-md-4"></div>
-              <div className=" col-xs-12 col-sm-6 col-md-4" data-toggle="collapse" data-target="#demo" onClick={this.handleClickImage} id="imageClick">
-                {this.renderAudio()}
-                <img src="../images/bananas_icon_speaker_cartoon.png" alt="home page"/>
-              </div>
+          <div className=" col-xs-12 col-sm-6 col-md-4" data-toggle="collapse" data-target="#demo" onClick={this.handleClickImage} id="imageClick">
+            {this.renderAudio()}
+            <img src="../images/bananas_icon_speaker_cartoon.png" alt="home page"/>
+          </div>
           <div className="col-lg-12 col-sm-6 col-md-4"></div>
         </div>
 
@@ -66,7 +65,7 @@ class Home extends Component {
         <div className=" row">
           <div className="col-xs-12 col-sm-6 col-md-2"></div>
           <div className="well col-xs-12 col-sm-6 col-md-8 text-center">
-          <Link to="/recipes"><button role="presentation" className=" recipes btn btn-md">Recipes</button></Link>
+            <Link to="/recipes"><button role="presentation" className=" recipes btn btn-md">Recipes</button></Link>
           </div>
           <div className="col-lg-12 col-sm-6 col-md-2"></div>
         </div>

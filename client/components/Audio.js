@@ -7,12 +7,12 @@ import { listeningDispatch, repeatDispatch } from '../actions/actionCreators'
 class Audio extends React.Component {
 
   stopListening() {
-    this.props.listeningDispatch(false)
+      this.props.listeningDispatch(false)
   }
 
   startListening() {
-    this.props.listeningDispatch(true)
-    this.props.repeatDispatch(false)
+      this.props.listeningDispatch(true)
+      this.props.repeatDispatch(false)
   }
 
   render() {
@@ -32,22 +32,19 @@ class Audio extends React.Component {
 }
 
 
-
 const mapStateToProps = (state) => {
   return {
-    listening: state.recipe.listening
+    listening: state.recipe.listening,
+    repeating: state.recipe.repeating
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
-  //bindActionCreators is unknown. keep in mind
   return bindActionCreators(
     { listeningDispatch, repeatDispatch },
     dispatch
   )
 }
-
-
 
 export default connect(
   mapStateToProps,
