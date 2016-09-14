@@ -92,6 +92,7 @@ class Recipe extends React.Component {
   }
 
 
+
   render(){
     const { cooking_time, ingredients, instructions, recipePage_image_path, name, notes, listening } = this.props.data
 
