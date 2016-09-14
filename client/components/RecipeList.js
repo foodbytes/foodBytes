@@ -14,9 +14,7 @@ class RecipeList extends Component {
   }
 
   render () {
-
     const { recipes } = this.props
-
     return (
       <div className="jumbotron">
         <div className="page-header">

@@ -9,7 +9,7 @@ import Nav from './layout/Nav';
 class App extends Component {
 
   constructor (props) {
-    super(props);
+    super(props)
   }
 
   componentDidMount () {
@@ -22,13 +22,11 @@ class App extends Component {
 
     return (
       <div>
-        {/* default nav bar */}
         <Nav />
         {this.props.children}
       </div>
-    );
+    )
   }
-
 }
 
 
@@ -39,7 +37,6 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  //bindActionCreators is unknown. keep in mind
   return bindActionCreators({ fetchRecipes }, dispatch)
 }
 
