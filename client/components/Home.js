@@ -45,9 +45,11 @@ class Home extends Component {
             <h4>To talk to me, say my name and a command. </h4>
             <h4 className="bold">The commands I understand are "CC next", "CC previous" and "CC repeat".</h4>
             <h4>So head on over to the recipe page to get started...I will meet you there. </h4>
+              <Link to="/recipes"><button role="presentation" className=" recipes btn btn-md">Recipes</button></Link>
           </div>
           <div className="col-lg-12 col-sm-6 col-md-2"></div>
         </div>
+
       </div>
     )
   }
