@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux'
 import { fetchRecipe} from '../actions/actionCreators'
 import { Router, Route, hashHistory, Link } from 'react-router'
 import RecipeList from './RecipeList'
+import ReactPlayer from 'react-player'
 
 
 class Home extends Component {
@@ -11,18 +12,30 @@ class Home extends Component {
   constructor(props){
     super(props)
     this.handleClickImage= this.handleClickImage.bind(this)
+
+    this.state = {
+      homePageListening: false
+    }
   }
 
   handleClickImage(){
-    let audio= new Audio("./audio/foodBytesIntroduction.mp3");
-    audio.play()
+
+    this.setState({
+      homePageListening: true
+    });
+  }
+
+  renderAudio(){
+    if (this.state.homePageListening) {
+      return <ReactPlayer className="hidden" url='./audio/foodBytesIntroduction.mp3' playing={true} />
+    }
   }
 
   render () {
     return(
       <div className="jumbotron">
         <div className="row">
-            <h1 className=" header text-center">Food Bytes</h1>
+          <h1 className=" header text-center">Food Bytes</h1>
           <div  className=" row">
             <h3 className=" well text-center">An interactive audio recipe book.</h3>
           </div>
@@ -30,9 +43,10 @@ class Home extends Component {
 
         <div className="well row">
           <div className="col-xs-12 col-sm-6 col-md-4"></div>
-            <div className=" col-xs-12 col-sm-6 col-md-4" data-toggle="collapse" data-target="#demo" onClick={this.handleClickImage} id="imageClick">
-              <img src="../images/bananas_icon_speaker_cartoon.png" alt="home page"/>
-            </div>
+          <div className=" col-xs-12 col-sm-6 col-md-4" data-toggle="collapse" data-target="#demo" onClick={this.handleClickImage} id="imageClick">
+            {this.renderAudio()}
+            <img src="../images/bananas_icon_speaker_cartoon.png" alt="home page"/>
+          </div>
           <div className="col-lg-12 col-sm-6 col-md-4"></div>
         </div>
 
