@@ -106,7 +106,7 @@ class Recipe extends React.Component {
 
     return (
 
-      <div className="">
+      <div className="jumbotron">
         <Listener />
           <div className="row well ">
               <div className= "col-xs-12 col-sm-3 col-md-2 col-lg-2"></div>
