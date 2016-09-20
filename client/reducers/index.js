@@ -15,6 +15,7 @@ const moveStep = (state, stepIncrement) => {
 }
 
 const repeatStep = (state, payload) => {
+  console.log(payload);
   return Object.assign(
     {},
     state,
