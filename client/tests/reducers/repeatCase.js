@@ -7,7 +7,8 @@ import { REPEAT } from '../../actions/actionCreators'
 test('reducer with basic REPEAT action with active_audio_path as an array', t=> {
 
   var action = {
-    type: REPEAT
+    type: REPEAT,
+    payload: true
   }
 
   var fakeState = {
@@ -129,7 +130,8 @@ test('reducer with basic REPEAT action with active_audio_path as an array', t=> 
 
 test('reducer with basic REPEAT action with active_audio_path as a string', t=> {
   var action = {
-    type: REPEAT
+    type: REPEAT,
+    payload: true
   }
   var fakeState = {
     recipe:{
