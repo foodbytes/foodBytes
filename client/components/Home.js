@@ -33,7 +33,10 @@ class Home extends Component {
 
   render () {
     return(
+
+
       <div className="jumbotron">
+
         <div className="row">
           <h1 className=" header text-center">Food Bytes</h1>
           <div  className=" row">
