@@ -6,7 +6,7 @@ let logger = require('morgan');
 let cookieParser = require('cookie-parser');
 let bodyParser = require('body-parser');
 
-let routes = require('./routes/index');
+let routes = require('./routes/api');
 let users = require('./routes/users');
 
 let fallback = require('express-history-api-fallback')

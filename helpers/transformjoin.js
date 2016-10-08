@@ -30,8 +30,7 @@ const transformJoin = (rows)=> {
      prev.currentStep = row.currentStep
      prev.instructions.push(row.instructions)
      prev.steps_audio_path.push(row.steps_audio_path)
-      return prev
-
+     return prev
    },initialState)
 }
 
