@@ -12,9 +12,7 @@ const getJoinTable = (id) => {
         .where('recipe_id',id)
         .innerJoin('steps', 'recipes.id', '=', 'steps.recipe_id')
         .orderBy('steps.id')
-        .then(function (rows){
-          return transformJoin(rows)
-        })
+        .then((rows) => transformJoin(rows))
 }
 
 module.exports = {
