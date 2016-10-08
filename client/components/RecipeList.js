@@ -3,27 +3,18 @@ import { connect } from 'react-redux'
 
 import RecipeThumbnail from './RecipeThumbnail'
 
-class RecipeList extends Component {
-
-  getRecipes(recipes){
-    if (recipes) {
-      return recipes.map(
-        (recipe)=> <RecipeThumbnail recipe={recipe} key={recipe.id}/>
-      )
-    }
-  }
-
-  render () {
-    const { recipes } = this.props
-    return (
+  function RecipeList(props) {
+    const recipes = props.recipes || []
+    return(
       <div className="jumbotron">
         <div className="page-header">
           <h1 className="text-center">Recipes</h1>
         </div>
-        {this.getRecipes(recipes)}
+        {
+          recipes.map((recipe)=> <RecipeThumbnail recipe={recipe} key={recipe.id}/>)
+        }
       </div>
     )
-  }
 }
 
 const mapStateToProps = (state) => {
