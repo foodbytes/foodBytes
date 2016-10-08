@@ -35,27 +35,13 @@ server.use(function(req, res, next) {
   next(err)
 })
 
-// error handlers
-
-// development error handler
-// will print stacktrace
-if (server.get('env') === 'development') {
+// error handler
   server.use(function(err, req, res, next) {
     res.status(err.status || 500)
     res.render('error', {
       message: err.message,
-      error: err
+      error: server.get('env') === 'production' ? {} : err
     })
   })
-}
-
-server.use(function(err, req, res, next) {
-  res.status(err.status || 500)
-  res.render('error', {
-    message: err.message,
-    error: {}
-  })
-})
-
 
 module.exports = server
