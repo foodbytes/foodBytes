@@ -7,7 +7,6 @@ let cookieParser = require('cookie-parser');
 let bodyParser = require('body-parser');
 
 let routes = require('./routes/index');
-let users = require('./routes/users');
 
 let fallback = require('express-history-api-fallback')
 let server = express();
@@ -27,7 +26,6 @@ server.use(express.static(path.join(__dirname, 'public')));
 server.use(express.static(root))
 
 server.use('/', routes);
-server.use('/users', users);
 server.use(fallback('index.html', { root: root }))
 
 // catch 404 and forward to error handler
