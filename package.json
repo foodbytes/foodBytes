@@ -10,8 +10,8 @@
     "build:css": "node-sass --include-path public/stylesheets --output-style compressed public/stylesheets/main.scss public/stylesheets/main.css",
     "watch": "watchify client/index.js -o public/bundle.js -dv",
     "watch:css": "node-sass --include-path public/stylesheets -w public/stylesheets/main.scss public/stylesheets/main.css",
-    "server-test": "node ./helpers/test.js | tap-spec",
     "test": "babel-tape-runner ./client/tests/**/*.js | tap-spec",
+    "test:server": "node ./helpers/test.js | tap-spec",
     "test:integration": "chimp --watch"
   },
   "browserify": {
