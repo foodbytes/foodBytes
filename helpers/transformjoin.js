@@ -9,6 +9,7 @@ const transformJoin = (rows)=> {
      length: 0,
      whole_recipe_audio_path: null,
      ingredients_audio_path: null,
+     audio: null,
      recipeList_image_path: null,
      recipePage_image_path: null,
      currentStep:0,
@@ -24,7 +25,8 @@ const transformJoin = (rows)=> {
      prev.cooking_time =row.cooking_time
      prev.length = row.length
      prev.whole_recipe_audio_path = row.whole_recipe_audio_path
-     prev.ingredients_audio_path = row.ingredients_audio_path
+     prev.ingredients_audio_path = row.ingredients_audio_path,
+     prev.audio = row.audio,
      prev.recipeList_image_path = row.recipeList_image_path
      prev.recipePage_image_path = row.recipePage_image_path
      prev.currentStep = row.currentStep

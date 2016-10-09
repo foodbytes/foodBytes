@@ -17,7 +17,7 @@ class Listener extends Component {
         'cc next': () => { this.props.nextDispatch() },
         'cc previous': () => { this.props.previousDispatch() },
         'cc repeat': () => { this.props.repeatDispatch(true) },
-        'cc ingredients': () => { this.props.ingredientsDispatch(this.props.ingredients_audio_path) }
+        'cc ingredients': () => { this.props.ingredientsDispatch(this.props.audio) }
       }
       annyang.addCommands(commands);
     }
@@ -49,7 +49,7 @@ class Listener extends Component {
 const mapStateToProps = (state) => {
   return {
     listening: state.recipe.listening,
-    ingredients_audio_path: state.recipe.ingredients_audio_path
+    audio: state.recipe.audio
   }
 }
 

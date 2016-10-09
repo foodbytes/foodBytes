@@ -58,6 +58,13 @@ class Recipe extends React.Component {
   checkReady(){
     const { playing, active_audio_path, currentStep } = this.props.data
     if (playing !== undefined) {
+      const audio = active_audio_path;
+      const reader = new FileReader();
+      const audio_path = reader.readAsArrayBuffer(audio);
+
+
+
+      console.log("audio:", audio_path);
       if (typeof(active_audio_path) === 'string') {
         return <Audio active_audio_path={active_audio_path} playing={playing}/>
       }

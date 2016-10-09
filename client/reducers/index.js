@@ -55,7 +55,7 @@ const recipe = (state = initialState, action) => {
     case WHOLE_RECIPE:
       return Object.assign({}, state, {active_audio_path: state.whole_recipe_audio_path}, {playing: true})
     case INGREDIENTS:
-      return Object.assign({}, state, {active_audio_path: state.ingredients_audio_path}, {playing: true})
+      return Object.assign({}, state, {active_audio_path: state.audio}, {playing: true})
     case LISTENING:
       const payload = action.payload || !state.listening
       return Object.assign({}, state, {listening: payload})
