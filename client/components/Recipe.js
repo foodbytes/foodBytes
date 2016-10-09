@@ -121,6 +121,7 @@ class Recipe extends React.Component {
                   <a type="button" className="btn" onClick={this.handleClickNext} id="next"> Next</a>
                   <a type="button" className="btn" onClick={this.handleClickRepeat} id="Repeat">Repeat</a>
                   <a type="button" className="btn" onClick={this.handleClickIngredients} id="Ingredients">Ingredients</a>
+                  <a type="button" className="btn" onClick={this.handleClickScroll} id="Scroll">Scroll</a>
               </div>
 
           </div>
