@@ -40,8 +40,7 @@ const recipe = (state = initialState, action) => {
       let apiData = Object.assign({}, action.payload, {length: length}, {currentStep: 0})
       return Object.assign({}, state, apiData)
     case START:
-      const newState = Object.assign({}, {active_audio_path: state.steps_audio_path[0]}, {playing: true}, {currentStep: 2}, state)
-      return newState
+      return Object.assign({}, {active_audio_path: state.steps_audio_path[0]}, {playing: true}, {currentStep: 2}, state)
     case NEXT:
       if (isAtEnd(state) && typeof(active_audio_path) !=='string') return state
       return moveStep(state, 1)
@@ -59,6 +58,8 @@ const recipe = (state = initialState, action) => {
     case LISTENING:
       const payload = action.payload || !state.listening
       return Object.assign({}, state, {listening: payload})
+    case HIGHLIGHT_NEXT_TEXT:
+      return
 
     default:
       return state

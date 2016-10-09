@@ -139,6 +139,7 @@ export const listeningDispatch = (state) => {
 }
 
 export const highlightNextTextDispatch = (state) => {
+  console.log("Inside highlightNextTextDispatch");
   return (dispatch) => {
     dispatch ({
       type: HIGHLIGHT_NEXT_TEXT,
