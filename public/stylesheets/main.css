@@ -119,6 +119,7 @@ li {
 .navbar-form {
   margin: 5px auto;
   padding: 0 15px;
+  border: none;
 }
 .input-group {
   height: 39px
