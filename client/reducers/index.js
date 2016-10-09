@@ -1,5 +1,5 @@
 import { initialState } from '../initialstate/initialstate'
-import { START, NEXT, REPEAT, PREVIOUS, STOP, WHOLE_RECIPE, LISTENING, INGREDIENTS, RECEIVE_RECIPE_STEPS, RECEIVE_ALL_RECIPES } from '../actions/actionCreators'
+import { START, NEXT, REPEAT, PREVIOUS, STOP, WHOLE_RECIPE, LISTENING, INGREDIENTS, RECEIVE_RECIPE_STEPS, RECEIVE_ALL_RECIPES, HIGHLIGHT_NEXT_TEXT } from '../actions/actionCreators'
 import { combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
 
