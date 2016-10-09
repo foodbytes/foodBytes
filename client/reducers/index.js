@@ -59,7 +59,7 @@ const recipe = (state = initialState, action) => {
       const payload = action.payload || !state.listening
       return Object.assign({}, state, {listening: payload})
     case HIGHLIGHT_NEXT_TEXT:
-      return
+      return null
 
     default:
       return state
