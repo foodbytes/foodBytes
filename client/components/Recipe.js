@@ -114,7 +114,7 @@ class Recipe extends React.Component {
       <div className="jumbotron">
         <Listener />
           <div className="row well ">
-              <div className="commands col-xs-12 col-sm-6 col-sm-offset-3 col-md-8 col-md-offset-2">
+              <div className="commands col-xs-12">
                   <a>Available commands:</a>
                   <a type="button" className="btn" onClick={this.handleClickStartAtBeginning} id="start">Start</a>
                   <a type="button" className="btn" onClick={this.handleClickPrevious} id="Previous">Previous</a>
@@ -125,7 +125,7 @@ class Recipe extends React.Component {
 
           </div>
             <div className="row well ">
-              <div className= "col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+              <div className= "col-xs-12">
                 <div className={`thumbnail ${spinnerClass, spinnerPulse}`}> <img width="300" height="400" src={recipePage_image_path} alt={thumbnailAlt} onClick={this.startListening}/>
                   <div className="buttonbar">
                     <a type="button" className="btn-lg glyphicon glyphicon-play" onClick={this.handleClickStartAtBeginning} id="start"></a>
