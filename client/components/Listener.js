@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import { startDispatch, nextDispatch, previousDispatch, repeatDispatch, stopDispatch, ingredientsDispatch } from '../actions/actionCreators'
+import { startDispatch, nextDispatch, previousDispatch, repeatDispatch, stopDispatch, ingredientsDispatch,  } from '../actions/actionCreators'
 
 class Listener extends Component {
 

@@ -11,9 +11,9 @@ const INGREDIENTS = 'ingredients'
 const LISTENING = 'listening'
 const RECEIVE_RECIPE_STEPS = 'RECEIVE_RECIPE_STEPS'
 const RECEIVE_ALL_RECIPES = 'RECEIVE_ALL_RECIPES'
-const AUTO_SCROLL_PAGE = 'AUTO_SCROLL_PAGE'
+const HIGHLIGHT_NEXT_TEXT = 'HIGHLIGHT_NEXT_TEXT'
 
-export { START, NEXT, PREVIOUS, REPEAT, STOP, WHOLE_RECIPE, LISTENING, INGREDIENTS, RECEIVE_RECIPE_STEPS, RECEIVE_ALL_RECIPES, AUTO_SCROLL_PAGE }
+export { START, NEXT, PREVIOUS, REPEAT, STOP, WHOLE_RECIPE, LISTENING, INGREDIENTS, RECEIVE_RECIPE_STEPS, RECEIVE_ALL_RECIPES, HIGHLIGHT_NEXT_TEXT }
 
 export const receiveRecipeSteps = (state) => {
     return {
@@ -136,4 +136,13 @@ export const listeningDispatch = (state) => {
         payload: state
       })
     }
+}
+
+export const highlightNextTextDispatch = (state) => {
+  return (dispatch) => {
+    dispatch ({
+      type: HIGHLIGHT_NEXT_TEXT,
+      payload: state
+    })
+  }
 }

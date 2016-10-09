@@ -1,23 +1,18 @@
-let knexConfig = require('../knexfile').development;
-let knex = require('knex')(knexConfig);
-let transformJoin = require('../helpers/transformjoin')
+const env = process.env.NODE_ENV || 'development'
+const knexConfig = require('../knexfile')[env];
+const knex = require('knex')(knexConfig);
+const transformJoin = require('../helpers/transformjoin')
 
-const getRecipesTable =  ()=>{
-  return knex('recipes').orderBy('id')
-}
+const getRecipesTable = () => knex('recipes').orderBy('id')
 
-const getStepsTable =  (id)=>{
-  return knex('steps').where('recipe_id', id)
-}
+const getStepsTable = id => knex('steps').where('recipe_id', id)
 
 const getJoinTable = (id) => {
-  return knex.table('recipes')
+  return knex('recipes')
         .where('recipe_id',id)
         .innerJoin('steps', 'recipes.id', '=', 'steps.recipe_id')
         .orderBy('steps.id')
-        .then(function (rows){
-          return transformJoin(rows)
-        })
+        .then((rows) => transformJoin(rows))
 }
 
 module.exports = {

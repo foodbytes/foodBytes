@@ -1,21 +1,22 @@
-const transformJoin = (seedData)=> {
-   let result = {id:null,
-   name: null,
-   description: null,
-   notes:null,
-   cooking_time: null,
-   ingredients: null,
-   length: 0,
-   whole_recipe_audio_path: null,
-   ingredients_audio_path: null,
-   recipeList_image_path: null,
-   recipePage_image_path: null,
-   instructions:[],
-   steps_audio_path:[]
- }
- 
- return seedData.reduce((prev,row)=>{
-     prev.id = row.id
+const transformJoin = (rows)=> {
+   let initialState = {
+     id:null,
+     name: null,
+     description: null,
+     notes:null,
+     ingredients: null,
+     cooking_time: null,
+     length: 0,
+     whole_recipe_audio_path: null,
+     ingredients_audio_path: null,
+     recipeList_image_path: null,
+     recipePage_image_path: null,
+     currentStep:0,
+     instructions:[],
+     steps_audio_path:[]
+   }
+   return rows.reduce((prev,row)=>{
+     prev.id = row.recipe_id
      prev.name = row.name
      prev.description = row.description
      prev.notes = row.notes
@@ -28,10 +29,8 @@ const transformJoin = (seedData)=> {
      prev.recipePage_image_path = row.recipePage_image_path
      prev.instructions.push(row.instructions)
      prev.steps_audio_path.push(row.steps_audio_path)
-      return prev
-
-   },result)
-
+     return prev
+   },initialState)
 }
 
 module.exports = transformJoin

@@ -3,9 +3,7 @@ let router = express.Router();
 
 let {getRecipesTable, getStepsTable, getJoinTable} = require('../database/db.js');
 
-router.get('/', function(req, res, next) {
-  res.send('index.html');
-});
+router.get('/', (req, res, next) => res.send('index.html'))
 
 router.get('/api/v1/recipes/:id', (req, res) => {
   let id = req.params.id
