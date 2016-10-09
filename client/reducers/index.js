@@ -14,6 +14,14 @@ const moveStep = (state, stepIncrement) => {
   )
 }
 
+const highlightNextStep = (state, stepIncrement) => {
+  return Object.assign(
+    {},
+    state,
+    {currentStep: state.currentStep + stepIncrement}
+  )
+}
+
 const repeatStep = (state, payload) => {
   return Object.assign(
     {},
@@ -59,7 +67,8 @@ const recipe = (state = initialState, action) => {
       const payload = action.payload || !state.listening
       return Object.assign({}, state, {listening: payload})
     case HIGHLIGHT_NEXT_TEXT:
-      return null
+      if (isAtEnd(state)) return state
+      return highlightNextStep(state, +1)
 
     default:
       return state
