@@ -28,11 +28,10 @@ class Listener extends Component {
     console.log('Listener receiving new props', nextProps.listening)
     if (nextProps.listening) {
       console.log('annyang starting')
-      annyang.start()
+      if (annyang) annyang.start()
     } else {
       console.log('annyang pausing')
-      annyang.abort()
-
+      if (annyang) annyang.abort()
     }
   }
 

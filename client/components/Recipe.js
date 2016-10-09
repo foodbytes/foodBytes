@@ -167,7 +167,8 @@ const mapDispatchToProps = (dispatch) => {
       fetchRecipe,
       wholeRecipeDispatch,
       ingredientsDispatch,
-      listeningDispatch
+      listeningDispatch,
+      highlightNextTextDispatch
     },
     dispatch
   )
