@@ -19,7 +19,7 @@ class Recipe extends React.Component {
     this.handleClickStop = this.handleClickStop.bind(this)
     this.handleClickIngredients = this.handleClickIngredients.bind(this)
     this.handleClickWholeRecipe = this.handleClickWholeRecipe.bind(this)
-    this.handlClickScroll = this.handlClickScroll.bind(this)
+    this.handleClickScroll = this.handleClickScroll.bind(this)
   }
 
   handleClickStartAtBeginning() {
@@ -56,7 +56,7 @@ class Recipe extends React.Component {
     this.props.wholeRecipeDispatch()
   }
 
-  handlClickScroll() {
+  handleClickScroll() {
     this.props.highlightNextTextDispatch()
   }
 
@@ -134,7 +134,7 @@ class Recipe extends React.Component {
                     <a type="button" className="btn-lg glyphicon glyphicon glyphicon-stop" onClick={this.handleClickStop} id="stop"></a>
                     <a type="button" className="btn-lg glyphicon glyphicon-repeat" onClick={this.handleClickRepeat} id="Repeat"></a>
                     <a type="button" className="btn-lg glyphicon glyphicon-grain" onClick={this.handleClickIngredients} id="Ingredients"></a>
-                    <a type="button" className="btn-lg glyphicon glyphicon-menu-down" onClick={this.handlClickScroll} id="Scroll"></a>
+                    <a type="button" className="btn-lg glyphicon glyphicon-menu-down" onClick={this.handleClickScroll} id="Scroll"></a>
                   </div>
                 </div>
               </div>
