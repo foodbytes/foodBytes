@@ -36,7 +36,6 @@ li {
 .navli {
   background-color: #333333; }
   .navli button {
-    margin: 5px;
     color: white;
     background-color: #B0BF75; }
 
@@ -116,6 +115,14 @@ li {
 .spinner-4:after {
   -webkit-animation: pulse 2s linear 2.3s infinite;
   animation: pulse 2s linear 2.3s infinite; }
+
+.navbar-form {
+  margin: 5px auto;
+}
+.input-group {
+  height: 39px
+
+}
 
 @-webkit-keyframes pulse {
   0% {
