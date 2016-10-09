@@ -29,14 +29,14 @@ server.use('/', api)
 server.use(fallback('index.html', { root: root }))
 
 // catch 404 and forward to error handler
-server.use(function(req, res, next) {
+server.use((req, res, next) => {
   let err = new Error('Not Found')
   err.status = 404
   next(err)
 })
 
 // error handler
-  server.use(function(err, req, res, next) {
+  server.use((err, req, res, next) => {
     res.status(err.status || 500)
     res.render('error', {
       message: err.message,
