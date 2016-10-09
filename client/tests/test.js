@@ -1,6 +1,6 @@
 var request = require('supertest')
 var test = require('tape')
-var router = require('../../routes/index')
+var router = require('../../routes/api')
 
 request(router)
   .get('/api/v1/recipes/:id')
