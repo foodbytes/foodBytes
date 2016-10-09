@@ -39,7 +39,7 @@ li {
     color: white;
     background-color: #B0BF75; }
 
-.recipes {
+.nav-button {
   margin: 5px;
   color: white;
   background-color: #B0BF75; }
@@ -118,6 +118,7 @@ li {
 
 .navbar-form {
   margin: 5px auto;
+  padding: 0 15px;
 }
 .input-group {
   height: 39px
