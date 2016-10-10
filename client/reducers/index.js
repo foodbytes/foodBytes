@@ -1,5 +1,5 @@
 import { initialState } from '../initialstate/initialstate'
-import { START, NEXT, REPEAT, PREVIOUS, STOP, WHOLE_RECIPE, LISTENING, INGREDIENTS, RECEIVE_RECIPE_STEPS, RECEIVE_ALL_RECIPES } from '../actions/actionCreators'
+import { START, NEXT, REPEAT, PREVIOUS, STOP, WHOLE_RECIPE, LISTENING, INGREDIENTS, RECEIVE_RECIPE_STEPS, RECEIVE_ALL_RECIPES, HIGHLIGHT_NEXT_TEXT } from '../actions/actionCreators'
 import { combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
 
@@ -10,6 +10,14 @@ const moveStep = (state, stepIncrement) => {
     state,
     {active_audio_path: state.steps_audio_path},
     {playing: true},
+    {currentStep: state.currentStep + stepIncrement}
+  )
+}
+
+const highlightNextStep = (state, stepIncrement) => {
+  return Object.assign(
+    {},
+    state,
     {currentStep: state.currentStep + stepIncrement}
   )
 }
@@ -40,8 +48,7 @@ const recipe = (state = initialState, action) => {
       let apiData = Object.assign({}, action.payload, {length: length}, {currentStep: 0})
       return Object.assign({}, state, apiData)
     case START:
-      const newState = Object.assign({}, {active_audio_path: state.steps_audio_path[0]}, {playing: true}, {currentStep: 2}, state)
-      return newState
+      return Object.assign({}, {active_audio_path: state.steps_audio_path[0]}, {playing: true}, {currentStep: 2}, state)
     case NEXT:
       if (isAtEnd(state) && typeof(active_audio_path) !=='string') return state
       return moveStep(state, 1)
@@ -59,6 +66,9 @@ const recipe = (state = initialState, action) => {
     case LISTENING:
       const payload = action.payload || !state.listening
       return Object.assign({}, state, {listening: payload})
+    case HIGHLIGHT_NEXT_TEXT:
+      if (isAtEnd(state)) return state
+      return highlightNextStep(state, +1)
 
     default:
       return state
