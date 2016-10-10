@@ -122,8 +122,7 @@ li {
   border: none;
 }
 .input-group {
-  height: 39px
-
+  height: 39px;
 }
 
 @-webkit-keyframes pulse {
