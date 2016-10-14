@@ -31,7 +31,6 @@ class Listener extends Component {
     } else {
       console.log('annyang pausing')
       annyang.abort()
-
     }
   }
 

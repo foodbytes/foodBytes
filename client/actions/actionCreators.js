@@ -1,4 +1,4 @@
-import { initialState } from '../initialstate/initialstate.js'
+import { initialState } from '../initialstate/initialstate'
 import request from 'superagent'
 
 const START = 'start'

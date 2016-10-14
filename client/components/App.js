@@ -8,10 +8,6 @@ import Nav from './layout/Nav';
 
 class App extends Component {
 
-  constructor (props) {
-    super(props)
-  }
-
   componentDidMount () {
     const { fetchRecipes } = this.props
     fetchRecipes()
