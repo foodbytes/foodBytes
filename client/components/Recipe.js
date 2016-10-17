@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 
-import { startDispatch, nextDispatch, previousDispatch, repeatDispatch, stopDispatch, fetchRecipe, wholeRecipeDispatch, ingredientsDispatch, listeningDispatch } from '../actions/actionCreators'
+import { startDispatch, nextDispatch, previousDispatch, repeatDispatch, stopDispatch, fetchRecipe, wholeRecipeDispatch, ingredientsDispatch, listeningDispatch, highlightNextTextDispatch } from '../actions/actionCreators'
 import Audio from './Audio'
 import Listener from './Listener'
 
@@ -19,6 +19,7 @@ class Recipe extends React.Component {
     this.handleClickStop = this.handleClickStop.bind(this)
     this.handleClickIngredients = this.handleClickIngredients.bind(this)
     this.handleClickWholeRecipe = this.handleClickWholeRecipe.bind(this)
+    this.handleClickScroll = this.handleClickScroll.bind(this)
   }
 
   handleClickStartAtBeginning() {
@@ -53,6 +54,10 @@ class Recipe extends React.Component {
 
   handleClickWholeRecipe() {
     this.props.wholeRecipeDispatch()
+  }
+
+  handleClickScroll() {
+    this.props.highlightNextTextDispatch()
   }
 
   checkReady(){
@@ -109,33 +114,31 @@ class Recipe extends React.Component {
       <div className="jumbotron">
         <Listener />
           <div className="row well ">
-              <div className= "col-xs-12 col-sm-3 col-md-2 col-lg-2"></div>
-              <div className="commands col-xs-12 col-sm-6 col-md-8 col-lg-8">
+              <div className="commands col-xs-12">
                   <a>Available commands:</a>
-                  <a type ="button" className="btn" onClick={this.handleClickStartAtBeginning} id="start">Start</a>
-                  <a type ="button" className="btn" onClick={this.handleClickPrevious} id="Previous">Previous</a>
-                  <a type ="button" className="btn" onClick={this.handleClickNext} id="next"> Next</a>
-                  <a type ="button" className="btn" onClick={this.handleClickRepeat} id="Repeat">Repeat</a>
-                  <a type ="button" className="btn" onClick={this.handleClickIngredients} id="Ingredients">Ingredients</a>
+                  <a type="button" className="btn" onClick={this.handleClickStartAtBeginning} id="start">Start</a>
+                  <a type="button" className="btn" onClick={this.handleClickPrevious} id="Previous">Previous</a>
+                  <a type="button" className="btn" onClick={this.handleClickNext} id="next"> Next</a>
+                  <a type="button" className="btn" onClick={this.handleClickRepeat} id="Repeat">Repeat</a>
+                  <a type="button" className="btn" onClick={this.handleClickIngredients} id="Ingredients">Ingredients</a>
+                  <a type="button" className="btn" onClick={this.handleClickScroll} id="Scroll">Scroll</a>
               </div>
-              <div className= "col-xs-12 col-sm-3 col-md-2 col-lg-2"></div>
 
           </div>
             <div className="row well ">
-              <div className= "col-xs-12 col-sm-6 col-md-4 col-lg-4"></div>
-              <div className= "col-xs-12 col-sm-6 col-md-4 col-lg-4">
+              <div className= "col-xs-12">
                 <div className={`thumbnail ${spinnerClass, spinnerPulse}`}> <img width="300" height="400" src={recipePage_image_path} alt={thumbnailAlt} onClick={this.startListening}/>
                   <div className="buttonbar">
-                    <a type ="button " className="btn-lg glyphicon glyphicon-play" onClick={this.handleClickStartAtBeginning} id="start"></a>
-                    <a type ="button" className="btn-lg glyphicon glyphicon-step-backward" onClick={this.handleClickPrevious} id="Previous"></a>
-                    <a type ="button" className="btn-lg glyphicon glyphicon-step-forward" onClick={this.handleClickNext} id="next"></a>
-                    <a type ="button" className="btn-lg glyphicon glyphicon glyphicon-stop" onClick={this.handleClickStop} id="stop"></a>
-                    <a type ="button" className="btn-lg glyphicon glyphicon-repeat" onClick={this.handleClickRepeat} id="Repeat"></a>
-                    <a type ="button" className="btn-lg glyphicon glyphicon-grain" onClick={this.handleClickIngredients} id="Ingredients"></a>
+                    <a type="button" className="btn-lg glyphicon glyphicon-play" onClick={this.handleClickStartAtBeginning} id="start"></a>
+                    <a type="button" className="btn-lg glyphicon glyphicon-step-backward" onClick={this.handleClickPrevious} id="Previous"></a>
+                    <a type="button" className="btn-lg glyphicon glyphicon-step-forward" onClick={this.handleClickNext} id="next"></a>
+                    <a type="button" className="btn-lg glyphicon glyphicon glyphicon-stop" onClick={this.handleClickStop} id="stop"></a>
+                    <a type="button" className="btn-lg glyphicon glyphicon-repeat" onClick={this.handleClickRepeat} id="Repeat"></a>
+                    <a type="button" className="btn-lg glyphicon glyphicon-grain" onClick={this.handleClickIngredients} id="Ingredients"></a>
+                    <a type="button" className="btn-lg glyphicon glyphicon-menu-down" onClick={this.handleClickScroll} id="Scroll"></a>
                   </div>
                 </div>
               </div>
-              <div className= "col-xs-12 col-sm-6 col-md-4 col-lg-4"></div>
             </div>
 
             <div className="row well text-justify menu">
@@ -165,11 +168,12 @@ const mapDispatchToProps = (dispatch) => {
       fetchRecipe,
       wholeRecipeDispatch,
       ingredientsDispatch,
-      listeningDispatch
+      listeningDispatch,
+      highlightNextTextDispatch
     },
     dispatch
   )
-  }
+}
 
 const mapStateToProps = (state) => {
   return {

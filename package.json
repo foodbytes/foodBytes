@@ -8,7 +8,7 @@
     "build": "NODE_ENV=production browserify client/index.js -o public/bundle.js -g uglifyify",
     "postinstall": "npm run build",
     "build:css": "node-sass --include-path public/stylesheets --output-style compressed public/stylesheets/main.scss public/stylesheets/main.css",
-    "watch": "watchify client/index.js -o public/bundle.js -dv",
+    "watch": "watchify client/index.js -o public/bundle.js -d",
     "watch:css": "node-sass --include-path public/stylesheets -w public/stylesheets/main.scss public/stylesheets/main.css",
     "test": "npm run test:unit && npm run test:server && npm run test:intergration",
     "test:server": "node ./helpers/test.js | tap-spec",
