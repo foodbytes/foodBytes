@@ -12,7 +12,6 @@ class Listener extends Component {
       annyang.debug()
       annyang.setLanguage('en-NZ')
       var commands = {
-        /* cc start set to call nextDispatch for presentation only! */
         'cc start': () => { this.props.nextDispatch() },
         'cc next': () => { this.props.nextDispatch() },
         'cc previous': () => { this.props.previousDispatch() },
