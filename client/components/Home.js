@@ -37,37 +37,31 @@ class Home extends Component {
         <div className="row">
           <h1 className=" header text-center">Food Bytes</h1>
           <div  className=" row">
-            <h3 className=" well text-center">An interactive audio recipe book.</h3>
+            <h3 className=" well text-center">An interactive recipe book.</h3>
           </div>
         </div>
 
-        <div className="well row">
-          <div className="col-xs-12 col-sm-6 col-md-4"></div>
-          <div className=" col-xs-12 col-sm-6 col-md-4" data-toggle="collapse" data-target="#demo" onClick={this.handleClickImage} id="imageClick">
+        <div className="row well">
+          <div className="col-xs-12" data-toggle="collapse" data-target="#demo" onClick={this.handleClickImage} id="imageClick">
             {this.renderAudio()}
             <img src="../images/bananas_icon_speaker_cartoon.png" alt="home page"/>
           </div>
-          <div className="col-lg-12 col-sm-6 col-md-4"></div>
         </div>
 
-        <div className=" row">
-          <div className="col-xs-12 col-sm-6 col-md-2"></div>
-          <div className="well col-xs-12 col-sm-6 col-md-8 text-center collapse" id="demo" >
+        <div className="row">
+          <div className="well col-xs-12 text-center collapse" id="demo" >
             <h4> Hi and welcome to FoodBytes. I am CC, your guide. </h4>
             <h4>Foodbytes is an interactive audio recipe book. By reading the recipes out to you your hands are free to get on with the cooking. </h4>
             <h4>To talk to me, say my name and a command. </h4>
             <h4 className="bold">The commands I understand are "CC next", "CC previous" and "CC repeat".</h4>
             <h4>So head on over to the recipe page to get started...I will meet you there. </h4>
           </div>
-          <div className="col-lg-12 col-sm-6 col-md-2"></div>
         </div>
 
-        <div className=" row">
-          <div className="col-xs-12 col-sm-6 col-md-2"></div>
-          <div className="well col-xs-12 col-sm-6 col-md-8 text-center">
+        <div className="row">
+          <div className="well col-xs-12 text-center">
             <Link to="/recipes"><button role="presentation" className=" recipes btn btn-md">Recipes</button></Link>
           </div>
-          <div className="col-lg-12 col-sm-6 col-md-2"></div>
         </div>
       </div>
     )

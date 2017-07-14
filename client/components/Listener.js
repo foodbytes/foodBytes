@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import { startDispatch, nextDispatch, previousDispatch, repeatDispatch, stopDispatch, ingredientsDispatch } from '../actions/actionCreators'
+import { startDispatch, nextDispatch, previousDispatch, repeatDispatch, stopDispatch, ingredientsDispatch, highlightNextTextDispatch } from '../actions/actionCreators'
 
 class Listener extends Component {
 
@@ -12,12 +12,12 @@ class Listener extends Component {
       annyang.debug()
       annyang.setLanguage('en-NZ')
       var commands = {
-        /* cc start set to call nextDispatch for presentation only! */
         'cc start': () => { this.props.nextDispatch() },
         'cc next': () => { this.props.nextDispatch() },
         'cc previous': () => { this.props.previousDispatch() },
         'cc repeat': () => { this.props.repeatDispatch(true) },
-        'cc ingredients': () => { this.props.ingredientsDispatch(this.props.ingredients_audio_path) }
+        'cc ingredients': () => { this.props.ingredientsDispatch(this.props.ingredients_audio_path) },
+        'cc scroll': () => { this.props.highlightNextTextDispatch() }
       }
       annyang.addCommands(commands);
     }
@@ -55,7 +55,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators(
-    { startDispatch, nextDispatch,  previousDispatch, repeatDispatch, stopDispatch, ingredientsDispatch }, // , wholeRecipeDispatch, ingredientsDispatch, listeningDispatch
+    { startDispatch, nextDispatch,  previousDispatch, repeatDispatch, stopDispatch, ingredientsDispatch, highlightNextTextDispatch }, // , wholeRecipeDispatch, ingredientsDispatch, listeningDispatch
     dispatch
   )
 }
